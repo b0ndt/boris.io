@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<div class="cv-container">
+    <div class="cv-content">
+
+        <nav class="menu profile" id="profile">
+            <div class="menu-bar content-container clearfix">
+                <div class="user-thumb visible">
+                    <div class="css-crop bg-cover">
+                        <a href="/">
+                          <amp-img id="scalingImage" class="small" alt="Portrait" src="/assets/images/logo.jpg" width="180" height="186" layout="responsive">
+                          </amp-img>
+                        </a>
+                    </div>
+                </div>
+                <ul class="nav navbar-nav clearfix">
+                    <li>
+                        <a on="tap:summary.scrollTo">Summary</a>
+                    </li>
+                    <li>
+                        <a on="tap:positions.scrollTo">Work Experience</a>
+                    </li>
+                    <li>
+                        <a on="tap:expertise.scrollTo">Expertise</a>
+                    </li>
+                    <li>
+                        <a on="tap:strengths.scrollTo">Skills</a>
+                    </li>
+                    <li>
+                        <a on="tap:clients.scrollTo">Clients</a>
+                    </li>
+                    <li>
+                        <a on="tap:personal_interests.scrollTo">Personal Interests</a>
+                    </li>
+                    <li>
+                        <a on="tap:contact.scrollTo">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="text_story full-width">
+            <header>
+                <h3 class="header-text">{{ page.title }}</h3>
+            </header>
+            <article>
+              {{ content }}
+            </article>
+
+      {% comment %}
+          {% include analytics.html %}
+      {% endcomment %}
+    </div>
+</div>

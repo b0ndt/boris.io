@@ -1,0 +1,42 @@
+# Defaults
+defaults:
+  - scope:
+      path: "assets/images/clients"
+    values:
+      image: true
+
+# Site settings
+title: Boris Fründt | boris.io
+email: boris.fruendt@gmail.com
+description: >
+  Hey there! I'm Boris. Nice to finally meet you!
+favicon: "/favicon.ico"
+logo: "/assets/images/share.jpg"
+baseurl: ""
+url: "http://bondt.me/playground/boris.io"
+name: 'Boris Fründt'
+bio: >
+  Mea suas vituperatoribus et, virtute corpora quaestio cum ut.
+  Ne solet nostrum complectitur pri, vis ut inani populo.
+author_image: "/assets/images/logo.jpg"
+twitter_username: bondt
+github_username:  b0ndt
+
+# Google Analytics
+analytics_id: ""
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  parse_block_html: true
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-tidy
+
+jekyll_tidy:
+  compress_html: false
