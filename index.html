@@ -12,7 +12,7 @@ layout: default
                     layout="nodisplay">
                 </amp-position-observer>
                 <amp-img id="scalingImage" role="button" tabindex="0" on="tap:top.scrollTo" alt="Portrait" src="assets/images/logo.jpg"
-                    width="180" height="186" layout="responsive">
+                    width="180" height="180" layout="responsive">
                 </amp-img>
                 <amp-animation id="scaleAnimation" layout="nodisplay">
                     <script type="application/json">
@@ -24,7 +24,7 @@ layout: default
                                 "selector": "#scalingImage",
                                 "media": "(min-width: 1025px)",
                                 "keyframes": [{
-                                    "transform": "scale(.2)"
+                                    "transform": "scale(.24)"
                                 }]
                             }]
                         }
@@ -40,10 +40,10 @@ layout: default
                 <a on="tap:what.scrollTo">What I do</a>
             </li>
             <li>
-                <a on="tap:expertise.scrollTo">Top Skill</a>
+                <a on="tap:expertise.scrollTo">Work areas</a>
             </li>
             <li>
-                <a on="tap:skills.scrollTo">Haves</a>
+                <a on="tap:skills.scrollTo">Skills</a>
             </li>
             <li>
                 <a on="tap:clients.scrollTo">Brands</a>
@@ -211,7 +211,7 @@ layout: default
 </section>
 <section id="expertise" class="full-width">
     <header>
-        <h3 class="header-text">Top Skills</h3>
+        <h3 class="header-text">Main work areas</h3>
     </header>
     <article>
         <ul class="three-circles">
@@ -358,7 +358,7 @@ layout: default
     <div class="col-sm-4 timetable-left"></div>
     <div class="col-sm-8 timetable-right">
         <header>
-            <h3 class="header-text">Haves</h3>
+            <h3 class="header-text">Top Skills</h3>
         </header>
     </div>
     <article>
@@ -462,87 +462,23 @@ layout: default
 </section>
 <section id="clients" class="full-width">
     <header>
-        <h3 class="header-text">Brands I've worked for</h3>
+        <h3 class="header-text">Brands I used to work for</h3>
     </header>
     <article>
         <ul class="grid" amp-fx="fade-in">
-            <li class="grid-item">
-                <amp-img alt="Bilder.de" src="assets/images/clients/bilder.png" width="200" height="45" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Bitburger" src="assets/images/clients/bitburger.png" width="200" height="90" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Bitburger" src="assets/images/clients/bmw.png" width="200" height="200" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Bosch Siemens Hausgeräte" src="assets/images/clients/bsh.png" width="200" height="62"
-                    layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Daimler" src="assets/images/clients/daimler.png" width="200" height="25" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Deutscher Fußballbund" src="assets/images/clients/dfb.png" width="200" height="200"
-                    layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="DHL" src="assets/images/clients/dhl.png" width="200" height="44" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Edeka" src="assets/images/clients/edeka.png" width="200" height="243" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Elbphilharmonie Hamburg" src="assets/images/clients/elphi.png" width="200" height="83"
-                    layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Ergo" src="assets/images/clients/ergo.png" width="200" height="57" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Freixenet" src="assets/images/clients/freixenet.png" width="200" height="72" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="General Electric" src="assets/images/clients/general_electric.png" width="200" height="200"
-                    layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Google" src="assets/images/clients/google.png" width="200" height="83" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Huawei" src="assets/images/clients/huawei.png" width="200" height="203" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Kia" src="assets/images/clients/kia.png" width="200" height="100" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Lufthansa" src="assets/images/clients/lufthansa.png" width="200" height="35" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Montblanc" src="assets/images/clients/montblanc.png" width="200" height="110" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="Nikon" src="assets/images/clients/nikon.png" width="200" height="200" layout="responsive"></amp-img>
-            </li>
-            <li class="grid-item">
-                <amp-img alt="vodafone" src="assets/images/clients/vodafone.png" width="200" height="174" layout="responsive"></amp-img>
-            </li>
-        </ul>
-        <!--
-        <ul class="grid">
         {% for file in site.static_files %}
         {% if file.path contains "/images/clients" %}
             {% if file.extname == '.png' or file.extname == '.jpg' %}
                 {% assign filenameparts = file.path | split: "/" %}
+                {% assign fullname = filenameparts | last | prepend: 'clients/' %}
                 {% assign filename = filenameparts | last | replace: file.extname,"" %}
                 <li class="grid-item">
-                <amp-img src="{{ file.path }}" width="{{ assets[file.path].width  }}" height="{{ assets[file.path].height  }}" alt="{{ filename }}" title="{{ filename }}" layout="responsive"></amp-img>
+                    <amp-img src="{{ file.path }}" height="{{ assets[fullname].dimensions.height }}" width="{{ assets[fullname].dimensions.width }}" alt="{{ filename | replace: file.extname, '' | capitalize }}" title="{{ filename | replace: file.extname, '' | capitalize }}" layout="responsive"></amp-img>
                 </li>
             {% endif %}
         {% endif %}
         {% endfor %}
         </ul>
-        -->
     </article>
 </section>
 <section id="how" class="dated_story">
