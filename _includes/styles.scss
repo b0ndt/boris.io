@@ -612,7 +612,11 @@ ol {
 			border-radius: 100%;
 			box-shadow: 0 0 0 2px $white;
 			top: 8px;
-			right: -6px;
+			left: -6px;
+			@media(min-width: 768px) {
+				left: auto;
+				right: -6px;
+			}
 			z-index: 1;
 		}
 	}
@@ -651,10 +655,10 @@ ol {
 #scalingImage {
 	transform: scale(1);
 	transform-origin: 22px bottom;
-	bottom: 8px;
+	bottom: 2px;
 	cursor: pointer;
 	&.small {
-		transform: scale(.26);
+		transform: scale(.2);
 		transform-origin: 22px bottom;
 	}
 }
@@ -905,6 +909,8 @@ svg:not(:root) {
 		columns: 6;
 		column-gap: 6em;
 		padding-top: 4em;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 	.grid-item {
 		-webkit-column-break-inside: avoid;
