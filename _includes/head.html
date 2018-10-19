@@ -1,10 +1,29 @@
 <head>
 
+  <!--
+
+                    ,/
+                  ,'/
+                ,' /
+              ,'  /_____,
+            .'____    ,'
+                /  ,'
+                / ,'
+              /,'
+              /'
+
+             Built by Boris Fründt.
+
+             Let's work together!
+
+      -->
+
   <link rel="shortcut icon" href="{{ site.favicon | prepend: site.baseurl | prepend: site.url }}">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400">
 
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
@@ -18,20 +37,20 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="theme-color" content="#466bb0">
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %} | boris.io</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_newlines }}{% endif %}" />
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
   <meta property="og:site_name" content="{{ site.title }}" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="⚡ {{ site.title }}" />
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_newlines }}{% endif %}" />
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
   <meta property="og:image" content="{{ site.logo | prepend: site.baseurl | prepend: site.url }}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="⚡ {{ site.title }}" />
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_newlines }}{% endif %}" />
   <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
   <meta name="twitter:image" content="{{ site.logo | prepend: site.baseurl | prepend: site.url }}" />
   <meta name="twitter:site" content="@bondt" />
