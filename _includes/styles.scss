@@ -92,7 +92,7 @@ ol {
 	@extend %extend;
 }
 
-@media(min-width: 768px) {
+@media(min-width: 1024px) {
 	.col-sm-4 {
 		float: left;
 		width: 33.33333333%;
@@ -116,6 +116,26 @@ ol {
 			> a {
 				padding-top: 15px;
 				padding-bottom: 15px;
+				position: relative;
+				&:after {
+					content: '';
+					position: absolute;
+					background-color: currentColor;
+					height: 1px;
+					width: 20px;
+					left: 50%;
+					bottom: 14px;
+					margin-left: -10px;
+					transform-origin: center;
+					transition: transform 120ms ease-in-out;
+					will-change: transform;
+					transform: scaleX(0);
+				}
+				&:hover, &.active {
+					&:after {
+						transform: scaleX(1);
+					}
+				}
 			}
 		}
 	}
@@ -360,7 +380,7 @@ ol {
 					padding-left: 15px;
 					padding-right: 15px;
 				}
-				& > p, & > .header-text {
+				& > p, & > h3, & > .header-text {
 					@media(min-width: 768px) {
 						padding-left: 62px;
 						padding-right: 62px;
@@ -423,7 +443,7 @@ ol {
 	.banner {
 		position: relative;
 		height: calc(100vh - 54px);
-		max-height: 570px;
+		max-height: 528px;
 		background-image: $diagonal, $layer, $header;
 		background-color: transparent;
 		background-size: 5px, 5px, cover;
@@ -521,6 +541,9 @@ ol {
 		padding: 0 5%;
 		margin: 0 auto;
 		width: 100%;
+		.hamburger {
+			display: none;
+		}
 		.nav {
 			overflow: hidden;
 			margin-left: 17%;
@@ -549,7 +572,7 @@ ol {
 		}
 	}
 	.user-title {
-		text-shadow: 0 0 5px #000;
+		text-shadow: 0 0 5px $black;
 		padding: 0 8px;
 		height: 34%;
 		margin: auto;
@@ -562,6 +585,15 @@ ol {
 		h1 {
 			border-bottom: 2px solid $white;
 			display: inline-block;
+			position: relative;
+			svg {
+				filter: drop-shadow(0 0 5px $black);
+				height: 18px;
+				width: 18px;
+				position: absolute;
+				right: 0.07em;
+				top: 0.7em;
+			}
 		}
 	}
 	.summary-header {
@@ -658,8 +690,8 @@ ol {
 	bottom: 2px;
 	cursor: pointer;
 	&.small {
-		transform: scale(.2);
-		transform-origin: 22px bottom;
+		transform: scale(0.29);
+		transform-origin: 22px 180px;
 	}
 }
 
@@ -830,14 +862,50 @@ footer {
 		.menu {
 			position: relative;
 			border: 0 none;
+			z-index: auto;
 		}
 		.menu-bar {
+			.hamburger {
+				display: block;
+				position: absolute;
+				right: 18px;
+				top: 4px;
+				background: 0 none;
+				border: 0 none;
+				z-index: 13;
+				width: 30px;
+				height: 34px;
+				padding: 0;
+				font-size: 30px;
+				&:before {
+					content: "";
+						position: absolute;
+						left: 0;
+						top: 0.25em;
+						width: 1em;
+						height: 0.15em;
+						background: black;
+						box-shadow: 
+							0 0.25em 0 0 black,
+							0 0.5em 0 0 black;
+				}
+			}
+
+			amp-sidebar {
+				background-color: $white;
+			}
+
 			.user-thumb {
 				width: 100px;
 				bottom: -33px;
 			}
 			.navbar-nav {
-				display: none;
+				margin-left: 0;
+				li {
+					a {
+						border: 0 none;
+					}
+				}
 			}
 		}
 		.col-sm {
@@ -919,7 +987,7 @@ svg:not(:root) {
 		margin-bottom:2em;
 		filter: grayscale(100%);
 		opacity: .6;
-		transition: all 200ms ease-in-out 0ms;
+		transition: all 120ms ease-in-out 0ms;
 		cursor: crosshair;
 
 		&:hover {
@@ -982,8 +1050,8 @@ svg:not(:root) {
 			order: 0;
 			flex: 0 1 auto;
 			align-self: auto;
-			width: 60px;
-			height: 60px;
+			width: 100px;
+			height: 100px;
 			transition: transform 200ms ease-in-out 0ms;
 		}
 	}
@@ -1019,9 +1087,11 @@ svg:not(:root) {
 		transform: translate(60%, 0);
 	}
 	&::after {
-		content: '\0026A1';
+		content: '';
+		background-image: $bolt;
 		color: $white;
-		font-size: 20px;
+		width: 36px;
+		height: 44px;
 		display: block;
 		position: absolute;
 		left: 50%;
