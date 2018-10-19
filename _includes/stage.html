@@ -1,0 +1,26 @@
+<div class="user-thumb visible">
+    <div class="css-crop bg-cover">
+        <amp-position-observer on="scroll:scaleAnimation.seekTo(percent=event.percent)" intersection-ratios="0 1"
+            layout="nodisplay">
+        </amp-position-observer>
+        <amp-img id="scalingImage" role="button" tabindex="0" on="tap:top.scrollTo" alt="Portrait" src="/assets/images/logo.jpg"
+            width="180" height="180" layout="responsive">
+        </amp-img>
+        <amp-animation id="scaleAnimation" layout="nodisplay">
+            <script type="application/json">
+                {
+                    "duration": "1",
+                    "fill": "both",
+                    "direction": "normal",
+                    "animations": [{
+                        "selector": "#scalingImage",
+                        "media": "(min-width: 1025px)",
+                        "keyframes": [{
+                            "transform": "scale(.24)"
+                        }]
+                    }]
+                }
+            </script>
+        </amp-animation>
+    </div>
+</div>

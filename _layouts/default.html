@@ -5,14 +5,11 @@
     <div class="cv-container">
         <div class="cv-content">
           {{ content }}
-
-          {% comment %}
-              {% include analytics.html %}
-          {% endcomment %}
-
           {% include footer.html %}
-
         </div>
     </div>
+    {% comment %}
+      {% include analytics.html %}
+    {% endcomment %}
   </body>
 </html>

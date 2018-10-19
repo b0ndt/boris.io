@@ -6,55 +6,37 @@ layout: default
 
 <nav class="menu profile" id="profile">
     <div class="menu-bar content-container clearfix">
-        <div class="user-thumb visible">
-            <div class="css-crop bg-cover">
-                <amp-position-observer on="scroll:scaleAnimation.seekTo(percent=event.percent)" intersection-ratios="0 1"
-                    layout="nodisplay">
-                </amp-position-observer>
-                <amp-img id="scalingImage" role="button" tabindex="0" on="tap:top.scrollTo" alt="Portrait" src="assets/images/logo.jpg"
-                    width="180" height="180" layout="responsive">
-                </amp-img>
-                <amp-animation id="scaleAnimation" layout="nodisplay">
-                    <script type="application/json">
-                        {
-                            "duration": "1",
-                            "fill": "both",
-                            "direction": "normal",
-                            "animations": [{
-                                "selector": "#scalingImage",
-                                "media": "(min-width: 1025px)",
-                                "keyframes": [{
-                                    "transform": "scale(.24)"
-                                }]
-                            }]
-                        }
-                    </script>
-                </amp-animation>
-            </div>
+        {% include stage.html %}
+        <button class="hamburger" on='tap:sidebar.toggle'></button>
+        <amp-sidebar id="sidebar" layout="nodisplay" side="right">
+            <nav toolbar="(min-width: 1024px)" toolbar-target="target-element">
+                <ul class="nav navbar-nav clearfix">
+                    <li>
+                        <a on="tap:sidebar.close,why.scrollTo">Introduction</a>
+                    </li>
+                    <li>
+                        <a on="tap:sidebar.close,what.scrollTo">What I do</a>
+                    </li>
+                    <li>
+                        <a on="tap:sidebar.close,expertise.scrollTo">Work areas</a>
+                    </li>
+                    <li>
+                        <a on="tap:sidebar.close,skills.scrollTo">Skills</a>
+                    </li>
+                    <li>
+                        <a on="tap:sidebar.close,clients.scrollTo">Brands</a>
+                    </li>
+                    <li>
+                        <a on="tap:sidebar.close,how.scrollTo">How I work</a>
+                    </li>
+                    <li>
+                        <a on="tap:sidebar.close,contact.scrollTo">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </amp-sidebar>
+        <div id="target-element">
         </div>
-        <ul class="nav navbar-nav clearfix">
-            <li>
-                <a on="tap:why.scrollTo">Summary</a>
-            </li>
-            <li>
-                <a on="tap:what.scrollTo">What I do</a>
-            </li>
-            <li>
-                <a on="tap:expertise.scrollTo">Work areas</a>
-            </li>
-            <li>
-                <a on="tap:skills.scrollTo">Skills</a>
-            </li>
-            <li>
-                <a on="tap:clients.scrollTo">Brands</a>
-            </li>
-            <li>
-                <a on="tap:how.scrollTo">How I work</a>
-            </li>
-            <li>
-                <a on="tap:contact.scrollTo">Contact</a>
-            </li>
-        </ul>
     </div>
 </nav>
 
@@ -63,23 +45,10 @@ layout: default
         <h3 class="header-text">Hello lovely people!</h3>
     </header>
     <article>
-        <p>Before jumping into the What and How I'd like to start with the Why. To be completely honest, my skills
-            (What) and approaches (How) are quite interchangeable and there are dozens of equally qualified people out
-            there. So what is it that differentiates me from these other folks in the wild?</p>
-        <p>In actual fact I do love my job! Currently, I work for Jung von Matt by leading a team of developers and
-            being a thoughtful technical director. Some people might say JvM is a company full of egomaniacs and
-            creative freaks. Others might think employees at JvM do work round the clock while creating chaos and tend
-            to live in the agency offices.</p>
-        <p>Actually, for a small minority of individuals this may be true. But do you know what? The people I got to
-            know are cooperative, empathetic and most of all passionate about what they do in their jobs. Be it
-            generating creative ideas non-stop, managing clients and projects with heart and soul or developing
-            state-of-the-art web applications – people at JvM really reach for excellent results and "remaining
-            dissatisfied" – one of JvM’s core principles – is not a mere cliche!</p>
-        <p>My career stopovers at IBM were different in terms of work approaches, used technologies and project goals.
-            But there too the people made the difference! An "IBMer" is proud to work at Big Blue and I've met people
-            from all over the world with various backgrounds in terms of culture and profession. Putting so much effort
-            into high-end tech always fascinated me and my colleagues were brilliant thinkers when it came to complex
-            systems and architectures.</p>
+        <p>Before jumping into the WHAT and HOW I'd like to start with the WHY. At first glance, my skills (WHAT) and approaches (HOW) seem to be quite interchangeable with potentially dozens of equally qualified people out there. So what is it that differentiates me from these other folks in the wild?</p>
+        <p>In actual fact I do love my job! During my long-standing work experience in brilliant companies, I shaped my professional but also personal profile – constantly searching for the optimum between quality and efficiency as well as fair, loyal and enthusiastic team work.</p>
+        <p>As a team leader of developers and a thoughtful technical director at Jung von Matt I appreciate how cooperative, empathetic and most of all passionate me and my colleagues are doing their jobs. Be it generating creative ideas non-stop, managing clients and projects with heart and soul or developing state-of-the-art web applications: People at JvM really reach for excellent results and "we remain dissatisfied" – one of JvM’s core principles – is not a mere cliche. This standard I adopted into my own working policy.</p>
+        <p>In contrast, my career stopovers at IBM were different in terms of work approaches, used technologies and project goals. But there too the people made the difference! An "IBMer" is proud to work at Big Blue and I've met people from all over the world with various backgrounds in terms of culture and profession. Putting so much effort into high-end tech always fascinated me and my colleagues were brilliant thinkers when it came to complex systems and architectures.</p>
 
         <amp-animation id="flyinIBMAnimation" layout="nodisplay">
             <script type="application/json">
@@ -129,13 +98,9 @@ layout: default
             <span id="jvm">7 years JvM</span>
         </div>
 
-
-        <p>Probably, it has been these facts which made it difficult for me to decide whether to work in the big
-            corporate or in the creative world. Both domains have their advantages and disadvantages - for sure. In the
-            end, I learned so many things: Professionally and personally.</p>
-        <p>But now for me is the time for a change. To make a change. To create something meaningful. I really want to
-            get to know new people, new ways of working and new approaches of building something with real value!</p>
-        <p>If you would like to work with me, let's meet, let's discuss, let's collaborate and make business together.</p>
+        <p>Probably, it has been these opposing working strategies which made it difficult for me to decide whether to work in the big corporate or the creative field. Both domains have their advantages and disadvantages - for sure. But why not combine the best of both worlds and mix it with some more of my personal values? That´s why I concluded that for me now is the time for a change. To make a change. To create something new and meaningful.</p>
+        <p>I really want to get to know new people, explore new ways of thinking and working as well as new approaches of building something with real value!</p>
+        <p>If you would like to work with me, let's meet, let's discuss, let's collaborate and make innovative business together.</p>
     </article>
 </section>
 <section id="what" class="dated_story">
@@ -208,6 +173,15 @@ layout: default
             </div>
         </div>
     </article>
+    <article>
+            <div class="col-sm-4 timetable-left marked">
+            </div>
+            <div class="col-sm-8 timetable-right">
+                <div class="article-body">
+                    <h4>tutoring, training and speaking at events</h4>
+                </div>
+            </div>
+        </article>
 </section>
 <section id="expertise" class="full-width">
     <header>
@@ -217,138 +191,37 @@ layout: default
         <ul class="three-circles">
             <li>
                 <h4>Engineering Management</h4>
-                <svg width="61.6" height="64.1" viewBox="0 0 61.6 64.1" xmlns="http://www.w3.org/2000/svg">
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <title>Engineering Management</title>
-                    <g>
-                        <g>
-                            <path fill="#466BB0" d="M18.6,43c-1.9-1.6-4.3-2.5-6.9-2.5C5.9,40.4,1.2,45.2,1.2,51v12.3c0,0.4,0.3,0.8,0.7,0.8h15.4
-                                        c-0.1-0.2-0.1-0.5-0.1-0.8V49C17.2,46.7,17.9,44.3,18.6,43z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M11.8,24.4c-3.9,0-7,3.2-7,7s3.2,7,7,7c3.9,0,7-3.2,7-7S15.6,24.4,11.8,24.4z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M19.4,64h22.7c0.4,0,0.8-0.3,0.8-0.8V49c0-6.6-5.4-12.1-12.1-12.1c-6.8,0-12.1,5.5-12.1,12.1v14.2
-                                        C18.7,63.7,19,64,19.4,64z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M44.3,64h15.3c0.4,0,0.8-0.3,0.8-0.8V51c0-2.8-1.1-5.5-3.1-7.5s-4.6-3.1-7.5-3.1c-2.5,0-5,0.9-6.9,2.5
-                                        c0.8,1.3,1.4,3.7,1.4,6.1v14.2C44.4,63.5,44.4,63.8,44.3,64z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M49.8,38.5c3.9,0,7-3.2,7-7s-3.2-7-7-7c-3.9,0-7,3.2-7,7S45.9,38.5,49.8,38.5z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M61.6,12.3V1.9c0-1.1-0.8-1.9-1.8-1.9H38.9c-1,0-1.9,0.8-1.9,1.9v10.5c0,1,0.8,1.9,1.9,1.9h1.5l-1.7,3.5
-                                        c-0.4,0.7,0.5,1.3,1.1,1l7.3-4.5h12.7C60.8,14.2,61.6,13.4,61.6,12.3z M55.7,9.8H42.9c-0.4,0-0.8-0.3-0.8-0.8
-                                        c0-0.4,0.3-0.8,0.8-0.8h12.8c0.4,0,0.8,0.3,0.8,0.8C56.5,9.4,56.2,9.8,55.7,9.8z M55.7,6.1H42.9c-0.4,0-0.8-0.3-0.8-0.8
-                                        c0-0.4,0.3-0.8,0.8-0.8h12.8c0.4,0,0.8,0.3,0.8,0.8C56.5,5.8,56.2,6.1,55.7,6.1z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M0,1.9v10.5c0,1,0.8,1.9,1.9,1.9h12.7l7.3,4.5c0.6,0.4,1.4-0.3,1.1-1l-1.7-3.5h1.5c1,0,1.9-0.8,1.9-1.9
-                                        V1.9c0-1-0.8-1.9-1.9-1.9h-21C0.8,0,0,0.8,0,1.9z M5.9,4.6h12.8c0.4,0,0.8,0.3,0.8,0.8c0,0.4-0.3,0.8-0.8,0.8H5.9
-                                        c-0.4,0-0.8-0.3-0.8-0.8S5.4,4.6,5.9,4.6z M5.9,8.3h12.8c0.4,0,0.8,0.3,0.8,0.8c0,0.4-0.3,0.8-0.8,0.8H5.9c-0.4,0-0.8-0.3-0.8-0.8
-                                        S5.4,8.3,5.9,8.3z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M22.8,26.4c0,4.4,3.6,8.1,8,8.1s8.1-3.6,8.1-8.1c0-4.4-3.6-8-8.1-8C26.4,18.4,22.8,22,22.8,26.4z" />
-                        </g>
-                    </g>
+                    <path fill="#466BB0" d="M212.6,80.7c-1.7-0.2-3.3,0.2-4.8,1.1l-152,95.4c-1.4,0.9-2.4,2.1-3,3.6c-0.6,1.6-0.7,3.2-0.2,4.8
+	c0.5,1.6,1.3,2.9,2.7,3.9c1.4,1,2.9,1.5,4.5,1.6l49.1,0.1l0.1,49.1c0,1.7,0.5,3.2,1.5,4.5c1,1.3,2.3,2.2,3.9,2.7
+	c1.6,0.5,3.2,0.4,4.8-0.2c1.6-0.6,2.8-1.6,3.7-3.1l95.4-152c0.9-1.5,1.3-3.1,1.1-4.8c-0.2-1.7-0.9-3.2-2.1-4.4
+	C215.9,81.6,214.4,80.9,212.6,80.7 M116.4,176.1L85.8,176l102.2-64.2l-64.2,102.2v-30.6c0-2-0.7-3.8-2.2-5.2
+	C120.2,176.8,118.5,176.1,116.4,176.1"/>
                 </svg>
             </li>
             <li>
                 <h4>Digital Consulting</h4>
-                <svg width="64" height="61.5" viewBox="0 0 64 61.5" xmlns="http://www.w3.org/2000/svg">
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <title>Digital Consulting</title>
-                    <g>
-                        <g>
-                            <path fill="#466BB0" d="M40.6,40.6v-6c0-0.3,0-0.5,0-0.8h-3.4v6.8H40.6z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M0,45.4c0,0.4,0.3,0.8,0.8,0.8h39.8v-4h-4.2c-0.4,0-0.8-0.3-0.8-0.8v-8.3c0-0.4,0.3-0.8,0.8-0.8h4.4
-                                c0-0.3,0.3-1.5,0.8-2.5H5.2c-0.4,0-0.8-0.3-0.8-0.8c0-0.4,0.3-0.8,0.8-0.8h37.3c0.9-1.4,2.4-2.9,4.3-3.9c2.1-1.1,3.1,1.1,6.3,4
-                                l3.6-3.6c0.6-0.6,1.5-0.7,1.8-0.6v-1.4c-3.1,3.1-7.8,2.9-10.6,0.2H26.3c-0.4,0-0.8-0.3-0.8-0.8c0-0.4,0.3-0.8,0.8-0.8h20.3
-                                c-0.8-1.1-1.2-2.5-1.2-3.9v-0.1H26.3c-0.4,0-0.8-0.3-0.8-0.8c0-0.4,0.3-0.8,0.8-0.8h19.2v-0.1c0.2-1.4,0.9-2.7,1.9-3.8H26.3
-                                c-0.4,0-0.8-0.3-0.8-0.8c0-0.4,0.3-0.8,0.8-0.8h22.9c0.9-0.6,2.4-1,3.8-1c2,0,3.9,0.7,5.4,2.3V7.1v0.1V0.8c0-0.4-0.3-0.8-0.8-0.8
-                                h-57C0.3,0.1,0,0.4,0,0.8V45.4z M26.3,5.2H53c0.4,0,0.8,0.3,0.8,0.8c0,0.4-0.3,0.7-0.8,0.7H26.3c-0.4,0-0.8-0.3-0.8-0.8
-                                C25.5,5.6,25.8,5.2,26.3,5.2z M19.3,33.1c0-0.4,0.3-0.8,0.8-0.8h8c0.4,0,0.8,0.3,0.8,0.8v8.3c0,0.4-0.3,0.8-0.8,0.8h-8
-                                c-0.4,0-0.8-0.3-0.8-0.8V33.1z M4,4.8C4,4.4,4.3,4,4.8,4h17.6c0.4,0,0.8,0.3,0.8,0.8v19.7c0,0.4-0.3,0.8-0.8,0.8H4.8
-                                C4.4,25.3,4,25,4,24.5V4.8z M4,33.1c0-0.4,0.3-0.8,0.8-0.8h7c0.4,0,0.8,0.3,0.8,0.8v8.3c0,0.4-0.3,0.8-0.8,0.8h-7
-                                c-0.4,0-0.8-0.3-0.8-0.8V33.1z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M64,47.3V34.6c0-3.8-2.1-7.1-5.4-8.9h-0.1l0,0c-0.3-0.1-0.5,0-0.7,0.2L53,30.6l-4.7-4.7
-                                c-0.2-0.2-0.6-0.3-0.9-0.1c-3.3,1.7-5.4,5.1-5.4,8.9v12.7c0,0.4,0.3,0.8,0.8,0.8h3.7v12.5c0,0.4,0.3,0.8,0.8,0.8h5V47.8
-                                c0-0.4,0.4-0.8,0.8-0.8c0.4,0,0.8,0.3,0.8,0.8v13.5h5c0.4,0,0.8-0.3,0.8-0.8V48.1h3.7C63.7,48.1,64,47.7,64,47.3z M53.8,44.7
-                                c0,0.4-0.3,0.8-0.8,0.8c-0.4,0-0.8-0.3-0.8-0.8V44c0-0.4,0.3-0.8,0.8-0.8c0.4,0,0.8,0.3,0.8,0.8V44.7z M53.8,41.6
-                                c0,0.4-0.3,0.8-0.8,0.8c-0.4,0-0.8-0.3-0.8-0.8v-0.7c0-0.4,0.3-0.8,0.8-0.8c0.4,0,0.8,0.3,0.8,0.8V41.6z M53.8,38.5
-                                c0,0.4-0.3,0.8-0.8,0.8c-0.4,0-0.8-0.3-0.8-0.8v-0.7c0-0.4,0.3-0.8,0.8-0.8c0.4,0,0.8,0.3,0.8,0.8V38.5z M53.8,35.4
-                                c0,0.4-0.3,0.8-0.8,0.8c-0.4,0-0.8-0.3-0.8-0.8v-0.7c0-0.4,0.3-0.8,0.8-0.8c0.4,0,0.8,0.3,0.8,0.8V35.4z" />
-                        </g>
-                        <g>
-                            <rect x="5.5" y="5.6" fill="#466BB0" width="16.1" height="18.2" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M53,11.1c-3.1,0-5.6,2.2-6.1,5.1c-0.7,3.7,2.2,7.3,6.1,7.3c3.4,0,6.2-2.8,6.2-6.2
-                                C59.3,13.9,56.4,11.1,53,11.1z" />
-                        </g>
-                        <g>
-                            <rect x="5.5" y="33.8" fill="#466BB0" width="5.5" height="6.8" />
-                        </g>
-                        <g>
-                            <rect x="20.8" y="33.8" fill="#466BB0" width="6.5" height="6.8" />
-                        </g>
-                    </g>
+                    <path fill="#466BB0" d="M186,30.5c-0.9-1.3-2.1-2.2-3.6-2.7l-30-10c-1.6-0.5-3.2-0.5-4.8,0l-30,10c-1.5,0.5-2.7,1.4-3.7,2.7
+	c-0.9,1.3-1.4,2.7-1.4,4.2c0,1.6,0.4,3,1.2,4.3l18.3,27.5l-29.5,167.1c-0.2,1.2-0.1,2.4,0.2,3.5c0.4,1.2,1,2.2,1.8,3.1l40,40
+	c1.5,1.5,3.2,2.2,5.3,2.2c2.1,0,3.8-0.7,5.3-2.2l40-40c0.9-0.9,1.5-1.9,1.9-3.1c0.4-1.1,0.4-2.3,0.2-3.5L167.9,66.6l18.4-27.5
+	c0.9-1.3,1.3-2.8,1.2-4.3C187.5,33.2,187,31.8,186,30.5 M131.7,39l18.3-6.1l18.3,6.1L156,57.5H144L131.7,39z M146.3,72.5h7.4
+	L182,232.4l-31.9,32l-31.9-32L146.3,72.5z"/>
                 </svg>
             </li>
             <li>
                 <h4>Front-end Development</h4>
-                <svg width="64.2" height="61.2" viewBox="0 0 64.2 61.2" xmlns="http://www.w3.org/2000/svg">
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <title>Front-end Development</title>
-                    <g>
-                        <g>
-                            <path fill="#466BB0" d="M63.3,41.5h-3c-0.2-0.7-0.4-1.3-0.7-1.9l2.1-2.1c0.3-0.3,0.3-0.8,0-1.1L57.3,32c-0.1-0.1-0.3-0.3-0.5-0.2
-                                c-0.2,0-0.4,0.1-0.5,0.2l-1.9,1.9c-0.7-0.4-1.4-0.7-2.1-0.9v-2.5c0-0.4-0.3-0.8-0.8-0.8h-4H46h-0.6c-0.4,0-0.8,0.3-0.8,0.8v2.6
-                                c-0.7,0.2-1.4,0.5-2,0.9l-1.9-1.9c-0.1-0.1-0.3-0.2-0.5-0.2s-0.4,0.1-0.5,0.2c-0.1,0.1-4.7,4.7-4.4,4.4c-0.3,0.3-0.3,0.8,0,1.1
-                                l1.2,1.2l0.9,0.9c-0.1,0.2-0.2,0.4-0.3,0.6c-0.2,0.4-0.3,0.8-0.4,1.3h-3c-0.4,0-0.8,0.3-0.8,0.8v6.1c0,0.4,0.3,0.8,0.8,0.8H37
-                                c0.2,0.5,0.4,1.1,0.7,1.6l-2.4,2.4c-0.3,0.3-0.3,0.8,0,1.1l4.4,4.4c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2l2.5-2.6
-                                c0.5,0.2,0.9,0.4,1.4,0.6v3.6c0,0.4,0.3,0.8,0.8,0.8h6.2c0.4,0,0.8-0.3,0.8-0.8v-3.6c0.5-0.2,1-0.4,1.4-0.6l2.6,2.6
-                                c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2l4.4-4.4c0.3-0.3,0.3-0.8,0-1.1l-2.4-2.4c0.3-0.5,0.5-1,0.7-1.6h3.3
-                                c0.4,0,0.8-0.3,0.8-0.8v-6.2C64,41.9,63.7,41.5,63.3,41.5z M48.4,53c-4.2,0-7.6-3.4-7.6-7.6c0-0.8,0.1-1.6,0.4-2.4
-                                c0.6-1.7,1.8-3.2,3.3-4.1c0.6-0.4,1.3-0.6,2-0.8c1.3-0.4,2.8-0.3,4.1,0.1c3.1,0.9,5.4,3.9,5.4,7.2C56,49.5,52.6,53,48.4,53z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M3.7,39.5V7.8C3.7,7.4,4,7,4.5,7h42.2c0.4,0,0.8,0.3,0.8,0.8v20.5h3.7V0.8c0-0.4-0.3-0.8-0.8-0.8H0.8
-                                C0.3,0,0,0.4,0,0.8v42.4C0,43.6,0.3,44,0.8,44h30.5v-1.7c0-0.9,0.5-1.7,1.3-2H4.5C4.1,40.2,3.7,39.9,3.7,39.5z M22.1,3.5h24.1
-                                c0.5,0,0.8,0.4,0.8,0.8s-0.3,0.8-0.8,0.8H22.1c-0.4,0-0.8-0.3-0.8-0.8C21.4,3.9,21.7,3.5,22.1,3.5z M12.5,2.8
-                                c0.8,0,1.5,0.7,1.5,1.5s-0.7,1.5-1.5,1.5S11,5.1,11,4.3C11.1,3.5,11.7,2.8,12.5,2.8z M8.9,2.8c0.8,0,1.5,0.7,1.5,1.5
-                                S9.7,5.8,8.9,5.8S7.4,5.1,7.4,4.3S8.1,2.8,8.9,2.8z M5.3,2.8c0.8,0,1.5,0.7,1.5,1.5S6.1,5.8,5.3,5.8S3.8,5.1,3.8,4.3
-                                S4.4,2.8,5.3,2.8z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M14.1,34.3c0,0.9,0.7,1.6,1.6,1.6c0.9,0,1.6-0.7,1.6-1.6c0-0.9-0.7-1.6-1.6-1.6
-                                C14.8,32.7,14.1,33.4,14.1,34.3z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M18.7,33.6H36l2.5-2.5c0.4-0.4,1-0.7,1.6-0.7s1.2,0.2,1.6,0.7l1.1,1.1c0.1,0,0.2-0.1,0.3-0.1v-1.6
-                                c0-1.2,1-2.3,2.3-2.3H46V8.5H5.2v30.2h29l-0.1-0.1c-0.4-0.4-0.7-1-0.7-1.6c0-1.2,0.9-1.8,1.1-2H18.7c-0.3,1.4-1.6,2.4-3,2.4
-                                c-1.5,0-2.7-1-3-2.4H8.9c-0.4,0-0.8-0.3-0.8-0.8c0-0.4,0.3-0.8,0.8-0.8h3.7c0.3-1.4,1.6-2.4,3-2.4C17.1,31.2,18.4,32.2,18.7,33.6z
-                                 M10.7,29.4c-1.3,0-2.4-1.1-2.4-2.4V14c0-1.3,1.1-2.4,2.4-2.4h29.6c1.3,0,2.4,1.1,2.4,2.4v12.9c0,1.3-1.1,2.4-2.4,2.4H10.7V29.4z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M41.3,27V14c0-0.5-0.4-0.9-0.9-0.9H10.7c-0.5,0-0.9,0.4-0.9,0.9v12.9c0,0.5,0.4,0.9,0.9,0.9h29.6
-                                C40.9,27.9,41.3,27.5,41.3,27z M25.6,26.6c-3.4,0-6.1-2.7-6.1-6.1s2.7-6.1,6.1-6.1s6.1,2.7,6.1,6.1C31.6,23.9,28.9,26.6,25.6,26.6
-                                z" />
-                        </g>
-                        <g>
-                            <path fill="#466BB0" d="M25.6,15.9C23,15.9,21,18,21,20.5s2.1,4.6,4.6,4.6s4.6-2.1,4.6-4.6C30.1,18,28.1,15.9,25.6,15.9z
-                                 M29.5,20.5c0,0.3-0.1,0.5-0.4,0.6L24.5,24c-0.5,0.3-1.1-0.1-1.1-0.6v-5.8c0-0.6,0.7-0.9,1.1-0.6l4.6,2.9
-                                C29.4,20,29.5,20.2,29.5,20.5z" />
-                        </g>
-                        <g>
-                            <polygon fill="#466BB0" points="24.9,19 24.9,22 27.3,20.5 		" />
-                        </g>
-                    </g>
+                    <path fill="#466BB0" d="M105,87.5c-2.1,0-3.8,0.7-5.3,2.2l-55,55c-1.5,1.5-2.2,3.2-2.2,5.3c0,2.1,0.7,3.8,2.2,5.3l55,55
+	c1.5,1.5,3.2,2.2,5.3,2.2c2.1,0,3.8-0.7,5.3-2.2c1.5-1.5,2.2-3.2,2.2-5.3c0-2.1-0.7-3.8-2.2-5.3L60.6,150l49.7-49.7
+	c1.5-1.5,2.2-3.2,2.2-5.3c0-2.1-0.7-3.8-2.2-5.3C108.8,88.2,107.1,87.5,105,87.5 M170.7,72.7c-2-0.5-3.9-0.3-5.6,0.8
+	c-1.8,1.1-3,2.6-3.5,4.6l-37.5,140c-0.5,2-0.3,3.9,0.8,5.7c1.1,1.8,2.6,3,4.6,3.5c2,0.5,3.9,0.3,5.7-0.8c1.8-1,3-2.5,3.5-4.5
+	l37.5-140c0.5-2,0.3-3.9-0.8-5.7C174.2,74.5,172.7,73.3,170.7,72.7 M189.7,89.7c-1.5,1.5-2.2,3.2-2.2,5.3c0,2.1,0.7,3.8,2.2,5.3
+	l49.7,49.7l-49.7,49.7c-1.5,1.5-2.2,3.2-2.2,5.3c0,2.1,0.7,3.8,2.2,5.3c1.5,1.5,3.2,2.2,5.3,2.2c2.1,0,3.8-0.7,5.3-2.2l55-55
+	c1.5-1.5,2.2-3.2,2.2-5.3c0-2.1-0.7-3.8-2.2-5.3l-55-55c-1.5-1.5-3.2-2.2-5.3-2.2C192.9,87.5,191.2,88.2,189.7,89.7z"/>
                 </svg>
             </li>
         </ul>
@@ -428,24 +301,6 @@ layout: default
             </div>
         </div>
     </article>
-    <article data-bind="contents">
-        <div class="col-sm-4 timetable-left">
-            <h4>People Skills</h4>
-        </div>
-        <div class="col-sm-8 timetable-right">
-            <div class="article-body competency">
-                <div class="competency-bar">
-                    <div class="competency-level"></div>
-                </div>
-                <p>Passionate team leading and people management
-                    <br />Excellent communication and presentation skills
-                    <br />Experienced in troubleshooting between clients, creatives and developers
-                    <br />Empathic, loyal and fair-minded team player
-                    <br />Enthusiastical and creative mind
-                    <br />Advanced teaching and training skills as a tutor</p>
-            </div>
-        </div>
-    </article>
     <article>
         <div class="col-sm-4 timetable-left">
             <h4>Languages</h4>
@@ -502,7 +357,25 @@ layout: default
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
-                <h4>being an inherent part of an interdisciplinary team</h4>
+                <h4>working as an enthusiastically and creative mind as well as an empathic, loyal and fair-minded team player</h4>
+            </div>
+        </div>
+    </article>
+    <article>
+        <div class="col-sm-4 timetable-left marked">
+        </div>
+        <div class="col-sm-8 timetable-right">
+            <div class="article-body">
+                <h4>providing passionate team leading and people management</h4>
+            </div>
+        </div>
+    </article>
+    <article>
+        <div class="col-sm-4 timetable-left marked">
+        </div>
+        <div class="col-sm-8 timetable-right">
+            <div class="article-body">
+                <h4>being an inherent part of interdisciplinary teams</h4>
             </div>
         </div>
     </article>
