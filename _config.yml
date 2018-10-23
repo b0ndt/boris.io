@@ -23,7 +23,7 @@ twitter_username: bondt
 github_username:  b0ndt
 
 # Google Analytics
-analytics_id: ""
+analytics_id: "UA-127964474-1"
 
 # Build settings
 markdown: kramdown
