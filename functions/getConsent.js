@@ -1,6 +1,8 @@
 exports.handler = function(event, context, callback) {
     callback(null, {
       statusCode: 200,
-      promptIfUnknown: true
+      body: {
+        promptIfUnknown: true
+      }
     });
   };
