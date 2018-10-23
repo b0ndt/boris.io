@@ -2,12 +2,8 @@
 <html ⚡ lang="en">
   {% include head.html %}
   <body class="cv-viewer">
-    <div class="cv-container">
-        <div class="cv-content">
-          {{ content }}
-          {% include footer.html %}
-        </div>
-    </div>
+    {{ content }}
+    {% include footer.html %}
     {% include consent.html %}
     {% include analytics.html %}
   </body>

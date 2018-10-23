@@ -8,37 +8,37 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
 <nav class="menu profile" id="profile">
     <div class="menu-bar content-container clearfix">
         {% include stage.html %}
-        <amp-sidebar id="sidebar" layout="nodisplay" side="right">
-            <nav toolbar="(min-width: 1024px)" toolbar-target="target-element">
-                <ul class="nav navbar-nav clearfix">
-                    <li>
-                        <a on="tap:sidebar.close,why.scrollTo">Introduction</a>
-                    </li>
-                    <li>
-                        <a on="tap:sidebar.close,what.scrollTo">What I do</a>
-                    </li>
-                    <li>
-                        <a on="tap:sidebar.close,expertise.scrollTo">Work areas</a>
-                    </li>
-                    <li>
-                        <a on="tap:sidebar.close,skills.scrollTo">Skills</a>
-                    </li>
-                    <li>
-                        <a on="tap:sidebar.close,clients.scrollTo">Brands</a>
-                    </li>
-                    <li>
-                        <a on="tap:sidebar.close,how.scrollTo">How I work</a>
-                    </li>
-                    <li>
-                        <a on="tap:sidebar.close,contact.scrollTo">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </amp-sidebar>
         <div id="target-element">
         </div>
     </div>
 </nav>
+<amp-sidebar id="sidebar" layout="nodisplay" side="right">
+    <nav toolbar="(min-width: 1024px)" toolbar-target="target-element">
+        <ul class="nav navbar-nav clearfix">
+            <li>
+                <a on="tap:sidebar.close,why.scrollTo">Introduction</a>
+            </li>
+            <li>
+                <a on="tap:sidebar.close,what.scrollTo">What I do</a>
+            </li>
+            <li>
+                <a on="tap:sidebar.close,expertise.scrollTo">Work areas</a>
+            </li>
+            <li>
+                <a on="tap:sidebar.close,skills.scrollTo">Skills</a>
+            </li>
+            <li>
+                <a on="tap:sidebar.close,clients.scrollTo">Brands</a>
+            </li>
+            <li>
+                <a on="tap:sidebar.close,how.scrollTo">How I work</a>
+            </li>
+            <li>
+                <a on="tap:sidebar.close,contact.scrollTo">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</amp-sidebar>
 <button class="hamburger" on='tap:sidebar.toggle'>Menu</button>
 
 <section id="why" class="text_story full-width">
@@ -193,7 +193,7 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
         <h3 class="header-text">Main work areas</h3>
     </header>
     <article>
-        <ul class="three-circles">
+        <ul class="circles">
             <li>
                 <h4>Engineering Management</h4>
                 <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">

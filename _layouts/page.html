@@ -8,26 +8,26 @@ layout: default
 <nav class="menu profile" id="profile">
     <div class="menu-bar content-container clearfix">
         {% include stage.html %}
-        <button class="hamburger" on='tap:sidebar.toggle'></button>
-        <amp-sidebar id="sidebar" layout="nodisplay" side="right">
-            <nav toolbar="(min-width: 1024px)" toolbar-target="target-element">
-                <ul class="nav navbar-nav clearfix">
-                    <li>
-                        <a href="/" title="Home">Home</a>
-                    </li>
-                    <li>
-                        <a href="/imprint/" title="Imprint">Imprint</a>
-                    </li>
-                    <li>
-                        <a href="/data-privacy/" title="Data Privacy">Data Privacy</a>
-                    </li>
-                </ul>
-            </nav>
-        </amp-sidebar>
         <div id="target-element">
         </div>
     </div>
 </nav>
+<amp-sidebar id="sidebar" layout="nodisplay" side="right">
+    <nav toolbar="(min-width: 1024px)" toolbar-target="target-element">
+        <ul class="nav navbar-nav clearfix">
+            <li>
+                <a href="/" title="Home">Home</a>
+            </li>
+            <li>
+                <a href="/imprint/" title="Imprint">Imprint</a>
+            </li>
+            <li>
+                <a href="/data-privacy/" title="Data Privacy">Data Privacy</a>
+            </li>
+        </ul>
+    </nav>
+</amp-sidebar>
+<button class="hamburger" on='tap:sidebar.toggle'></button>
 
 <section class="text_story full-width" id="content">
     <header>
