@@ -34,7 +34,7 @@ When visiting my website, statistical analyses may be made of your surfing behav
 
 You can object to this analysis. We will inform you below about how to exercise your options in this regard.
 
-### GENREAL INFORMATION AND MANDATORTY INFORMATION
+### General information and mandatory information
 
 Data protection
 
@@ -82,7 +82,7 @@ Opposition to promotional emails
 
 I hereby expressly prohibit the use of contact data published in the context of website legal notice requirements with regard to sending promotional and informational materials not expressly requested. The website operator reserves the right to take specific legal action if unsolicited advertising material, such as email spam, is received.
 
-### DATA COLLECTION ON OUR WEBSITE
+### Data collection on my website
 
 COOKIES
 
@@ -115,11 +115,9 @@ Specifically for analytics providers, I use Google Analytics, which is a web ana
 
 You can opt-out of having your activity on the website made available to Google Analytics by installing the Google Analytics opt-out browser add-on ([tools.google.com/dlpage/gaoptout](https://tools.google.com/dlpage/gaoptout) for your web browser. The Google Analytics opt-out browser add-on provides visitors with the ability to prevent their data from being collected and used by Google Analytics. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity. For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: [www.google.com/intl/en/policies/privacy/](http://www.google.com/intl/en/policies/privacy/)
 
-PLUGINS UND TOOLS
-
 GOOGLE WEB FONTS
 
-For uniform representation of fonts, this page uses web fonts provided by Google. When you open a page, your browser loads the required web fonts into your browser cache to display texts and fonts correctly.
+For uniform representation of fonts, this page uses web fonts provided by Google. When you open a page your browser loads the required web fonts into your browser cache to display texts and fonts correctly.
 
 For this purpose your browser has to establish a direct connection to Google servers. Google thus becomes aware that our web page was accessed via your IP address. The use of Google Web fonts is done in the interest of a uniform and attractive presentation of my website. This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
 
