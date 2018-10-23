@@ -376,7 +376,7 @@ ol {
 			max-width: none;
 			padding-left: 0;
 			padding-right: 0;
-			padding-bottom: 5em;
+			padding-bottom: 2em;
 			background-color: #f6f6f6;
 			header, article {
 				max-width: 1200px;
@@ -400,7 +400,7 @@ ol {
 			display: table;
 		}
 		article:last-child > .timetable-right:last-child {
-			padding-bottom: 5em;
+			padding-bottom: 2em;
 		}
 	}
 
@@ -511,7 +511,7 @@ ol {
 		cursor: pointer;
 	}
 	header {
-		padding-top: 5em;
+		padding-top: 2em;
 		font-weight: initial;
 		text-align: center;
 		.header-text {
@@ -619,7 +619,7 @@ ol {
 			padding-bottom: 2em;
 		}
 		& > header {
-			padding-bottom: 2em;
+			padding-bottom: 1em;
 			.header-text {
 				text-align: left;
 			}
