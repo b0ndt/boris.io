@@ -449,7 +449,10 @@ ol {
 	}
 	.banner {
 		position: relative;
-		height: calc(100vh - 54px);
+		height: 500px;
+		@media(min-width: 768px) {
+			height: calc(100vh - 54px);
+		}
 		max-height: 528px;
 		background-image: $diagonal, $layer, $header;
 		background-color: transparent;
@@ -511,7 +514,7 @@ ol {
 		cursor: pointer;
 	}
 	header {
-		padding-top: 2em;
+		padding-top: 3em;
 		font-weight: initial;
 		text-align: center;
 		.header-text {
@@ -886,7 +889,7 @@ footer {
 	}
 }
 
-@media(max-width: 1024px) {
+@media(max-width: 1023px) {
 	.cv-container {
 		.menu {
 			position: relative;
@@ -1036,7 +1039,6 @@ svg:not(:root) {
 .three-circles {
 	width: 100%;
 	position: relative;
-	margin: 2em 0;
 	display: flex;
     flex-direction: row;
     flex-wrap: wrap;
