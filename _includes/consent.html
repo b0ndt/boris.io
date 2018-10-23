@@ -1,0 +1,19 @@
+<amp-consent id="myUserConsent" layout="nodisplay">
+    <script type="application/json">
+        {
+            "consents": {
+                "consent1": {
+                    "checkConsentHref": "{{'/.netlify/functions/getConsent' | prepend: site.baseurl | prepend: site.url}}",
+                    "promptUI": "consentDialog"
+                }
+            },
+            "postPromptUI": "post-consent-ui"
+        }
+    </script>
+    <div class="popupOverlay" id="consentDialog">
+        <div class="consentPopup">
+            <p>By visiting and using this website, you accept the use of cookies. You can find out more about this and the basic handling of your data on my website in the <a href="/data-privacy/" title="Data Privacy">data privacy policy</a>.</p>
+            <button on="tap:myUserConsent.accept">Accept</button>
+        </div>
+    </div>
+</amp-consent>

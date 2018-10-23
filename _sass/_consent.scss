@@ -1,0 +1,69 @@
+amp-consent {
+    min-height: 30px;
+    padding: 8px;
+    color: $black;
+    position: fixed;
+    bottom: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: block;
+    background: $darkestgrey;
+    font-family: $pt;
+    font-size: 14px;
+
+    .consentPopup {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: center;
+    }
+
+    &.amp-active {
+        animation: fadeIn ease-in .3s 1 forwards;
+    }
+
+    p {
+        order: 0;
+        flex: 1 1 auto;
+        align-self: auto;
+        padding-right: 8px;
+    }
+
+    a {
+        color: $blue;
+    }
+
+    button {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        border: none;
+        border-radius: 2px;
+        color: $white;
+        height: 26px;
+        min-width: 70px;
+        padding: 0 16px;
+        order: 0;
+        flex: 0 1 auto;
+        align-self: auto;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        cursor: pointer;
+        vertical-align: middle;
+        line-height: 26px;
+        text-align: center;
+        background: $blue;
+        font-family: $pt;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
