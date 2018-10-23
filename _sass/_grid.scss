@@ -1,0 +1,33 @@
+.grid {
+    columns: 4;
+    -webkit-columns: 4;
+    column-gap: 2em;
+    -webkit-column-gap: 2em;
+    padding-top: 2em;
+
+    @media(min-width: 768px) {
+        columns: 6;
+        -webkit-columns: 6;
+        column-gap: 6em;
+        column-gap: 6em;
+        padding-top: 4em;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .grid-item {
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin-bottom: 2em;
+        filter: grayscale(100%);
+        opacity: .6;
+        transition: all 120ms ease-in-out 0ms;
+        cursor: crosshair;
+
+        &:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+    }
+}

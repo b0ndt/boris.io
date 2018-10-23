@@ -1,0 +1,64 @@
+.circles {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+
+    li {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        text-align: center;
+        order: 0;
+        flex: 0 1 auto;
+        align-self: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: center;
+        margin: 10px 16px;
+        box-shadow: 0 0 0 3px $blue;
+        overflow: hidden;
+        transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+        cursor: crosshair;
+
+        &:hover {
+            background: $blue;
+            color: #702fa8;
+            box-shadow: 0 0 0 8px $darkestgrey;
+
+            h4 {
+                transform: translate(-50%, -50%);
+            }
+
+            svg {
+                transform: translateX(150%);
+            }
+        }
+
+        h4 {
+            color: $darkgrey;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-250%, -50%);
+            transition: transform 200ms ease-in-out 0ms;
+        }
+
+        svg {
+            order: 0;
+            flex: 0 1 auto;
+            align-self: auto;
+            width: 100px;
+            height: 100px;
+            transition: transform 200ms ease-in-out 0ms;
+        }
+    }
+}
