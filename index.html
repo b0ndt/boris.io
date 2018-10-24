@@ -194,7 +194,7 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </header>
     <article>
         <ul class="circles">
-            <li>
+            <li amp-fx="fly-in-left" data-duration="1000ms" data-easing="ease-in-out">
                 <h4>Engineering Management</h4>
                 <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <title>Engineering Management</title>
@@ -205,7 +205,7 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
 	C120.2,176.8,118.5,176.1,116.4,176.1"/>
                 </svg>
             </li>
-            <li>
+            <li amp-fx="fly-in-left" data-duration="900ms" data-easing="ease-in-out">
                 <h4>Digital Consulting</h4>
                 <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <title>Digital Consulting</title>
@@ -216,7 +216,7 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
 	L182,232.4l-31.9,32l-31.9-32L146.3,72.5z"/>
                 </svg>
             </li>
-            <li>
+            <li amp-fx="fly-in-left" data-duration="800ms" data-easing="ease-in-out">
                 <h4>Front-end Development</h4>
                 <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <title>Front-end Development</title>
@@ -325,7 +325,7 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
         <h3 class="header-text">Brands I used to work for</h3>
     </header>
     <article>
-        <ul class="grid">
+        <ul class="grid" amp-fx="fade-in">
         {% for file in site.static_files %}
         {% if file.path contains "/images/clients" %}
             {% if file.extname == '.png' or file.extname == '.jpg' %}
