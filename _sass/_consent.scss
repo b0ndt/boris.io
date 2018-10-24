@@ -32,7 +32,10 @@ amp-consent {
     }
 
     a {
-        color: $blue;
+        .cv-viewer & {
+            color: darken($blue, 10%);
+            text-decoration: underline;
+        }
     }
 
     button {
