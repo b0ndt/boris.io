@@ -3,6 +3,7 @@
     height: 300px;
     position: relative;
     margin: 2em 0;
+    isolation: isolate;
 
     #ibm,
     #jvm {
@@ -10,7 +11,7 @@
         border-radius: 50%;
         height: 300px;
         width: 300px;
-        mix-blend-mode: multiply;
+        mix-blend-mode: overlay;
         position: absolute;
         left: 0;
         right: 0;
