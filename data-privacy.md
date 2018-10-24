@@ -52,7 +52,7 @@ Boris Fründt<br>
 Gärtnerstraße 114b<br>
 20253 Hamburg<br>
 Telefon: +49 160 1559634<br>
-E-Mail: boris.fruendt(at)gmail.com<br>
+E-Mail: hey(at)boris.io<br>
 
 The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data (names, email addresses, etc.).
 

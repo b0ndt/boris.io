@@ -13,7 +13,7 @@ Gärtnerstraße 114b<br>
 Germany
 
 Phone: (+49)160-1559634<br>
-E-Mail: boris(dot)fruendt(at)gmail(dot)com<br>
+E-Mail: hey(at)boris.io<br>
 Website: [https://boris.io](https://boris.io)
 
 ### Responsible for content
