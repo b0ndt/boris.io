@@ -18,18 +18,18 @@
         top: 0;
         bottom: 0;
         margin: auto;
-        color: #fff;
+        color: $white;
         text-align: center;
         line-height: 300px;
     }
 
     #ibm {
-        background-color: #466bb0;
+        background-color: $blue;
         transform: translate(-60%, 0);
     }
 
     #jvm {
-        background-color: #102319;
+        background-color: $green;
         transform: translate(60%, 0);
     }
 

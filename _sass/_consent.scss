@@ -33,7 +33,7 @@ amp-consent {
 
     a {
         .cv-viewer & {
-            color: darken($blue, 10%);
+            color: $darkblue;
             text-decoration: underline;
         }
     }
@@ -56,7 +56,7 @@ amp-consent {
         vertical-align: middle;
         line-height: 26px;
         text-align: center;
-        background: $blue;
+        background: $darkblue;
         font-family: $pt;
     }
 }

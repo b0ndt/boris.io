@@ -24,14 +24,14 @@
         align-content: stretch;
         align-items: center;
         margin: 10px 24px;
-        box-shadow: 0 0 0 3px $blue;
+        box-shadow: 0 0 0 3px $darkblue;
         overflow: hidden;
         transition: all 0.2s;
         cursor: crosshair;
 
         &:hover {
-            background: $blue;
-            color: #702fa8;
+            background: $darkblue;
+            color: $white;
             box-shadow: 0 0 0 8px $darkestgrey;
 
             h4 {
