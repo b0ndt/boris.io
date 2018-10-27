@@ -1,0 +1,53 @@
+<amp-animation id="flyinIBMAnimation" layout="nodisplay">
+        <script type="application/json">
+            {
+                "duration": "1",
+                "fill": "both",
+                "direction": "normal",
+                "animations": [{
+                    "selector": "#ibm",
+                    "keyframes": [{
+                            "transform": "translate(-55%, 0)"
+                        },
+                        {
+                            "transform": "translate(-25%, 0)"
+                        }
+                    ]
+                }]
+            }
+        </script>
+    </amp-animation>
+    <amp-animation id="flyinJVMAnimation" layout="nodisplay">
+        <script type="application/json">
+            {
+                "duration": "1",
+                "fill": "both",
+                "direction": "normal",
+                "animations": [{
+                    "selector": "#jvm",
+                    "keyframes": [{
+                            "transform": "translate(55%, 0)"
+                        },
+                        {
+                            "transform": "translate(25%, 0)"
+                        }
+                    ]
+                }]
+            }
+        </script>
+    </amp-animation>
+
+    <amp-position-observer on="scroll:flyinIBMAnimation.seekTo(percent=event.percent)" intersection-ratios="0"
+        layout="nodisplay"></amp-position-observer>
+    <amp-position-observer on="scroll:flyinJVMAnimation.seekTo(percent=event.percent)" intersection-ratios="0"
+        layout="nodisplay"></amp-position-observer>
+        
+    <div class="venn">
+        <span id="ibm">7 years IBM</span>
+        <span id="jvm">7 years JvM</span>
+        <svg width="79.001" height="125" viewBox="0 0 79.001 125" xmlns="http://www.w3.org/2000/svg">
+            <title></title>
+            <path d="M 49.678466,0.40348861 38.280161,42.627119 l 30.152542,0 -42.050847,57.254233 12.762712,-42.491521 -30.457627,0"
+                style="" fill="#FFFFFF" fill-opacity="1" stroke="none" />
+        </svg>
+    </div>
