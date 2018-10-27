@@ -537,7 +537,7 @@ ul {
 			background: $darkblue;
 			border-radius: 100%;
 			box-shadow: 0 0 0 2px $white;
-			top: 4px;
+			top: 6px;
 			left: -6px;
 			display: flex;
 			flex-direction: row;
@@ -553,6 +553,7 @@ ul {
 				align-self: auto;
 			}
 			@media(min-width: 768px) {
+				top: 4px;
 				left: auto;
 				right: -6px;
 			}
@@ -732,7 +733,7 @@ footer {
 		}
 		.timetable-right {
 			border-left: none;
-			padding-left: 15px;
+			padding-left: 20px;
 			&.popup-gallery {
 				padding-left: 10px;
 			}
