@@ -54,8 +54,9 @@ a {
 }
 
 b, strong {
-	font-weight: 400;
+	color: $darkblue;
 	font-family: $oswald, $sans;
+	font-weight: 700;
 }
 
 img {
@@ -258,7 +259,7 @@ ul {
 			padding-left: 0;
 			padding-right: 0;
 			padding-bottom: 2em;
-			background-color: #f6f6f6;
+			background-color: $darkgrey;
 			header, article {
 				max-width: 1200px;
 				padding-left: 5%;
@@ -391,7 +392,7 @@ ul {
 		font-weight: 700;
 	}
 	a {
-		color: $blue;
+		color: $darkblue;
 		cursor: pointer;
 	}
 	header {
@@ -517,28 +518,40 @@ ul {
 			height: 1px;
 		}
 		.competency-level {
-			background-color: $blue;
+			background-color: $darkblue;
 			height: 100%;
 		}
 	}
 	.timetable-left {
 		border-right: 0;
 		h4 {
-			margin-top: 16px;
+			margin-top: 20px;
 			@media(min-width: 1024px) {
 				text-align: right;
 			}
 		}
-		&.marked:after {
-			content: "";
+		&.marked span {
 			position: absolute;
-			width: 12px;
-			height: 12px;
-			background: $blue;
+			width: 16px;
+			height: 16px;
+			background: $darkblue;
 			border-radius: 100%;
 			box-shadow: 0 0 0 2px $white;
-			top: 8px;
+			top: 4px;
 			left: -6px;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-content: stretch;
+			align-items: center;
+			svg {
+				width: 14px;
+				height: 14px;
+				order: 0;
+				flex: 0 1 auto;
+				align-self: auto;
+			}
 			@media(min-width: 768px) {
 				left: auto;
 				right: -6px;
@@ -692,7 +705,7 @@ footer {
 					box-shadow: 
 						0 0.25em 0 0 black,
 						0 0.5em 0 0 black;
-					filter: drop-shadow(2px 2px 1px #fff);
+					filter: drop-shadow(2px 2px 1px $white);
 			}
 		}
 		.col-sm {
