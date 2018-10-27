@@ -46,66 +46,36 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
         <h3 class="header-text">Hello lovely people!</h3>
     </header>
     <article>
-        <p>Before jumping into the WHAT and HOW I'd like to start with the WHY. At first glance, my skills (WHAT) and approaches (HOW) seem to be quite interchangeable with potentially dozens of equally qualified people out there. So what is it that differentiates me from these other folks in the wild?</p>
-        <p>In actual fact I do love my job! During my long-standing work experience in brilliant companies, I shaped my professional but also personal profile – constantly searching for the optimum between quality and efficiency as well as fair, loyal and enthusiastic team work.</p>
-        <p>As a team leader of developers and a thoughtful technical director at Jung von Matt I appreciate how cooperative, empathetic and most of all passionate me and my colleagues are doing their jobs. Be it generating creative ideas non-stop, managing clients and projects with heart and soul or developing state-of-the-art web applications: People at JvM really reach for excellent results and "we remain dissatisfied" – one of JvM’s core principles – is not a mere cliche. This standard I adopted into my own working policy.</p>
-        <p>In contrast, my career stopovers at IBM were different in terms of work approaches, used technologies and project goals. But there too the people made the difference! An "IBMer" is proud to work at Big Blue and I've met people from all over the world with various backgrounds in terms of culture and profession. Putting so much effort into high-end tech always fascinated me and my colleagues were brilliant thinkers when it came to complex systems and architectures.</p>
+        <p>Before jumping into the WHAT and HOW I'd like to start with <strong>the WHY</strong>. At first glance, my
+            skills (WHAT) and approaches (HOW) seem to be quite interchangeable with potentially dozens of equally
+            qualified people out there. So what is it that differentiates me from these other folks in
+            the wild?</p>
+        <p>In actual fact <strong>I do love my job</strong>! During my long-standing work experience in brilliant companies, I shaped my
+            professional but also personal profile – constantly searching for the optimum between quality and
+                efficiency as well as fair, loyal and enthusiastic team work.</p>
+        <p>As a <strong>team leader</strong> of developers and a thoughtful technical director at <strong>Jung
+            von Matt</strong> I appreciate how cooperative, empathetic and most of all passionate me and my colleagues are doing
+            their jobs. Be it generating creative ideas non-stop, managing clients and projects with heart and soul or
+            developing state-of-the-art web applications: People at JvM really reach for excellent results and <strong>"we
+                remain dissatisfied"</strong> – one of JvM’s core principles – is not a mere cliche. This standard I
+            adopted into my own working policy</p>
+        <p>In contrast, my career stopovers at <strong>IBM</strong> were different in terms of work approaches, used technologies and
+            project goals. But there too the people made the difference! An "IBMer" is proud to work
+            at Big Blue and I've met people from all over the world with various backgrounds in terms of culture and
+            profession. Putting so much effort into high-end tech always fascinated me and my
+            colleagues were brilliant thinkers when it came to complex systems and architectures.</p>
 
-        <amp-animation id="flyinIBMAnimation" layout="nodisplay">
-            <script type="application/json">
-                {
-                    "duration": "1",
-                    "fill": "both",
-                    "direction": "normal",
-                    "animations": [{
-                        "selector": "#ibm",
-                        "keyframes": [{
-                                "transform": "translate(-55%, 0)"
-                            },
-                            {
-                                "transform": "translate(-25%, 0)"
-                            }
-                        ]
-                    }]
-                }
-            </script>
-        </amp-animation>
-        <amp-animation id="flyinJVMAnimation" layout="nodisplay">
-            <script type="application/json">
-                {
-                    "duration": "1",
-                    "fill": "both",
-                    "direction": "normal",
-                    "animations": [{
-                        "selector": "#jvm",
-                        "keyframes": [{
-                                "transform": "translate(55%, 0)"
-                            },
-                            {
-                                "transform": "translate(25%, 0)"
-                            }
-                        ]
-                    }]
-                }
-            </script>
-        </amp-animation>
+        {% include venn.html %}
 
-        <amp-position-observer on="scroll:flyinIBMAnimation.seekTo(percent=event.percent)" intersection-ratios="0"
-            layout="nodisplay"></amp-position-observer>
-        <amp-position-observer on="scroll:flyinJVMAnimation.seekTo(percent=event.percent)" intersection-ratios="0"
-            layout="nodisplay"></amp-position-observer>
-        <div class="venn">
-            <span id="ibm">7 years IBM</span>
-            <span id="jvm">7 years JvM</span>
-            <svg width="79.001" height="125" viewBox="0 0 79.001 125" xmlns="http://www.w3.org/2000/svg">
-                <title></title>
-                <path d="M 49.678466,0.40348861 38.280161,42.627119 l 30.152542,0 -42.050847,57.254233 12.762712,-42.491521 -30.457627,0" style="" fill="#FFFFFF" fill-opacity="1" stroke="none"/>
-            </svg>
-        </div>
-
-        <p>Probably, it has been these opposing working strategies which made it difficult for me to decide whether to work in the big corporate or the creative field. Both domains have their advantages and disadvantages - for sure. But why not combine the best of both worlds and mix it with some more of my personal values? That´s why I concluded that for me now is the time for a change. To make a change. To create something new and meaningful.</p>
-        <p>I really want to get to know new people, explore new ways of thinking and working as well as new approaches of building something with real value!</p>
-        <p>If you would like to work with me, let's meet, let's discuss, let's collaborate and make innovative business together.</p>
+        <p>Probably, it has been these opposing working strategies which made it difficult for me to
+            decide whether to work in the <strong>big corporate or the creative field</strong>. Both domains have their
+            advantages and disadvantages - for sure. But why not combine the best of both worlds and
+            mix it with some more of my personal values? That´s why I concluded that for me now is the
+            time for a change. <strong>To make a change</strong>. <strong>To create something new and meaningful</strong>.</p>
+        <p>I really want to get to know new people, explore new ways of thinking and working
+            as well as new approaches of building something with real value!</p>
+        <p><strong>If you would like to work with me, let's meet, let's discuss, let's collaborate and make
+                innovative business together</strong>.</p>
     </article>
 </section>
 <section id="what" class="dated_story">
@@ -117,51 +87,27 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </div>
     <article>
         <div class="col-sm-4 timetable-left marked">
+            <span>
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <title>Engineering Management</title>
+                    <path d="m33.8 191.1 75.1.1v70.3h.1v4.7l126.6-201.8zm90.1-15-38.1-.1 102.3-64.2-64.2 102.2z" fill="#FFFFFF" />
+                </svg>
+            </span>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
-                <h4>technical analyzes in early project phases and ideation situations</h4>
+                <h4>team and client management</h4>
             </div>
         </div>
     </article>
     <article>
         <div class="col-sm-4 timetable-left marked">
-        </div>
-        <div class="col-sm-8 timetable-right">
-            <div class="article-body">
-                <h4>evaluation and leading of service providers</h4>
-            </div>
-        </div>
-    </article>
-    <article>
-        <div class="col-sm-4 timetable-left marked">
-        </div>
-        <div class="col-sm-8 timetable-right">
-            <div class="article-body">
-                <h4>conception and prototyping of digital and interactive products</h4>
-            </div>
-        </div>
-    </article>
-    <article>
-        <div class="col-sm-4 timetable-left marked">
-        </div>
-        <div class="col-sm-8 timetable-right">
-            <div class="article-body">
-                <h4>technical architecture and (front end) development</h4>
-            </div>
-        </div>
-    </article>
-    <article>
-        <div class="col-sm-4 timetable-left marked">
-        </div>
-        <div class="col-sm-8 timetable-right">
-            <div class="article-body">
-                <h4>consulting and evaluation of emerging and transformational technology</h4>
-            </div>
-        </div>
-    </article>
-    <article>
-        <div class="col-sm-4 timetable-left marked">
+            <span>
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <title>Engineering Management</title>
+                    <path d="m33.8 191.1 75.1.1v70.3h.1v4.7l126.6-201.8zm90.1-15-38.1-.1 102.3-64.2-64.2 102.2z" fill="#FFFFFF" />
+                </svg>
+            </span>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
@@ -171,22 +117,94 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </article>
     <article>
         <div class="col-sm-4 timetable-left marked">
+            <span>
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <title>Engineering Management</title>
+                    <path d="m33.8 191.1 75.1.1v70.3h.1v4.7l126.6-201.8zm90.1-15-38.1-.1 102.3-64.2-64.2 102.2z" fill="#FFFFFF" />
+                </svg>
+            </span>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
-                <h4>team and client management</h4>
+                <h4>evaluation and leading of service providers</h4>
             </div>
         </div>
     </article>
     <article>
-            <div class="col-sm-4 timetable-left marked">
+        <div class="col-sm-4 timetable-left marked">
+            <span>
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <title>Digital Consulting</title>
+                    <path d="m167.9 66.7 23.7-35.7-41.6-13.9-41.7 13.9 23.8 35.7-30.2 170.9 48.1 48.1 48.1-48.1zm-36.2-27.7 18.3-6.1 18.3 6.1-12.4 18.5h-11.9zm14.5 33.5h7.4l28.2 159.9-31.8 32-31.9-31.9z" fill="#FFFFFF" />
+                </svg>
+            </span>
+        </div>
+        <div class="col-sm-8 timetable-right">
+            <div class="article-body">
+                <h4>tutoring, training and speaking at events</h4>
             </div>
-            <div class="col-sm-8 timetable-right">
-                <div class="article-body">
-                    <h4>tutoring, training and speaking at events</h4>
-                </div>
+        </div>
+    </article>
+    <article>
+        <div class="col-sm-4 timetable-left marked">
+            <span>
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <title>Digital Consulting</title>
+                    <path d="m167.9 66.7 23.7-35.7-41.6-13.9-41.7 13.9 23.8 35.7-30.2 170.9 48.1 48.1 48.1-48.1zm-36.2-27.7 18.3-6.1 18.3 6.1-12.4 18.5h-11.9zm14.5 33.5h7.4l28.2 159.9-31.8 32-31.9-31.9z" fill="#FFFFFF" />
+                </svg>
+            </span>
+        </div>
+        <div class="col-sm-8 timetable-right">
+            <div class="article-body">
+                <h4>technical analyzes in early project phases and ideation situations</h4>
             </div>
-        </article>
+        </div>
+    </article>
+    <article>
+        <div class="col-sm-4 timetable-left marked">
+            <span>
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <title>Digital Consulting</title>
+                    <path d="m167.9 66.7 23.7-35.7-41.6-13.9-41.7 13.9 23.8 35.7-30.2 170.9 48.1 48.1 48.1-48.1zm-36.2-27.7 18.3-6.1 18.3 6.1-12.4 18.5h-11.9zm14.5 33.5h7.4l28.2 159.9-31.8 32-31.9-31.9z" fill="#FFFFFF" />
+                </svg>
+            </span>
+        </div>
+        <div class="col-sm-8 timetable-right">
+            <div class="article-body">
+                <h4>conception and prototyping of digital and interactive products</h4>
+            </div>
+        </div>
+    </article>
+    <article>
+        <div class="col-sm-4 timetable-left marked">
+            <span>
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <title>Digital Consulting</title>
+                    <path d="m167.9 66.7 23.7-35.7-41.6-13.9-41.7 13.9 23.8 35.7-30.2 170.9 48.1 48.1 48.1-48.1zm-36.2-27.7 18.3-6.1 18.3 6.1-12.4 18.5h-11.9zm14.5 33.5h7.4l28.2 159.9-31.8 32-31.9-31.9z" fill="#FFFFFF" />
+                </svg>
+            </span>
+        </div>
+        <div class="col-sm-8 timetable-right">
+            <div class="article-body">
+                <h4>consulting and evaluation of emerging and transformational technology</h4>
+            </div>
+        </div>
+    </article>
+    <article>
+        <div class="col-sm-4 timetable-left marked">
+            <span>
+                <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <title>Front-end Development</title>
+                    <path d="m99.7 89.7-60.3 60.3 60.3 60.3 10.6-10.6-49.7-49.7 49.7-49.7zm90 10.6 49.7 49.7-49.7 49.7 10.6 10.6 60.3-60.3-60.3-60.3zm-65.6 117.8 14.5 3.9 37.5-140-14.5-3.9z" fill="#FFFFFF" />
+                </svg>
+            </span>
+        </div>
+        <div class="col-sm-8 timetable-right">
+            <div class="article-body">
+                <h4>technical architecture and (front end) development</h4>
+            </div>
+        </div>
+    </article>
 </section>
 <section id="expertise" class="full-width">
     <header>
@@ -198,35 +216,21 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
                 <h4>Engineering Management</h4>
                 <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <title>Engineering Management</title>
-                    <path fill="#466BB0" d="M212.6,80.7c-1.7-0.2-3.3,0.2-4.8,1.1l-152,95.4c-1.4,0.9-2.4,2.1-3,3.6c-0.6,1.6-0.7,3.2-0.2,4.8
-	c0.5,1.6,1.3,2.9,2.7,3.9c1.4,1,2.9,1.5,4.5,1.6l49.1,0.1l0.1,49.1c0,1.7,0.5,3.2,1.5,4.5c1,1.3,2.3,2.2,3.9,2.7
-	c1.6,0.5,3.2,0.4,4.8-0.2c1.6-0.6,2.8-1.6,3.7-3.1l95.4-152c0.9-1.5,1.3-3.1,1.1-4.8c-0.2-1.7-0.9-3.2-2.1-4.4
-	C215.9,81.6,214.4,80.9,212.6,80.7 M116.4,176.1L85.8,176l102.2-64.2l-64.2,102.2v-30.6c0-2-0.7-3.8-2.2-5.2
-	C120.2,176.8,118.5,176.1,116.4,176.1"/>
+                    <path d="m33.8 191.1 75.1.1v70.3h.1v4.7l126.6-201.8zm90.1-15-38.1-.1 102.3-64.2-64.2 102.2z" fill="#081a6f" />
                 </svg>
             </li>
             <li amp-fx="fly-in-left" data-duration="900ms" data-easing="ease-in-out">
                 <h4>Digital Consulting</h4>
                 <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <title>Digital Consulting</title>
-                    <path fill="#466BB0" d="M186,30.5c-0.9-1.3-2.1-2.2-3.6-2.7l-30-10c-1.6-0.5-3.2-0.5-4.8,0l-30,10c-1.5,0.5-2.7,1.4-3.7,2.7
-	c-0.9,1.3-1.4,2.7-1.4,4.2c0,1.6,0.4,3,1.2,4.3l18.3,27.5l-29.5,167.1c-0.2,1.2-0.1,2.4,0.2,3.5c0.4,1.2,1,2.2,1.8,3.1l40,40
-	c1.5,1.5,3.2,2.2,5.3,2.2c2.1,0,3.8-0.7,5.3-2.2l40-40c0.9-0.9,1.5-1.9,1.9-3.1c0.4-1.1,0.4-2.3,0.2-3.5L167.9,66.6l18.4-27.5
-	c0.9-1.3,1.3-2.8,1.2-4.3C187.5,33.2,187,31.8,186,30.5 M131.7,39l18.3-6.1l18.3,6.1L156,57.5H144L131.7,39z M146.3,72.5h7.4
-	L182,232.4l-31.9,32l-31.9-32L146.3,72.5z"/>
+                    <path d="m167.9 66.7 23.7-35.7-41.6-13.9-41.7 13.9 23.8 35.7-30.2 170.9 48.1 48.1 48.1-48.1zm-36.2-27.7 18.3-6.1 18.3 6.1-12.4 18.5h-11.9zm14.5 33.5h7.4l28.2 159.9-31.8 32-31.9-31.9z" fill="#081a6f" />
                 </svg>
             </li>
             <li amp-fx="fly-in-left" data-duration="800ms" data-easing="ease-in-out">
                 <h4>Front-end Development</h4>
                 <svg width="300px" height="300px" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
                     <title>Front-end Development</title>
-                    <path fill="#466BB0" d="M105,87.5c-2.1,0-3.8,0.7-5.3,2.2l-55,55c-1.5,1.5-2.2,3.2-2.2,5.3c0,2.1,0.7,3.8,2.2,5.3l55,55
-	c1.5,1.5,3.2,2.2,5.3,2.2c2.1,0,3.8-0.7,5.3-2.2c1.5-1.5,2.2-3.2,2.2-5.3c0-2.1-0.7-3.8-2.2-5.3L60.6,150l49.7-49.7
-	c1.5-1.5,2.2-3.2,2.2-5.3c0-2.1-0.7-3.8-2.2-5.3C108.8,88.2,107.1,87.5,105,87.5 M170.7,72.7c-2-0.5-3.9-0.3-5.6,0.8
-	c-1.8,1.1-3,2.6-3.5,4.6l-37.5,140c-0.5,2-0.3,3.9,0.8,5.7c1.1,1.8,2.6,3,4.6,3.5c2,0.5,3.9,0.3,5.7-0.8c1.8-1,3-2.5,3.5-4.5
-	l37.5-140c0.5-2,0.3-3.9-0.8-5.7C174.2,74.5,172.7,73.3,170.7,72.7 M189.7,89.7c-1.5,1.5-2.2,3.2-2.2,5.3c0,2.1,0.7,3.8,2.2,5.3
-	l49.7,49.7l-49.7,49.7c-1.5,1.5-2.2,3.2-2.2,5.3c0,2.1,0.7,3.8,2.2,5.3c1.5,1.5,3.2,2.2,5.3,2.2c2.1,0,3.8-0.7,5.3-2.2l55-55
-	c1.5-1.5,2.2-3.2,2.2-5.3c0-2.1-0.7-3.8-2.2-5.3l-55-55c-1.5-1.5-3.2-2.2-5.3-2.2C192.9,87.5,191.2,88.2,189.7,89.7z"/>
+                    <path d="m99.7 89.7-60.3 60.3 60.3 60.3 10.6-10.6-49.7-49.7 49.7-49.7zm90 10.6 49.7 49.7-49.7 49.7 10.6 10.6 60.3-60.3-60.3-60.3zm-65.6 117.8 14.5 3.9 37.5-140-14.5-3.9z" fill="#081a6f" />
                 </svg>
             </li>
         </ul>
@@ -236,9 +240,22 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     <div class="col-sm-4 timetable-left"></div>
     <div class="col-sm-8 timetable-right">
         <header>
-            <h3 class="header-text">Top Skills</h3>
+            <h3 class="header-text">Buzzwords to check off the list</h3>
         </header>
     </div>
+    <article>
+        <div class="col-sm-4 timetable-left">
+            <h4>Technical Project Management</h4>
+        </div>
+        <div class="col-sm-8 timetable-right">
+            <div class="article-body competency">
+                <div class="competency-bar">
+                    <div class="competency-level"></div>
+                </div>
+                <p>Leadership, Communication, Time Management, Risk Management, Scrum, Kanban, Scrumban, DevOps</p>
+            </div>
+        </div>
+    </article>
     <article>
         <div class="col-sm-4 timetable-left">
             <h4>Front-end Development</h4>
@@ -248,21 +265,7 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
                 <div class="competency-bar">
                     <div class="competency-level"></div>
                 </div>
-                <p>HTML, CSS, JavaScript (Vanilla / ESNext, Angular, React, Vue, etc.), AMP, PWA, Responsive Design,
-                    Performance Optimization, SEO, Accessibility, etc.</p>
-            </div>
-        </div>
-    </article>
-    <article>
-        <div class="col-sm-4 timetable-left">
-            <h4>UX Design</h4>
-        </div>
-        <div class="col-sm-8 timetable-right">
-            <div class="article-body competency">
-                <div class="competency-bar">
-                    <div class="competency-level"></div>
-                </div>
-                <p>Design Thinking, Rapid Prototyping, Wireframes / Mockups (Balsamiq, Axure, InVision)</p>
+                <p>HTML, CSS, JavaScript (Vanilla / ESNext, Angular, React, Vue, etc.), AMP, PWA, Responsive Design, Performance Optimization, SEO, Accessibility, etc.</p>
             </div>
         </div>
     </article>
@@ -281,28 +284,40 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </article>
     <article>
         <div class="col-sm-4 timetable-left">
-            <h4>CMS Development / Integration</h4>
+            <h4>Content Managment Solutions</h4>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body competency">
                 <div class="competency-bar">
                     <div class="competency-level"></div>
                 </div>
-                <p>WebSphere Portal Server, Typo3, FirstSpirit, Shopware, etc.</p>
+                <p>Neos CMS, Wordpress, FirstSpirit, WebSphere Portal Server, Shopware, Contentful, etc.</p>
+            </div>
+        </div>
+    </article>
+    <article>
+        <div class="col-sm-4 timetable-left">
+            <h4>Technical Concept</h4>
+        </div>
+        <div class="col-sm-8 timetable-right">
+            <div class="article-body competency">
+                <div class="competency-bar">
+                    <div class="competency-level"></div>
+                </div>
+                <p>Design Thinking, Rapid Prototyping, Wireframes / Mockups (Balsamiq, Axure, InVision)</p>
             </div>
         </div>
     </article>
     <article data-bind="contents">
         <div class="col-sm-4 timetable-left">
-            <h4>Other Technical Skills</h4>
+            <h4>Other Technical Skills &amp; Tools</h4>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body competency">
                 <div class="competency-bar">
                     <div class="competency-level"></div>
                 </div>
-                <p>DevOps, AWS, IBM Bluemix, IBM Watson, NLP, Amazon Alexa, Google Assistant, Dialogflow, Arduino,
-                    MS Office, Adobe Suite, Unix, Bash, Git, etc.</p>
+                <p>AWS, IBM Bluemix, IBM Watson, NLP, Voice Assistants, Arduino, MS Office, Adobe Suite, Atlassian Suite, GSuite, Unix, Bash, Git, etc.</p>
             </div>
         </div>
     </article>
@@ -326,18 +341,20 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </header>
     <article>
         <ul class="grid" amp-fx="fade-in">
-        {% for file in site.static_files %}
-        {% if file.path contains "/images/clients" %}
+            {% for file in site.static_files %}
+            {% if file.path contains "/images/clients" %}
             {% if file.extname == '.png' or file.extname == '.jpg' %}
-                {% assign filenameparts = file.path | split: "/" %}
-                {% assign fullname = filenameparts | last | prepend: 'clients/' %}
-                {% assign filename = filenameparts | last | replace: file.extname,"" %}
-                <li class="grid-item">
-                    <amp-img src="{{ file.path }}" height="{{ assets[fullname].dimensions.height }}" width="{{ assets[fullname].dimensions.width }}" alt="{{ filename | replace: file.extname, '' | capitalize }}" title="{{ filename | replace: file.extname, '' | capitalize }}" layout="responsive"></amp-img>
-                </li>
+            {% assign filenameparts = file.path | split: "/" %}
+            {% assign fullname = filenameparts | last | prepend: 'clients/' %}
+            {% assign filename = filenameparts | last | replace: file.extname,"" %}
+            <li class="grid-item">
+                <amp-img src="{{ file.path }}" height="{{ assets[fullname].dimensions.height }}" width="{{ assets[fullname].dimensions.width }}"
+                    alt="{{ filename | replace: file.extname, '' | capitalize }}" title="{{ filename | replace: file.extname, '' | capitalize }}"
+                    layout="responsive"></amp-img>
+            </li>
             {% endif %}
-        {% endif %}
-        {% endfor %}
+            {% endif %}
+            {% endfor %}
         </ul>
     </article>
 </section>
@@ -350,6 +367,7 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </div>
     <article>
         <div class="col-sm-4 timetable-left marked">
+            <span></span>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
@@ -359,6 +377,7 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </article>
     <article>
         <div class="col-sm-4 timetable-left marked">
+            <span></span>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
@@ -368,6 +387,7 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </article>
     <article>
         <div class="col-sm-4 timetable-left marked">
+            <span></span>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
@@ -377,6 +397,7 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </article>
     <article>
         <div class="col-sm-4 timetable-left marked">
+            <span></span>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
@@ -386,15 +407,17 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </article>
     <article>
         <div class="col-sm-4 timetable-left marked">
+            <span></span>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
-                <h4>empowering people and teams by conducting workshop and holding presentations</h4>
+                <h4>empowering people and teams by conducting workshop and giving presentations</h4>
             </div>
         </div>
     </article>
     <article>
         <div class="col-sm-4 timetable-left marked">
+            <span></span>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
@@ -404,10 +427,11 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
     </article>
     <article>
         <div class="col-sm-4 timetable-left marked">
+            <span></span>
         </div>
         <div class="col-sm-8 timetable-right">
             <div class="article-body">
-                <h4>appreciating empathy, transparency and honesty</h4>
+                <h4>appreciating sense of humour, empathy, transparency and honesty</h4>
             </div>
         </div>
     </article>
@@ -415,72 +439,78 @@ welcome: Hi there, I'm Boris! Very nice to finally meet you!
 <section id="contact" class="social-footer full-width">
     <div class="social-footer__wrap">
         <header>
-            <h3 class="header-text">Contact me</h3>
+            <h3 class="header-text">Let's talk</h3>
         </header>
 
         <ul class="socialmedia">
-            <li class="socialmedia__item"><a class="socialmedia__link" target="_blank" rel="noreferrer" href="mailto:hey@boris.io">
+            <li class="socialmedia__item">
+                <a class="socialmedia__link" target="_blank" rel="noreferrer" href="mailto:hey@boris.io">
                     <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
                         <title>Email</title>
                         <g>
-                            <circle fill="none" stroke="#466bb0" cx="22" cy="22" r="21.5" />
-                            <path fill="#466bb0" d="M9.5,14.1v18h24v-18H9.5z M31,16.1l-9.5,7.7L12,16.1C12,16.1,31,16.1,31,16.1z M11.5,30.1V18.3l10,8.1
-                            l10-8.1v11.8H11.5z" />
+                            <circle fill="none" stroke="#081a6f" cx="22" cy="22" r="21.5" />
+                            <path fill="#081a6f" d="M9.5,14.1v18h24v-18H9.5z M31,16.1l-9.5,7.7L12,16.1C12,16.1,31,16.1,31,16.1z M11.5,30.1V18.3l10,8.1 l10-8.1v11.8H11.5z" />
                         </g>
                     </svg>
-                </a></li>
-            <li class="socialmedia__item"><a class="socialmedia__link" target="_blank" rel="noreferrer" href="https://www.xing.com/profile/Boris_Fruendt">
+                </a>
+            </li>
+            <li class="socialmedia__item">
+                <a class="socialmedia__link" target="_blank" rel="noreferrer" href="https://www.xing.com/profile/Boris_Fruendt">
                     <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
                         <title>Xing</title>
                         <g>
-                            <circle fill="none" stroke="#466bb0" cx="22" cy="22" r="21.5" />
-                            <path fill="#466bb0" d="M24.9,34l-5.3-9.7L27.7,10h4.9l-8.1,14.3l5.3,9.7H24.9z M17.7,15h-4.9l2.8,4.7L11.4,27h4.9l4.1-7.3
-                                C20.4,19.7,17.7,15,17.7,15z" />
+                            <circle fill="none" stroke="#081a6f" cx="22" cy="22" r="21.5" />
+                            <path fill="#081a6f" d="M24.9,34l-5.3-9.7L27.7,10h4.9l-8.1,14.3l5.3,9.7H24.9z M17.7,15h-4.9l2.8,4.7L11.4,27h4.9l4.1-7.3 C20.4,19.7,17.7,15,17.7,15z" />
                         </g>
                     </svg>
-                </a></li>
-            <li class="socialmedia__item"><a class="socialmedia__link" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/borisfruendt">
+                </a>
+            </li>
+            <li class="socialmedia__item">
+                <a class="socialmedia__link" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/borisfruendt">
                     <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
                         <title>Linkedin</title>
                         <g>
-                            <circle fill="none" stroke="#466bb0" cx="22" cy="22" r="21.5" />
+                            <circle fill="none" stroke="#081a6f" cx="22" cy="22" r="21.5" />
                             <g>
-                                <path fill="#466bb0" d="M15,13c0,1.4-1.1,2.5-2.5,2.5S10,14.4,10,13c0-1.4,1.1-2.5,2.5-2.5S15,11.6,15,13z M15,17.5h-5v16h5V17.5z
-                                    M23,17.5h-5v16h5v-8.4c0-4.7,6-5.1,6,0v8.4h5V23.4c0-7.9-8.9-7.6-11-3.7C23,19.7,23,17.5,23,17.5z" />
+                                <path fill="#081a6f" d="M15,13c0,1.4-1.1,2.5-2.5,2.5S10,14.4,10,13c0-1.4,1.1-2.5,2.5-2.5S15,11.6,15,13z M15,17.5h-5v16h5V17.5z M23,17.5h-5v16h5v-8.4c0-4.7,6-5.1,6,0v8.4h5V23.4c0-7.9-8.9-7.6-11-3.7C23,19.7,23,17.5,23,17.5z" />
                             </g>
                         </g>
                     </svg>
-                </a></li>
-            <li class="socialmedia__item"><a class="socialmedia__link" target="_blank" rel="noreferrer" href="https://www.instagram.com/b0ndt/">
+                </a>
+            </li>
+            <li class="socialmedia__item">
+                <a class="socialmedia__link" target="_blank" rel="noreferrer" href="https://www.instagram.com/b0ndt/">
                     <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
                         <title>Instagram</title>
                         <g fill="none" fill-rule="evenodd">
-                            <circle stroke="#466bb0" cx="22" cy="22" r="21.5" class="social-circle"></circle>
-                            <path d="M22.5 11c3.123 0 3.515.013 4.74.07 1.225.055 2.06.25 2.793.534a5.637 5.637 0 0 1 2.037 1.326c.64.64 1.032 1.28 1.326 2.037.285.732.48 1.568.535 2.792.057 1.225.07 1.617.07 4.74s-.013 3.515-.07 4.74c-.055 1.225-.25 2.06-.534 2.793a5.638 5.638 0 0 1-1.326 2.037 5.638 5.638 0 0 1-2.037 1.326c-.732.285-1.568.48-2.792.535-1.225.057-1.617.07-4.74.07s-3.515-.013-4.74-.07c-1.225-.055-2.06-.25-2.793-.534a5.638 5.638 0 0 1-2.037-1.326 5.637 5.637 0 0 1-1.326-2.037c-.285-.732-.48-1.568-.535-2.792-.057-1.225-.07-1.617-.07-4.74s.013-3.515.07-4.74c.055-1.225.25-2.06.534-2.793a5.637 5.637 0 0 1 1.326-2.037 5.637 5.637 0 0 1 2.037-1.326c.732-.285 1.568-.48 2.792-.535 1.225-.057 1.617-.07 4.74-.07zm0 2.072c-3.07 0-3.434.012-4.647.067-1.12.05-1.73.238-2.135.395-.537.21-.92.458-1.323.86a3.563 3.563 0 0 0-.86 1.323c-.157.405-.345 1.014-.396 2.135-.056 1.213-.068 1.576-.068 4.647 0 3.07.012 3.434.067 4.647.05 1.12.238 1.73.395 2.135.21.537.458.92.86 1.323.403.402.786.65 1.323.86.405.157 1.014.345 2.135.396 1.213.056 1.576.068 4.647.068 3.07 0 3.435-.012 4.647-.067 1.12-.05 1.73-.238 2.135-.395.537-.21.92-.458 1.323-.86.402-.403.65-.786.86-1.323.157-.405.345-1.014.396-2.135.056-1.213.068-1.576.068-4.647 0-3.07-.012-3.434-.067-4.647-.05-1.12-.238-1.73-.395-2.135a3.563 3.563 0 0 0-.86-1.323 3.563 3.563 0 0 0-1.323-.86c-.405-.157-1.014-.345-2.135-.396-1.213-.056-1.576-.068-4.647-.068zm0 3.523a5.905 5.905 0 1 1 0 11.81 5.905 5.905 0 0 1 0-11.81zm0 9.738a3.833 3.833 0 1 0 0-7.666 3.833 3.833 0 0 0 0 7.666zm7.52-9.972a1.38 1.38 0 1 1-2.76 0 1.38 1.38 0 0 1 2.76 0z"
-                                fill="#466bb0" class="social-inner"></path>
+                            <circle stroke="#081a6f" cx="22" cy="22" r="21.5" class="social-circle"></circle>
+                            <path d="M22.5 11c3.123 0 3.515.013 4.74.07 1.225.055 2.06.25 2.793.534a5.637 5.637 0 0 1 2.037 1.326c.64.64 1.032 1.28 1.326 2.037.285.732.48 1.568.535 2.792.057 1.225.07 1.617.07 4.74s-.013 3.515-.07 4.74c-.055 1.225-.25 2.06-.534 2.793a5.638 5.638 0 0 1-1.326 2.037 5.638 5.638 0 0 1-2.037 1.326c-.732.285-1.568.48-2.792.535-1.225.057-1.617.07-4.74.07s-3.515-.013-4.74-.07c-1.225-.055-2.06-.25-2.793-.534a5.638 5.638 0 0 1-2.037-1.326 5.637 5.637 0 0 1-1.326-2.037c-.285-.732-.48-1.568-.535-2.792-.057-1.225-.07-1.617-.07-4.74s.013-3.515.07-4.74c.055-1.225.25-2.06.534-2.793a5.637 5.637 0 0 1 1.326-2.037 5.637 5.637 0 0 1 2.037-1.326c.732-.285 1.568-.48 2.792-.535 1.225-.057 1.617-.07 4.74-.07zm0 2.072c-3.07 0-3.434.012-4.647.067-1.12.05-1.73.238-2.135.395-.537.21-.92.458-1.323.86a3.563 3.563 0 0 0-.86 1.323c-.157.405-.345 1.014-.396 2.135-.056 1.213-.068 1.576-.068 4.647 0 3.07.012 3.434.067 4.647.05 1.12.238 1.73.395 2.135.21.537.458.92.86 1.323.403.402.786.65 1.323.86.405.157 1.014.345 2.135.396 1.213.056 1.576.068 4.647.068 3.07 0 3.435-.012 4.647-.067 1.12-.05 1.73-.238 2.135-.395.537-.21.92-.458 1.323-.86.402-.403.65-.786.86-1.323.157-.405.345-1.014.396-2.135.056-1.213.068-1.576.068-4.647 0-3.07-.012-3.434-.067-4.647-.05-1.12-.238-1.73-.395-2.135a3.563 3.563 0 0 0-.86-1.323 3.563 3.563 0 0 0-1.323-.86c-.405-.157-1.014-.345-2.135-.396-1.213-.056-1.576-.068-4.647-.068zm0 3.523a5.905 5.905 0 1 1 0 11.81 5.905 5.905 0 0 1 0-11.81zm0 9.738a3.833 3.833 0 1 0 0-7.666 3.833 3.833 0 0 0 0 7.666zm7.52-9.972a1.38 1.38 0 1 1-2.76 0 1.38 1.38 0 0 1 2.76 0z" fill="#081a6f" class="social-inner"></path>
                         </g>
                     </svg>
-                </a></li>
-            <li class="socialmedia__item"><a class="socialmedia__link" target="_blank" rel="noreferrer" href="https://www.twitter.com/bondt/">
+                </a>
+            </li>
+            <li class="socialmedia__item">
+                <a class="socialmedia__link" target="_blank" rel="noreferrer" href="https://www.twitter.com/bondt/">
                     <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
                         <title>Twitter</title>
                         <g fill="none" fill-rule="evenodd">
-                            <circle stroke="#466bb0" cx="22" cy="22" r="21.5" class="social-circle"></circle>
-                            <path d="M30.526 16.846a4.51 4.51 0 0 0 1.893-2.513 8.355 8.355 0 0 1-2.737 1.102A4.194 4.194 0 0 0 26.54 14c-2.38 0-4.308 2.035-4.308 4.544 0 .356.036.703.11 1.034-3.58-.19-6.754-1.996-8.88-4.747a4.724 4.724 0 0 0-.583 2.286c0 1.576.76 2.967 1.916 3.783a4.154 4.154 0 0 1-1.953-.57v.057c0 2.202 1.484 4.04 3.458 4.455a4.01 4.01 0 0 1-1.136.16 4.05 4.05 0 0 1-.81-.08c.548 1.804 2.14 3.12 4.025 3.155-1.477 1.22-3.334 1.944-5.352 1.944-.348 0-.69-.018-1.028-.06A11.747 11.747 0 0 0 18.604 32c7.926 0 12.257-6.924 12.257-12.93 0-.196 0-.393-.01-.586A9.006 9.006 0 0 0 33 16.13a8.257 8.257 0 0 1-2.474.716z"
-                                fill="#466bb0" class="social-inner"></path>
+                            <circle stroke="#081a6f" cx="22" cy="22" r="21.5" class="social-circle"></circle>
+                            <path d="M30.526 16.846a4.51 4.51 0 0 0 1.893-2.513 8.355 8.355 0 0 1-2.737 1.102A4.194 4.194 0 0 0 26.54 14c-2.38 0-4.308 2.035-4.308 4.544 0 .356.036.703.11 1.034-3.58-.19-6.754-1.996-8.88-4.747a4.724 4.724 0 0 0-.583 2.286c0 1.576.76 2.967 1.916 3.783a4.154 4.154 0 0 1-1.953-.57v.057c0 2.202 1.484 4.04 3.458 4.455a4.01 4.01 0 0 1-1.136.16 4.05 4.05 0 0 1-.81-.08c.548 1.804 2.14 3.12 4.025 3.155-1.477 1.22-3.334 1.944-5.352 1.944-.348 0-.69-.018-1.028-.06A11.747 11.747 0 0 0 18.604 32c7.926 0 12.257-6.924 12.257-12.93 0-.196 0-.393-.01-.586A9.006 9.006 0 0 0 33 16.13a8.257 8.257 0 0 1-2.474.716z" fill="#081a6f" class="social-inner"></path>
                         </g>
                     </svg>
-                </a></li>
-            <li class="socialmedia__item"><a class="socialmedia__link" target="_blank" rel="noreferrer" href="https://www.youtube.com/user/b0ndt/">
+                </a>
+            </li>
+            <li class="socialmedia__item">
+                <a class="socialmedia__link" target="_blank" rel="noreferrer" href="https://www.youtube.com/user/b0ndt/">
                     <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
                         <title>Youtube</title>
                         <g fill="none" fill-rule="evenodd">
-                            <circle stroke="#466bb0" cx="22" cy="22" r="21.5" class="social-circle"></circle>
-                            <path d="M32 25.564C32 29 28.553 29 28.553 29H15.445C12 29 12 25.564 12 25.564v-7.128C12 15 15.445 15 15.445 15h13.108C32 15 32 18.436 32 18.436v7.128zm-6.117-3.554l-6.548-3.834v7.667l6.548-3.833z"
-                                fill="#466bb0" class="social-inner"></path>
+                            <circle stroke="#081a6f" cx="22" cy="22" r="21.5" class="social-circle"></circle>
+                            <path d="M32 25.564C32 29 28.553 29 28.553 29H15.445C12 29 12 25.564 12 25.564v-7.128C12 15 15.445 15 15.445 15h13.108C32 15 32 18.436 32 18.436v7.128zm-6.117-3.554l-6.548-3.834v7.667l6.548-3.833z" fill="#081a6f" class="social-inner"></path>
                         </g>
                     </svg>
-                </a></li>
+                </a>
+            </li>
         </ul>
     </div>
 </section>
