@@ -27,38 +27,22 @@
         box-shadow: 0 0 0 3px $darkblue;
         overflow: hidden;
         transition: all 0.2s;
-        cursor: crosshair;
-
-        &:hover {
-            background: $darkblue;
-            color: $white;
-            box-shadow: 0 0 0 8px $darkestgrey;
-
-            h4 {
-                transform: translate(-50%, -50%);
-            }
-
-            svg {
-                transform: translateX(150%);
-            }
-        }
 
         h4 {
-            color: $darkgrey;
+            color: $darkblue;
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-250%, -50%);
-            transition: transform 200ms ease-in-out 0ms;
+            transform: translate(-50%, -5%);
         }
 
         svg {
             order: 0;
             flex: 0 1 auto;
-            align-self: auto;
-            width: 50%;
-            height: 50%;
-            transition: transform 200ms ease-in-out 0ms;
+            align-self: flex-start;
+            width: 40%;
+            height: 40%;
+            transform: translate(0%, 20%);
         }
     }
 }

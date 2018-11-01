@@ -53,12 +53,6 @@ a {
 	}
 }
 
-b, strong {
-	color: $darkblue;
-	font-family: $oswald, $sans;
-	font-weight: 700;
-}
-
 img {
 	border: 0;
 	max-width: 100%;
@@ -240,7 +234,6 @@ ul {
 	background: $white;
 	border-radius: 1px;
 	z-index: 10;
-	background-color: $grey;
 	margin: 0 auto;
 	width: 100%;
 	max-width: initial;
@@ -259,7 +252,8 @@ ul {
 			padding-left: 0;
 			padding-right: 0;
 			padding-bottom: 2em;
-			background-color: $darkgrey;
+			border-top: 1px solid $darkestgrey;
+			border-bottom: 1px solid $darkestgrey;
 			header, article {
 				max-width: 1200px;
 				padding-left: 5%;
@@ -332,9 +326,6 @@ ul {
 	.banner {
 		position: relative;
 		height: 500px;
-		@media(min-width: 768px) {
-			height: calc(100vh - 54px);
-		}
 		max-height: 528px;
 		background-image: $diagonal, $layer, $header;
 		background-color: transparent;
@@ -422,8 +413,6 @@ ul {
 	.menu {
 		background: $white;
 		border-bottom: 1px solid $darkestgrey;
-		position: sticky;
-		position: -webkit-sticky;
 		top: -1px;
 		z-index: 2;
 	}
@@ -463,6 +452,59 @@ ul {
 			padding-bottom: 100%;
 		}
 	}
+	.user-contact {
+		list-style: none;
+		padding-top: 0.25em;
+		margin: 0;
+		text-align: center;
+		padding-left: 0;
+		max-width: 500px;
+		display: inline-block;
+		i {
+			text-align: center;
+			width: 1.35em;
+			color: $darkestgrey;
+		}
+		li {
+			font-size: 95%;
+			margin-bottom: 0.25em;
+			overflow: visible;
+			white-space: nowrap;
+			display: inline-block;
+			&:before {
+				content: '\2022';
+				color: $darkestgrey;
+				font-size: 150%;
+				line-height: 0.5em;
+				vertical-align: middle;
+				margin: 0 0.25em;
+			}
+		}
+		.title {
+			padding: 0 5%;
+		}
+	}
+	.user-links {
+		list-style: none;
+		padding-top: 0.25em;
+		margin: 0;
+		text-align: center;
+		padding-left: 0;
+		max-width: 500px;
+		display: inline-block;
+		i {
+			text-align: center;
+			width: 1.35em;
+			color: $darkestgrey;
+		}
+		li {
+			font-size: 95%;
+			margin-bottom: 0.25em;
+			overflow: visible;
+			white-space: nowrap;
+			display: inline-block;
+		}
+	}
 	.user-title {
 		text-shadow: 0 0 5px $black;
 		padding: 0 8px;
@@ -483,7 +525,7 @@ ul {
 				height: 18px;
 				width: 18px;
 				position: absolute;
-				right: 0.07em;
+				right: 4.35em;
 				top: 0.7em;
 			}
 		}
@@ -497,7 +539,7 @@ ul {
 		font-weight: 200;
 	}
 	.timetable-right {
-		min-height: 60px;
+		min-height: 50px;
 		border-left: 1px solid $darkestgrey;
 		padding-left: 55px;
 		&.last {
@@ -514,18 +556,25 @@ ul {
 		.competency-bar {
 			margin: 0.5em 0 0.75em;
 			width: 100%;
-			background-color: $darkestgrey;
 			height: 1px;
 		}
 		.competency-level {
-			background-color: $darkblue;
 			height: 100%;
 		}
 	}
 	.timetable-left {
 		border-right: 0;
-		h4 {
+		padding-right: 24px;
+		&.mt h4 {
 			margin-top: 20px;
+		}
+		h4 {
+			@media(min-width: 1024px) {
+				text-align: right;
+				margin-top: -4px;
+			}
+		}
+		h5 {
 			@media(min-width: 1024px) {
 				text-align: right;
 			}
@@ -555,7 +604,7 @@ ul {
 			@media(min-width: 768px) {
 				top: 4px;
 				left: auto;
-				right: -6px;
+				right: -8px;
 			}
 			z-index: 1;
 		}
@@ -746,4 +795,8 @@ footer {
 
 svg:not(:root) {
 	overflow: hidden;
+}
+
+.page-break {
+	page-break-after: always;
 }
