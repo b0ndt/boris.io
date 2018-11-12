@@ -247,11 +247,14 @@ ul {
 		padding: 0 5%;
 		margin: 0 auto;
 		width: 100%;
+		&.page-break {
+			margin-top: 8em;
+		}
 		&.full-width {
 			max-width: none;
 			padding-left: 0;
 			padding-right: 0;
-			padding-bottom: 2em;
+			padding-bottom: 3em;
 			border-top: 1px solid $darkestgrey;
 			border-bottom: 1px solid $darkestgrey;
 			header, article {
@@ -412,7 +415,6 @@ ul {
 	}
 	.menu {
 		background: $white;
-		border-bottom: 1px solid $darkestgrey;
 		top: -1px;
 		z-index: 2;
 	}
@@ -539,7 +541,7 @@ ul {
 		font-weight: 200;
 	}
 	.timetable-right {
-		min-height: 50px;
+		min-height: 44px;
 		border-left: 1px solid $darkestgrey;
 		padding-left: 55px;
 		&.last {
@@ -554,19 +556,22 @@ ul {
 	}
 	.competency {
 		.competency-bar {
-			margin: 0.5em 0 0.75em;
+			margin: 0;
 			width: 100%;
 			height: 1px;
 		}
 		.competency-level {
 			height: 100%;
 		}
+		p {
+			margin: 0;
+		}
 	}
 	.timetable-left {
 		border-right: 0;
 		padding-right: 24px;
 		&.mt h4 {
-			margin-top: 20px;
+			margin-top: 0;
 		}
 		h4 {
 			@media(min-width: 1024px) {
@@ -679,7 +684,6 @@ ul {
 footer {
 	text-align: center;
 	padding: 14px 0;
-	border-top: 1px solid $darkestgrey;
 	a {
 		position: relative;
 		&:after {
@@ -798,5 +802,5 @@ svg:not(:root) {
 }
 
 .page-break {
-	page-break-after: always;
+	page-break-before: always;
 }
