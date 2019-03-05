@@ -462,13 +462,14 @@ ul {
 		padding-left: 0;
 		max-width: 500px;
 		display: inline-block;
+		font-weight: 700;
 		i {
 			text-align: center;
 			width: 1.35em;
 			color: $darkestgrey;
 		}
 		li {
-			font-size: 95%;
+			font-size: 120%;
 			margin-bottom: 0.25em;
 			overflow: visible;
 			white-space: nowrap;
@@ -508,9 +509,9 @@ ul {
 		}
 	}
 	.user-title {
-		text-shadow: 0 0 5px $black;
+		text-shadow: 2px 2px 1px $black;
 		padding: 0 8px;
-		height: 34%;
+		height: 43%;
 		margin: auto;
 		display: block;
 		position: absolute;
