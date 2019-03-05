@@ -16,9 +16,12 @@ Phone: (+49)160-1559634<br>
 E-Mail: hey(at)boris.io<br>
 Website: [https://boris.io](https://boris.io)
 
-### Responsible for content
-Pursuant to § 55, sect. 2 of RStV:
+### VAT registration number
+Pursuant to § 27 of the Value Added Tax Law:<br>
+DE 3211074159
 
+### Responsible for content
+Pursuant to § 55, sect. 2 of RStV:<br>
 Boris Fründt
 
 ### Data privacy
