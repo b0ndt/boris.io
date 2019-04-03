@@ -23,9 +23,7 @@
   <link rel="preconnect dns-prefetch" href="https://cdn.ampproject.org/" crossorigin>
   <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400">
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans|Oswald:300,400">
   <link rel="preload" href="/assets/images/header.jpg" as="image">
 
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -58,6 +56,7 @@
   <meta property="og:image" content="{{ site.logo | prepend: site.baseurl | prepend: site.url }}" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="{{ site.logo_alt }}"
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="⚡ {{ site.title }}" />
