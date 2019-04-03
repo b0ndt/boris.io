@@ -12,6 +12,7 @@ description: >
   Hey there! I'm Boris. Nice to finally meet you! If you would like to work with me, let's meet, let's discuss, let's collaborate and make innovative business together.
 favicon: "/favicon.ico"
 logo: "/assets/images/share.jpg"
+logo_alt: "Me wearing shirt and tie behind my logo and the domain name boris.io"
 baseurl: ""
 url: "https://boris.io"
 name: 'Boris Fründt'
