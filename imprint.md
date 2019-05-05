@@ -18,7 +18,7 @@ Website: [https://boris.io](https://boris.io)
 
 ### VAT registration number
 Pursuant to § 27 of the Value Added Tax Law:<br>
-DE 3211074159
+DE 321074159
 
 ### Responsible for content
 Pursuant to § 55, sect. 2 of RStV:<br>
