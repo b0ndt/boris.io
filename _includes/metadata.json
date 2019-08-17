@@ -16,9 +16,9 @@
     "name": "{{ site.title }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.logo | prepend: site.baseurl | prepend: site.url }}",
-      "width": "1024",
-      "height": "512"
+      "url": "{{ site.author_image | prepend: site.baseurl | prepend: site.url }}",
+      "width": "360",
+      "height": "360"
     },
     "contactPoint": [{
       "@type": "ContactPoint",
@@ -29,7 +29,7 @@
   "image": {
     "@type": "ImageObject",
     "url": "{{ site.logo | prepend: site.baseurl | prepend: site.url }}",
-    "height": "1024",
-    "width": "512"
+    "height": "512",
+    "width": "1024"
   }
 }
