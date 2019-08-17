@@ -16,9 +16,9 @@
     "name": "{{ site.title }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.author_image | prepend: site.baseurl | prepend: site.url }}",
-      "width": "360",
-      "height": "360"
+      "url": "{{ site.publisher_image | prepend: site.baseurl | prepend: site.url }}",
+      "width": "600",
+      "height": "60"
     },
     "contactPoint": [{
       "@type": "ContactPoint",
