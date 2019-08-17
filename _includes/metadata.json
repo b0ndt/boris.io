@@ -16,14 +16,13 @@
       "https://www.instagram.com/b0ndt/",
       "https://www.linkedin.com/in/borisfruendt",
       "https://www.twitter.com/bondt/",
-      "https://www.youtube.com/user/b0ndt/",
-      "https://plus.google.com/+BorisFruendt"
+      "https://www.youtube.com/user/b0ndt/"
     ]
   },
   "publisher": {
     "@type": "Organization",
     "url": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
-    "name": "⚡ {{ site.title }}",
+    "name": "{{ site.title }}",
     "logo": {
       "@type": "ImageObject",
       "url": "{{ site.logo | prepend: site.baseurl | prepend: site.url }}",
