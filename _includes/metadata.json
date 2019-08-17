@@ -1,7 +1,7 @@
 
 {
   "@context": "http://schema.org",
-  "@type": "WebSite",
+  "@type": "NewsArticle",
   "mainEntityOfPage": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
   "headline": "{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}",
   "datePublished": "{% if page.date %}{{ page.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}",
@@ -9,26 +9,22 @@
   "description": "{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_newlines | truncate: 160 }}{% endif %}",
   "author": {
     "@type": "Person",
-    "name": "{{ site.name }}",
-    "url": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
-    "sameAs": [
-      "https://www.facebook.com/bondt",
-      "https://www.instagram.com/b0ndt/",
-      "https://www.linkedin.com/in/borisfruendt",
-      "https://www.twitter.com/bondt/",
-      "https://www.youtube.com/user/b0ndt/"
-    ]
+    "name": "{{ site.name }}"
   },
   "publisher": {
     "@type": "Organization",
-    "url": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
     "name": "{{ site.title }}",
     "logo": {
       "@type": "ImageObject",
       "url": "{{ site.logo | prepend: site.baseurl | prepend: site.url }}",
       "width": "1024",
       "height": "512"
-    }
+    },
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+49-160-155-9634",
+      "contactType": "customer service"
+    }]
   },
   "image": {
     "@type": "ImageObject",
