@@ -100,7 +100,7 @@ ul {
 		width: 750px;
 	}
 
-	.cv-container .navbar-nav {
+	.navbar-nav {
 		float: left;
 		margin: 0;
 		> li {
@@ -417,6 +417,9 @@ ul {
 		background: $white;
 		top: -1px;
 		z-index: 2;
+		@media(min-width: 1024px) {
+			min-height: 55px;
+		}
 	}
 	.menu-bar {
 		position: relative;
@@ -474,6 +477,7 @@ ul {
 			overflow: visible;
 			white-space: nowrap;
 			display: inline-block;
+			background: none;
 			&:before {
 				content: '\2022';
 				color: $darkestgrey;
