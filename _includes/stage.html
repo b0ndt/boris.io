@@ -2,8 +2,8 @@
     <div class="css-crop bg-cover">
         <amp-position-observer on="scroll:scaleAnimation.seekTo(percent=event.percent)" viewport-margins="100px 50vh" layout="nodisplay">
         </amp-position-observer>
-        <amp-img id="scalingImage" role="button" tabindex="0" on="tap:top.scrollTo" alt="Portrait" src="/assets/images/logo.jpg"
-            width="140" height="140" layout="responsive">
+        <amp-img id="scalingImage" role="button" tabindex="0" on="tap:top.scrollTo" alt="Portrait" src="/assets/images/logo.webp" width="140" height="140" layout="responsive">
+            <amp-img fallback src="/assets/images/logo.jpg" width="140" height="140" layout="responsive"></amp-img>
         </amp-img>
         <amp-animation id="scaleAnimation" layout="nodisplay">
             <script type="application/json">
