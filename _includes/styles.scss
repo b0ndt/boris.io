@@ -764,3 +764,10 @@ footer {
 svg:not(:root) {
 	overflow: hidden;
 }
+
+.i-amphtml-slide-item {
+	background-color: $white !important;
+	.i-amphtml-image-viewer-image {
+		transform: scale(.8) !important;
+	}
+}

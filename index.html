@@ -340,7 +340,7 @@ welcome: Hey there! I'm Boris – Freelance tech consultant & developer from Ham
         <h3 class="header-text">Brands I used to work for</h3>
     </header>
     <article>
-        <ul class="grid" amp-fx="fade-in">
+        <ul class="grid">
             {% for file in site.static_files %}
             {% if file.path contains "/images/clients" %}
             {% if file.extname == '.png' or file.extname == '.jpg' %}
