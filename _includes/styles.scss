@@ -764,3 +764,11 @@ footer {
 svg:not(:root) {
 	overflow: hidden;
 }
+
+amp-image-viewer {
+	margin: 20px;
+}
+
+amp-image-viewer, amp-carousel div {
+	background-color: $white;
+}
