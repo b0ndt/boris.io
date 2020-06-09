@@ -22,12 +22,24 @@
         margin-bottom: 2em;
         filter: grayscale(100%);
         opacity: .6;
-        transition: all 120ms ease-in-out 0ms;
-        cursor: crosshair;
+        transition: opacity 120ms ease-in-out 0ms;
 
         &:hover {
             filter: grayscale(0%);
             opacity: 1;
         }
+
+        amp-img {
+            will-change: transform;
+        }
+
+        amp-image-viewer {
+            margin: 20px;
+        }
+
+        amp-image-viewer, amp-carousel div {
+            background-color: $white;
+        }
+
     }
 }
