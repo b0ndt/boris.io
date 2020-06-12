@@ -1,5 +1,7 @@
 # boris.io
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/34080f68-46d2-48b1-bd69-dc6f3f8622ac/deploy-status)](https://app.netlify.com/sites/competent-jepsen-0bbf5c/deploys)
+
 *This page is built using Google AMP*
 
 AMP [Accelerated Mobile Pages](https://www.ampproject.org/) is an open-source project that defines rules for creating websites that load nearly instantly even on mobile devices with
