@@ -8,8 +8,8 @@ permalink: /imprint/
 Pursuant to § 5 TMG:
 
 Boris Fründt<br>
-Gärtnerstraße 114b<br>
-20235 Hamburg<br>
+Carl-Adam-Petri-Straße 44<br>
+14469 Potsdam<br>
 Germany
 
 Phone: (+49)160-1559634<br>

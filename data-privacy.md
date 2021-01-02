@@ -49,8 +49,8 @@ Notice concerning the party responsible for this website
 The party responsible for processing data on this website is:
 
 Boris Fründt<br>
-Gärtnerstraße 114b<br>
-20253 Hamburg<br>
+Carl-Adam-Petri-Straße 44<br>
+14469 Potsdam<br>
 Telefon: +49 160 1559634<br>
 E-Mail: hey(at)boris.io<br>
 
