@@ -6,20 +6,20 @@ defaults:
       image: true
 
 # Site settings
-title: Boris Fründt – Technical Consulting & Development
+title: Boris Fründt – Tech Consulting & Development
 email: boris.fruendt@gmail.com
 description: >
-  I'm Boris – Freelance technical consultant & developer from Hamburg. Nice to finally meet you! Let's meet.
+  I'm Boris – Freelance tech consultant & developer. Nice to finally meet you! Let's meet.
 favicon: "/favicon.ico"
 logo: "/assets/images/share.jpg"
 logo_alt: "Me wearing shirt and tie behind my logo and the domain name boris.io"
 baseurl: ""
 url: "https://boris.io"
-name: 'Boris Fründt'
+name: "Boris Fründt"
 author_image: "/assets/images/logo.jpg"
 publisher_image: "/assets/images/publisher.png"
 twitter_username: bondt
-github_username:  b0ndt
+github_username: b0ndt
 
 # Google Analytics
 analytics_id: "UA-127964474-1"
@@ -55,9 +55,8 @@ assets:
     type: file
     enabled: true
   precompile: []
-  raw_precompile: [
-    #
-  ]
+  raw_precompile: []
+  #
   cdn:
     baseurl: false
     destination: false
@@ -92,5 +91,5 @@ assets:
     - img
     - js
   plugins:
-    css: { autoprefixer: {}}
-    img: { optim: {}}
+    css: { autoprefixer: {} }
+    img: { optim: {} }
