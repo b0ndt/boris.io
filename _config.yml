@@ -35,11 +35,7 @@ sass:
   style: compressed
 
 plugins:
-  - jekyll-tidy
   - jekyll-assets
-
-jekyll_tidy:
-  compress_html: false
 
 assets:
   source_maps: true
