@@ -15,14 +15,14 @@ logo: "/assets/images/share.jpg"
 logo_alt: "Me wearing shirt and tie behind my logo and the domain name boris.io"
 baseurl: ""
 url: "https://boris.io"
-name: 'Boris Fründt'
+name: "Boris Fründt"
 author_image: "/assets/images/logo.jpg"
 publisher_image: "/assets/images/publisher.png"
 twitter_username: bondt
-github_username:  b0ndt
+github_username: b0ndt
 
 # Google Analytics
-analytics_id: "UA-127964474-1"
+analytics_id: "G-LNBW1L9M8Z"
 
 # Build settings
 markdown: kramdown
@@ -51,9 +51,8 @@ assets:
     type: file
     enabled: true
   precompile: []
-  raw_precompile: [
-    #
-  ]
+  raw_precompile: []
+  #
   cdn:
     baseurl: false
     destination: false
@@ -88,5 +87,5 @@ assets:
     - img
     - js
   plugins:
-    css: { autoprefixer: {}}
-    img: { optim: {}}
+    css: { autoprefixer: {} }
+    img: { optim: {} }
