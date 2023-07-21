@@ -389,14 +389,14 @@ ul {
 
   .banner {
     position: relative;
-    height: 500px;
+    height: 400px;
     max-height: 528px;
-    background-image: $diagonal, $layer, $header;
-    background-color: transparent;
-    background-size: 5px, 5px, cover;
-    background-repeat: repeat, repeat, no-repeat;
-    background-position: center center;
-    box-shadow: 0 -50px 100px 20px $black inset;
+    // background-image: $diagonal, $layer, $header;
+    background-color: $darkblue;
+    // background-size: 5px, 5px, cover;
+    // background-repeat: repeat, repeat, no-repeat;
+    // background-position: center center;
+    box-shadow: 0 -50px 100px 20px #020321 inset;
     color: $white;
     padding-top: 0;
   }
@@ -499,7 +499,7 @@ ul {
 
   .menu-bar {
     position: absolute;
-    top: 500px;
+    top: 400px;
     left: 12%;
     max-width: 1200px;
     padding: 0 5%;
@@ -605,9 +605,9 @@ ul {
   }
 
   .user-title {
-    text-shadow: 0.15em 0.15em 0em $black;
+    // text-shadow: 0.15em 0.15em 0em $black;
     padding: 0 8px;
-    height: 43%;
+    height: 57%;
     margin: auto;
     display: block;
     position: absolute;
