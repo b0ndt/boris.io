@@ -89,3 +89,6 @@ assets:
   plugins:
     css: { autoprefixer: {} }
     img: { optim: {} }
+
+include:
+  - _headers
