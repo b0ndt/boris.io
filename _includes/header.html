@@ -1,13 +1,12 @@
 <header id="top" class="banner">
-    <amp-img alt="Background" src="/assets/images/header.webp" layout="fill">
-        <amp-img fallback alt="Background" src="/assets/images/header.jpg" layout="fill"></amp-img>
-    </amp-img>
     <div class="user-title" amp-fx="parallax" data-parallax-factor="1.3">
         <h1 class="full-name">
             boris.io
             <svg width="79.001" height="125" viewBox="0 0 79.001 125" xmlns="http://www.w3.org/2000/svg">
                 <title></title>
-                <path d="M 49.678466,0.40348861 38.280161,42.627119 l 30.152542,0 -42.050847,57.254233 12.762712,-42.491521 -30.457627,0" fill="#FFFFFF" fill-opacity="1" stroke="none"/>
+                <path
+                    d="M 49.678466,0.40348861 38.280161,42.627119 l 30.152542,0 -42.050847,57.254233 12.762712,-42.491521 -30.457627,0"
+                    fill="#FFFFFF" fill-opacity="1" stroke="none" />
             </svg>
         </h1>
         <h2 class="title">{% if page.welcome %}{{ page.welcome }}{% else %}{{ page.title }}{% endif %}</h2>
