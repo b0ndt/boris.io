@@ -1,3 +1,10 @@
+@import "variables";
+@import "mixins";
+
+@import "base";
+@import "layout";
+@import "navigation";
+
 @import "colors";
 @import "fonts";
 @import "urls";
@@ -45,8 +52,8 @@ summary {
 %extend {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: $spacing-base;
+  padding-right: $spacing-base;
 }
 
 a {
@@ -87,17 +94,9 @@ ul {
 /* Layout styles */
 
 .row {
-  margin-left: -15px;
-  margin-right: -15px;
-  &:before {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    content: " ";
-    display: table;
-    clear: both;
-  }
+  margin-left: -$spacing-base;
+  margin-right: -$spacing-base;
+  @include clearfix;
 }
 
 .col-sm-4,
@@ -105,7 +104,7 @@ ul {
   @extend %extend;
 }
 
-@media (min-width: 1024px) {
+@include desktop {
   .col-sm-4 {
     float: left;
     width: 33.33333333%;
@@ -117,7 +116,7 @@ ul {
   }
 
   .container {
-    width: 750px;
+    width: $container-width;
   }
 
   .navbar-nav {
@@ -127,29 +126,10 @@ ul {
       float: left;
       line-height: 37px;
       > a {
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: $spacing-base;
+        padding-bottom: $spacing-base;
         position: relative;
-        &:after {
-          content: "";
-          position: absolute;
-          background-color: currentColor;
-          height: 1px;
-          width: 20px;
-          left: 50%;
-          bottom: 14px;
-          margin-left: -10px;
-          transform-origin: center;
-          transition: transform 120ms ease-in-out;
-          will-change: transform;
-          transform: scaleX(0);
-        }
-        &:hover,
-        &.active {
-          &:after {
-            transform: scaleX(1);
-          }
-        }
+        @include underline-hover;
       }
     }
   }
@@ -265,7 +245,7 @@ ul {
   section {
     position: relative;
     word-wrap: break-word;
-    max-width: 1200px;
+    max-width: $max-content-width;
     padding: 0 5%;
     margin: 0 auto;
     width: 100%;
@@ -277,19 +257,19 @@ ul {
       background-color: $darkgrey;
       header,
       article {
-        max-width: 1200px;
+        max-width: $max-content-width;
         padding-left: 5%;
         padding-right: 5%;
         margin: 0 auto;
         p,
         .header-text {
-          padding-left: 15px;
-          padding-right: 15px;
+          padding-left: $spacing-base;
+          padding-right: $spacing-base;
         }
         & > p,
         & > h3,
         & > .header-text {
-          @media (min-width: 768px) {
+          @include tablet {
             padding-left: 62px;
             padding-right: 62px;
           }
@@ -333,6 +313,12 @@ ul {
         display: none;
       }
     }
+    
+    // Fix content layout for tablet view using mixins
+    @include tablet {
+      margin-top: 30px; // Add space after banner
+    }
+    
     &:after {
       content: "";
       display: block;
@@ -351,12 +337,15 @@ ul {
   .banner {
     position: relative;
     height: 500px;
-    @media (min-width: 768px) {
+    @include tablet {
       height: calc(100vh - 54px);
+      max-height: 280px; // Adjust height to prevent content overlap
+      overflow: hidden; // Prevent overflow
     }
     max-height: 330px;
     color: $white;
     padding-top: 0;
+    
     amp-img {
       img {
         object-fit: cover;
@@ -458,13 +447,13 @@ ul {
     position: -webkit-sticky;
     top: -1px;
     z-index: 2;
-    @media (min-width: 1024px) {
-      min-height: 55px;
+    @include desktop {
+      min-height: $menu-height;
     }
   }
   .menu-bar {
     position: relative;
-    max-width: 1200px;
+    max-width: $max-content-width;
     padding: 0 5%;
     margin: 0 auto;
     width: 100%;
@@ -476,7 +465,7 @@ ul {
         font-family: $oswald, $sans;
         font-weight: 300;
         line-height: 150%;
-        padding: 15px 25px;
+        padding: $spacing-base 25px;
         border-right: 1px solid $darkgrey;
         cursor: pointer;
       }
@@ -496,6 +485,13 @@ ul {
     z-index: 3;
     .css-crop {
       padding-bottom: 100%;
+    }
+    
+    // Fix for tablet view using mixins
+    @include tablet {
+      width: 100px;
+      bottom: -20px;
+      left: 20px;
     }
   }
   .user-title {
@@ -545,6 +541,12 @@ ul {
         text-align: left;
       }
     }
+    
+    // Fix for tablet view using mixins
+    @include tablet {
+      border-left: none; // Remove left border
+      padding-left: 25px; // Adjust padding
+    }
   }
   .competency {
     .competency-bar {
@@ -562,38 +564,79 @@ ul {
     border-right: 0;
     h4 {
       margin-top: 20px;
-      @media (min-width: 1024px) {
+      @include desktop {
         text-align: right;
       }
+      
+      // Fix alignment in tablet view using mixins
+      @include tablet {
+        text-align: left;
+        padding-left: 0;
+        margin-top: 15px;
+      }
     }
-    &.marked span {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      background: $darkblue;
-      border-radius: 100%;
-      box-shadow: 0 0 0 2px $white;
-      top: 6px;
-      left: -6px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-content: stretch;
-      align-items: center;
-      svg {
-        width: 14px;
-        height: 14px;
-        order: 0;
-        flex: 0 1 auto;
-        align-self: auto;
+    &.marked {
+      position: relative;
+      
+      // Add vertical line connecting the dots - set to exactly where the dots are
+      &:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background-color: $darkblue;
+        top: 0;
+        bottom: 0;
+        right: -1px;
+        z-index: 0;
+        
+        // Only show the line on desktop
+        display: none;
+        
+        @include desktop {
+          display: block;
+        }
       }
-      @media (min-width: 768px) {
-        top: 4px;
-        left: auto;
-        right: -8px;
+
+      // Special treatment for the first and last item in a section
+      &:first-of-type:before {
+        top: 6px;
       }
-      z-index: 1;
+      
+      &:last-of-type:before {
+        bottom: calc(100% - 6px);
+      }
+      
+      // The dots/circles
+      span {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: $darkblue;
+        border-radius: 100%;
+        box-shadow: 0 0 0 2px $white;
+        top: 6px;
+        
+        // Default position (mobile/tablet): on the left
+        left: -6px;
+        right: auto;
+        
+        @include flex-center;
+        z-index: 1;
+        
+        // Desktop: Position dot to be centered on the line on the right
+        @include desktop {
+          left: auto;
+          right: -8px;
+        }
+        
+        svg {
+          width: 14px;
+          height: 14px;
+          order: 0;
+          flex: 0 1 auto;
+          align-self: auto;
+        }
+      }
     }
   }
   .nowrap-list li {
@@ -669,30 +712,17 @@ footer {
   border-top: 1px solid $darkestgrey;
   a {
     position: relative;
+    @include underline-hover;
+    
+    // Override the mixin's positioning to ensure line appears below text
     &:after {
-      content: "";
-      position: absolute;
-      background-color: currentColor;
-      height: 1px;
-      width: 20px;
-      left: 50%;
-      bottom: -2px;
-      margin-left: -10px;
-      transform-origin: center;
-      transition: transform 120ms ease-in-out;
-      will-change: transform;
-      transform: scaleX(0);
-    }
-    &:hover,
-    &.active {
-      &:after {
-        transform: scaleX(1);
-      }
+      top: auto; // Reset any top positioning from the mixin
+      bottom: -3px; // Position below text
     }
   }
 }
 
-@media (max-width: 1023px) {
+@include mobile {
   .cv-viewer {
     .menu {
       position: relative;
@@ -745,20 +775,12 @@ footer {
       width: 100%;
       margin-left: 0;
     }
-    section[data-table="text_stories"] {
-      width: 100%;
-      margin-left: 0;
-      border-left: none;
-      padding-left: 15px;
-      &.popup-gallery {
-        padding-left: 10px;
-      }
-    }
+    section[data-table="text_stories"],
     section[data-table="graph_stories"] {
       width: 100%;
       margin-left: 0;
       border-left: none;
-      padding-left: 15px;
+      padding-left: $spacing-base;
       &.popup-gallery {
         padding-left: 10px;
       }
@@ -787,4 +809,90 @@ amp-image-viewer {
 amp-image-viewer,
 amp-carousel div {
   background-color: $white;
+}
+
+// Replace this entire section with tablet mixin
+@include tablet {
+  .cv-viewer {
+    // Fix for section headings
+    .header-text {
+      font-size: 180%; // Smaller font size
+      margin-bottom: 15px; // Add bottom margin
+      text-align: center; // Ensure headings are centered
+    }
+    
+    // Adjust h1 for proper spacing
+    h1 {
+      font-size: 250%; // Slightly smaller heading
+      margin-bottom: 10px;
+      line-height: 55px;
+    }
+    
+    // Center section containers while preserving content alignment
+    section {
+      margin-top: 20px; // Add space between sections
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%; // Control width to center content
+      padding-left: 0;
+      padding-right: 0;
+    }
+    
+    // Adjust column layout for proper centering
+    .col-sm-4 {
+      width: 30%; // Adjust column width
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    
+    .col-sm-8 {
+      width: 70%; // Adjust column width
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    
+    // Make all sections have consistent container centering
+    section > header {
+      h6, h3 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+    }
+    
+    // Handle the sections with lists better
+    article {
+      padding-left: 15px; // Add consistent padding
+      padding-right: 15px;
+      max-width: 100%; // Ensure content uses available space
+    }
+    
+    // For all list-containing sections (like "WHAT I DO" and "HOW I WORK")
+    section:not(.full-width) {
+      h6 {
+        text-align: center; // Center section headings
+      }
+      
+      // Special handling for list items
+      ul {
+        max-width: 95%; // Slightly narrower than container for better centering
+        margin: 0 auto; // Center the list container
+        
+        li {
+          margin-bottom: 15px;
+          position: relative;
+          padding-left: 25px; // Space for dots/icons
+        }
+      }
+    }
+    
+    // Improve the dot/circle icon positioning globally
+    .timetable-left.marked span {
+      left: -8px; // Adjust the dot position
+    }
+    
+    // Fix spacing after the banner
+    #why {
+      margin-top: 50px; // Add extra space for the first section
+    }
+  }
 }
