@@ -1,3 +1,7 @@
+// Override breakpoints for responsive design improvements
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px; // Changed from 1024px to 1200px to improve tablet experience
+
 @import "variables";
 @import "mixins";
 

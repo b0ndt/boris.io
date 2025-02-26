@@ -5,11 +5,21 @@
     -webkit-column-gap: 2em;
     padding-top: 2em;
 
-    @media(min-width: 768px) {
+    @include tablet {
         columns: 6;
         -webkit-columns: 6;
         column-gap: 6em;
+        -webkit-column-gap: 6em;
+        padding-top: 4em;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    @include desktop {
+        columns: 6;
+        -webkit-columns: 6;
         column-gap: 6em;
+        -webkit-column-gap: 6em;
         padding-top: 4em;
         padding-left: 15px;
         padding-right: 15px;
