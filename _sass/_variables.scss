@@ -27,14 +27,24 @@ $line-height-headings: 1.5;
 $line-height-body: 1.5;
 $line-height-large: 1.6;
 
+// Spacing System - For consistent vertical rhythm
+$spacing-xs: 0.5rem;      // 8px
+$spacing-sm: 1rem;        // 16px
+$spacing-md: 1.5rem;      // 24px
+$spacing-lg: 2rem;        // 32px
+$spacing-xl: 3rem;        // 48px
+$spacing-xxl: 4.5rem;     // 72px
+
 // URLs
 $diagonal: url('/assets/images/diagonal-left.png');
 $layer: url('/assets/images/black20.png');
 
-// Dimensions
-$spacing-base: 15px;
-$spacing-double: $spacing-base * 2;
-$container-width: 750px;
+// Container & Grid
+$spacing-base: $spacing-sm;
+$spacing-double: $spacing-lg;
+$container-width: 85%;    // Fluid width based on percentage
+$container-max-width: 1400px; // Max width for very large screens
+$container-min-width: 320px;  // Min width for small screens
 $max-content-width: 1200px;
 $banner-height: 400px;
 $menu-height: 55px;
@@ -42,7 +52,7 @@ $menu-height: 55px;
 // Breakpoints
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
+$breakpoint-desktop: 1200px;
 
 // Animation
 $transition-duration: 120ms;

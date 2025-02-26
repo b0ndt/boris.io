@@ -278,6 +278,8 @@ ul {
   font-family: $pt, $sans;
   font-weight: 300;
   padding: 0;
+  
+  // Section styling with consistent spacing
   section {
     position: relative;
     word-wrap: break-word;
@@ -285,11 +287,12 @@ ul {
     padding: 0 5%;
     margin: 0 auto;
     width: 100%;
+    
     &.full-width {
       max-width: none;
       padding-left: 0;
       padding-right: 0;
-      padding-bottom: 2em;
+      padding-bottom: $spacing-lg; // Consistent padding
       background-color: $darkgrey;
       header,
       article {
@@ -306,18 +309,30 @@ ul {
         & > h3,
         & > .header-text {
           @include tablet {
-            padding-left: 62px;
-            padding-right: 62px;
+            padding-left: $spacing-xl;
+            padding-right: $spacing-xl;
           }
         }
       }
     }
+    
     &:after {
       content: " ";
       display: table;
     }
+    
+    // Consistent header spacing
+    > header {
+      margin-bottom: $spacing-lg;
+    }
+    
+    // Last section needs no bottom margin
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
     article:last-child > .timetable-right:last-child {
-      padding-bottom: 2em;
+      padding-bottom: $spacing-lg;
     }
   }
 
@@ -332,11 +347,17 @@ ul {
       padding-right: 0;
     }
     .article-body {
-      padding-bottom: 0.25em;
+      padding-bottom: $spacing-xs;
     }
     p {
       font-size: $text-base;
       line-height: $line-height-body;
+      margin-bottom: $spacing-md; // Consistent paragraph spacing
+      
+      // Last paragraph in an article needs no bottom margin
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
   .cv-content {
@@ -373,17 +394,11 @@ ul {
   .banner {
     position: relative;
     height: 320px;
-    @include tablet {
-      height: calc(100vh - 54px);
-      max-height: 280px; // Adjust height to prevent content overlap
-      overflow: hidden; // Prevent overflow
-    }
     @include desktop {
       height: calc(100vh - 54px);
       max-height: 280px;
       overflow: hidden;
     }
-    max-height: 320px;
     color: $white;
     padding-top: 0;
     
@@ -453,7 +468,7 @@ ul {
     cursor: pointer;
   }
   header {
-    padding-top: 3em;
+    padding-top: $spacing-xl;
     font-weight: initial;
     text-align: center;
     .header-text {
@@ -464,16 +479,16 @@ ul {
   .navbar {
     position: relative;
     min-height: 50px;
-    margin-bottom: 20px;
+    margin-bottom: $spacing-md;
     border: 1px solid transparent;
   }
   .navbar-nav {
     > li > a {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: $spacing-sm;
+      padding-bottom: $spacing-sm;
       line-height: 20px;
       display: inline-block;
-      padding: 10px 20px;
+      padding: $spacing-sm $spacing-md;
     }
   }
   .menu {
@@ -568,12 +583,12 @@ ul {
   .timetable-right {
     min-height: 60px;
     border-left: 1px solid $darkestgrey;
-    padding-left: 55px;
+    padding-left: $spacing-xl;
     &.last {
-      padding-bottom: 2em;
+      padding-bottom: $spacing-lg;
     }
     & > header {
-      padding-bottom: 1em;
+      padding-bottom: $spacing-md;
       .header-text {
         text-align: left;
       }
@@ -582,12 +597,12 @@ ul {
     // Fix for tablet view using mixins
     @include tablet {
       border-left: none; // Remove left border
-      padding-left: 25px; // Adjust padding
+      padding-left: $spacing-lg; // Adjust padding
     }
   }
   .competency {
     .competency-bar {
-      margin: 0.5em 0 0.75em;
+      margin: $spacing-xs 0 $spacing-sm;
       width: 100%;
       background-color: $darkestgrey;
       height: 1px;
@@ -600,7 +615,7 @@ ul {
   .timetable-left {
     border-right: 0;
     h4 {
-      margin-top: 20px;
+      margin-top: $spacing-md;
       @include desktop {
         text-align: right;
       }
@@ -609,7 +624,7 @@ ul {
       @include tablet {
         text-align: left;
         padding-left: 0;
-        margin-top: 15px;
+        margin-top: $spacing-sm;
       }
     }
     &.marked {
@@ -854,80 +869,80 @@ amp-carousel div {
     // Fix for section headings
     .header-text {
       font-size: 180%; // Smaller font size
-      margin-bottom: 15px; // Add bottom margin
+      margin-bottom: $spacing-md; // Consistent spacing
       text-align: center; // Ensure headings are centered
     }
     
     // Adjust h1 for proper spacing
     h1 {
-      margin-bottom: 10px;
+      margin-bottom: $spacing-sm;
     }
     
     // Center section containers while preserving content alignment
     section {
-      margin-top: 20px; // Add space between sections
+      margin-top: $spacing-lg; // Consistent spacing
       margin-left: auto;
       margin-right: auto;
-      width: 90%; // Control width to center content
+      width: 90%;
       padding-left: 0;
       padding-right: 0;
     }
     
     // Adjust column layout for proper centering
     .col-sm-4 {
-      width: 30%; // Adjust column width
-      padding-left: 15px;
-      padding-right: 15px;
+      width: 30%;
+      padding-left: $spacing-sm;
+      padding-right: $spacing-sm;
     }
     
     .col-sm-8 {
-      width: 70%; // Adjust column width
-      padding-left: 15px;
-      padding-right: 15px;
+      width: 70%;
+      padding-left: $spacing-sm;
+      padding-right: $spacing-sm;
     }
     
     // Make all sections have consistent container centering
     section > header {
       h6, h3 {
         text-align: center;
-        margin-bottom: 25px;
+        margin-bottom: $spacing-lg;
       }
     }
     
     // Handle the sections with lists better
     article {
-      padding-left: 15px; // Add consistent padding
-      padding-right: 15px;
-      max-width: 100%; // Ensure content uses available space
+      padding-left: $spacing-sm;
+      padding-right: $spacing-sm;
+      max-width: 100%;
     }
     
     // For all list-containing sections (like "WHAT I DO" and "HOW I WORK")
     section:not(.full-width) {
       h6 {
-        text-align: center; // Center section headings
+        text-align: center;
       }
       
       // Special handling for list items
       ul {
-        max-width: 95%; // Slightly narrower than container for better centering
-        margin: 0 auto; // Center the list container
+        max-width: 95%;
+        margin: 0 auto;
         
         li {
-          margin-bottom: 15px;
+          margin-bottom: $spacing-md;
           position: relative;
-          padding-left: 25px; // Space for dots/icons
+          padding-left: $spacing-lg;
         }
       }
     }
     
     // Improve the dot/circle icon positioning globally
     .timetable-left.marked span {
-      left: -8px; // Adjust the dot position
+      left: -8px;
     }
     
     // Fix spacing after the banner
     #why {
-      margin-top: 50px; // Add extra space for the first section
+      margin-top: $spacing-xxl;
     }
   }
 }
