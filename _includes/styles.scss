@@ -5,6 +5,38 @@ $breakpoint-desktop: 1200px; // Changed from 1024px to 1200px to improve tablet 
 @import "variables";
 @import "mixins";
 
+// Typography overrides - Simplified
+html {
+  font-size: $base-font-size;
+  line-height: $line-height-body;
+}
+
+body {
+  font-size: $text-base;
+  line-height: $line-height-body;
+}
+
+p {
+  font-size: $text-base;
+  line-height: $line-height-body;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: $line-height-headings;
+  font-weight: 400;
+}
+
+h1 { font-size: $text-xlarge; }
+h2 { font-size: $text-large; }
+h3 { font-size: $text-large; }
+h4 { font-size: $text-medium; }
+h5 { font-size: $text-medium; }
+h6 { font-size: $text-large; }
+
 @import "base";
 @import "layout";
 @import "navigation";
@@ -303,8 +335,8 @@ ul {
       padding-bottom: 0.25em;
     }
     p {
-      font-size: 14px;
-      line-height: 22px;
+      font-size: $text-base;
+      line-height: $line-height-body;
     }
   }
   .cv-content {
@@ -340,13 +372,18 @@ ul {
   }
   .banner {
     position: relative;
-    height: 500px;
+    height: 320px;
     @include tablet {
       height: calc(100vh - 54px);
       max-height: 280px; // Adjust height to prevent content overlap
       overflow: hidden; // Prevent overflow
     }
-    max-height: 330px;
+    @include desktop {
+      height: calc(100vh - 54px);
+      max-height: 280px;
+      overflow: hidden;
+    }
+    max-height: 320px;
     color: $white;
     padding-top: 0;
     
@@ -363,19 +400,15 @@ ul {
       top: 0;
       width: 100%;
       height: 100%;
-      // background-image: $diagonal;
-      // background-color: transparent;
-      // background-size: 5px, 5px;
-      // background-repeat: repeat, repeat;
       background-color: $darkblue;
       box-shadow: 0 -50px 100px 20px #020321 inset;
     }
   }
   h1 {
     font-family: $oswald, $sans;
-    font-size: 300%;
+    font-size: $text-xlarge;
     margin: 0;
-    line-height: 75px;
+    line-height: $line-height-large;
     text-transform: uppercase;
     font-weight: 300;
     margin-bottom: 0.25em;
@@ -384,34 +417,33 @@ ul {
     margin-top: 0;
     margin-bottom: 0.25em;
     font-weight: 400;
-    font-size: 150%;
+    font-size: $text-medium;
   }
   h3 {
     margin-top: 0;
     margin-bottom: 0.25em;
     font-weight: 400;
     font-family: $oswald, $sans;
-    font-size: 200%;
+    font-size: $text-large;
   }
   h4 {
     margin-top: 0;
     margin-bottom: 0.25em;
     font-weight: 400;
-    font-size: 120%;
+    font-size: $text-medium;
   }
   h5 {
     margin-top: 0;
     margin-bottom: 0.25em;
     font-weight: 400;
-    font-weight: 400;
-    font-size: 115%;
+    font-size: $text-medium;
   }
   h6 {
     margin-top: 0;
     margin-bottom: 0.25em;
     font-weight: 400;
     font-family: $oswald, $sans;
-    font-size: 225%;
+    font-size: $text-large;
   }
   strong {
     font-weight: 700;
@@ -464,11 +496,11 @@ ul {
     .nav {
       overflow: hidden;
       margin-left: 17%;
-      font-size: 100%;
+      font-size: $text-base;
       > li > a {
         font-family: $oswald, $sans;
         font-weight: 300;
-        line-height: 150%;
+        line-height: 1.5;
         padding: $spacing-base 25px;
         border-right: 1px solid $darkgrey;
         cursor: pointer;
@@ -529,7 +561,8 @@ ul {
   }
   .summary-text {
     margin-top: 0;
-    font-size: 125%;
+    font-size: $text-medium;
+    line-height: $line-height-body;
     font-weight: 200;
   }
   .timetable-right {
@@ -827,9 +860,7 @@ amp-carousel div {
     
     // Adjust h1 for proper spacing
     h1 {
-      font-size: 250%; // Slightly smaller heading
       margin-bottom: 10px;
-      line-height: 55px;
     }
     
     // Center section containers while preserving content alignment
