@@ -1,0 +1,36 @@
+// Colors
+$black: #333;
+$blue: #002d9c;
+$darkblue: #000a43;
+$green: #091e17;
+$white: #fff;
+$grey: #fcfcfc;
+$darkgrey: #f6f6f6;
+$darkestgrey: #dedede;
+
+// Fonts
+$sans: 'sans-serif';
+$mono: 'monospace';
+$pt: 'PT Sans';
+$oswald: 'Oswald';
+
+// URLs
+$diagonal: url('/assets/images/diagonal-left.png');
+$layer: url('/assets/images/black20.png');
+
+// Dimensions
+$spacing-base: 15px;
+$spacing-double: $spacing-base * 2;
+$container-width: 750px;
+$max-content-width: 1200px;
+$banner-height: 400px;
+$menu-height: 55px;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Animation
+$transition-duration: 120ms;
+$transition-easing: ease-in-out; 

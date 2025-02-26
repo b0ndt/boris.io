@@ -1,0 +1,104 @@
+// Navigation styles
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.navbar-nav {
+  > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+  }
+  
+  @include desktop {
+    float: left;
+    margin: 0;
+    
+    > li {
+      float: left;
+      line-height: 37px;
+      
+      > a {
+        padding-top: $spacing-base;
+        padding-bottom: $spacing-base;
+        position: relative;
+        @include underline-hover;
+      }
+    }
+  }
+}
+
+.menu {
+  background: $white;
+  border-bottom: 1px solid $darkestgrey;
+  position: sticky;
+  position: -webkit-sticky;
+  top: -1px;
+  z-index: 2;
+  
+  @include desktop {
+    min-height: $menu-height;
+  }
+}
+
+.menu-bar {
+  position: relative;
+  max-width: $max-content-width;
+  padding: 0 5%;
+  margin: 0 auto;
+  width: 100%;
+  
+  .nav {
+    overflow: hidden;
+    margin-left: 17%;
+    font-size: 100%;
+    
+    > li > a {
+      font-family: $oswald, $sans;
+      font-weight: 300;
+      line-height: 150%;
+      padding: $spacing-base 25px;
+      border-right: 1px solid $darkgrey;
+      cursor: pointer;
+    }
+
+    > li:last-child > a {
+      border: 0 none;
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+  
+  @include mobile {
+    display: block;
+    position: sticky;
+    left: calc(100vw - 38px);
+    top: 4px;
+    background: 0 none;
+    border: 0 none;
+    z-index: 13;
+    width: 30px;
+    height: 34px;
+    padding: 0;
+    font-size: 30px;
+    
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.25em;
+      width: 1em;
+      height: 0.1em;
+      background: black;
+      box-shadow: 0 0.25em 0 0 black, 0 0.5em 0 0 black;
+      filter: drop-shadow(2px 2px 1px $white);
+    }
+  }
+} 

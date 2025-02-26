@@ -1,0 +1,60 @@
+// Base styles
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline: 0;
+  }
+}
+
+html {
+  font-family: $sans;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+article, aside, details, figcaption, figure, footer,
+header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+a {
+  font-family: $oswald, $sans;
+  background-color: transparent;
+  text-decoration: none;
+  opacity: 1;
+  
+  svg {
+    opacity: 0.8;
+  }
+  
+  &:active,
+  &:hover {
+    outline: 0;
+    
+    svg {
+      opacity: 1;
+    }
+  }
+}
+
+b,
+strong {
+  color: $darkblue;
+  font-family: $oswald, $sans;
+  font-weight: 700;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+} 

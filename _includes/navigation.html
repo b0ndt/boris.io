@@ -1,0 +1,47 @@
+<nav class="menu profile" id="profile">
+  <div class="menu-bar content-container clearfix">
+    {% include stage.html %}
+    <div id="target-element">
+    </div>
+  </div>
+</nav>
+<amp-sidebar id="sidebar" layout="nodisplay" side="right">
+  <nav toolbar="(min-width: 1024px)" toolbar-target="target-element">
+    <ul class="nav navbar-nav clearfix">
+      {% if page.layout == 'default' %}
+      <li>
+        <a on="tap:sidebar.close,why.scrollTo">Introduction</a>
+      </li>
+      <li>
+        <a on="tap:sidebar.close,what.scrollTo">What I do</a>
+      </li>
+      <li>
+        <a on="tap:sidebar.close,expertise.scrollTo">Work areas</a>
+      </li>
+      <li>
+        <a on="tap:sidebar.close,skills.scrollTo">Skills</a>
+      </li>
+      <li>
+        <a on="tap:sidebar.close,clients.scrollTo">Brands</a>
+      </li>
+      <li>
+        <a on="tap:sidebar.close,how.scrollTo">How I work</a>
+      </li>
+      <li>
+        <a on="tap:sidebar.close,contact.scrollTo">Contact</a>
+      </li>
+      {% else %}
+      <li>
+        <a href="/" title="Home">Home</a>
+      </li>
+      <li>
+        <a href="/imprint/" title="Imprint">Imprint</a>
+      </li>
+      <li>
+        <a href="/data-privacy/" title="Data Privacy">Data Privacy</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+</amp-sidebar>
+<button class="hamburger" on='tap:sidebar.toggle'></button>

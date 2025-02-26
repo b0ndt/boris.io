@@ -4,42 +4,7 @@ welcome: Hey there! I'm Boris – Freelance tech consultant & developer.<br>Nice
 ---
 
 {% include header.html %}
-
-<nav class="menu profile" id="profile">
-    <div class="menu-bar content-container clearfix">
-        {% include stage.html %}
-        <div id="target-element">
-        </div>
-    </div>
-</nav>
-<amp-sidebar id="sidebar" layout="nodisplay" side="right">
-    <nav toolbar="(min-width: 1024px)" toolbar-target="target-element">
-        <ul class="nav navbar-nav clearfix">
-            <li>
-                <a on="tap:sidebar.close,why.scrollTo">Introduction</a>
-            </li>
-            <li>
-                <a on="tap:sidebar.close,what.scrollTo">What I do</a>
-            </li>
-            <li>
-                <a on="tap:sidebar.close,expertise.scrollTo">Work areas</a>
-            </li>
-            <li>
-                <a on="tap:sidebar.close,skills.scrollTo">Skills</a>
-            </li>
-            <li>
-                <a on="tap:sidebar.close,clients.scrollTo">Brands</a>
-            </li>
-            <li>
-                <a on="tap:sidebar.close,how.scrollTo">How I work</a>
-            </li>
-            <li>
-                <a on="tap:sidebar.close,contact.scrollTo">Contact</a>
-            </li>
-        </ul>
-    </nav>
-</amp-sidebar>
-<button class="hamburger" on='tap:sidebar.toggle'></button>
+{% include navigation.html %}
 
 <section id="why" class="text_story full-width">
     <header>
@@ -60,7 +25,7 @@ welcome: Hey there! I'm Boris – Freelance tech consultant & developer.<br>Nice
             our jobs. Was it generating creative ideas non-stop, managing clients and projects with heart and soul or
             developing state-of-the-art web applications: People at JvM really reach for excellent results and
             <strong>"we
-                remain dissatisfied"</strong> – one of JvM’s core principles – was not a mere cliche. This standard I
+                remain dissatisfied"</strong> – one of JvM's core principles – was not a mere cliche. This standard I
             adopted into my own working policy.
         </p>
         <p>In contrast, my career stopovers at <strong>IBM</strong> were different in terms of work approaches, used
@@ -545,7 +510,7 @@ welcome: Hey there! I'm Boris – Freelance tech consultant & developer.<br>Nice
                         <g fill="none" fill-rule="evenodd">
                             <circle stroke="#081a6f" cx="22" cy="22" r="21.5" class="social-circle"></circle>
                             <path
-                                d="M22.5 11c3.123 0 3.515.013 4.74.07 1.225.055 2.06.25 2.793.534a5.637 5.637 0 0 1 2.037 1.326c.64.64 1.032 1.28 1.326 2.037.285.732.48 1.568.535 2.792.057 1.225.07 1.617.07 4.74s-.013 3.515-.07 4.74c-.055 1.225-.25 2.06-.534 2.793a5.638 5.638 0 0 1-1.326 2.037 5.638 5.638 0 0 1-2.037 1.326c-.732.285-1.568.48-2.792.535-1.225.057-1.617.07-4.74.07s-3.515-.013-4.74-.07c-1.225-.055-2.06-.25-2.793-.534a5.638 5.638 0 0 1-2.037-1.326 5.637 5.637 0 0 1-1.326-2.037c-.285-.732-.48-1.568-.535-2.792-.057-1.225-.07-1.617-.07-4.74s.013-3.515.07-4.74c.055-1.225.25-2.06.534-2.793a5.637 5.637 0 0 1 1.326-2.037 5.637 5.637 0 0 1 2.037-1.326c.732-.285 1.568-.48 2.792-.535 1.225-.057 1.617-.07 4.74-.07zm0 2.072c-3.07 0-3.434.012-4.647.067-1.12.05-1.73.238-2.135.395-.537.21-.92.458-1.323.86a3.563 3.563 0 0 0-.86 1.323c-.157.405-.345 1.014-.396 2.135-.056 1.213-.068 1.576-.068 4.647 0 3.07.012 3.434.067 4.647.05 1.12.238 1.73.395 2.135.21.537.458.92.86 1.323.403.402.786.65 1.323.86.405.157 1.014.345 2.135.396 1.213.056 1.576.068 4.647.068 3.07 0 3.435-.012 4.647-.067 1.12-.05 1.73-.238 2.135-.395.537-.21.92-.458 1.323-.86.402-.403.65-.786.86-1.323.157-.405.345-1.014.396-2.135.056-1.213.068-1.576.068-4.647 0-3.07-.012-3.434-.067-4.647-.05-1.12-.238-1.73-.395-2.135a3.563 3.563 0 0 0-.86-1.323 3.563 3.563 0 0 0-1.323-.86c-.405-.157-1.014-.345-2.135-.396-1.213-.056-1.576-.068-4.647-.068zm0 3.523a5.905 5.905 0 1 1 0 11.81 5.905 5.905 0 0 1 0-11.81zm0 9.738a3.833 3.833 0 1 0 0-7.666 3.833 3.833 0 0 0 0 7.666zm7.52-9.972a1.38 1.38 0 1 1-2.76 0 1.38 1.38 0 0 1 2.76 0z"
+                                d="M22.5 11c3.123 0 3.515.013 4.74.07 1.225.055 2.06.25 2.793.534a5.637 5.637 0 0 1 2.037 1.326c.64.64 1.032 1.28 1.326 2.037.285.732.48 1.568.535 2.792.057 1.225.07 1.617.07 4.74s-.013 3.515-.07 4.74c-.055 1.225-.25 2.06-.534 2.793a5.638 5.638 0 0 1-1.326 2.037 5.638 5.638 0 0 1-2.037 1.326c-.732.285-1.568.48-2.792.535-1.225.057-1.617.07-4.74.07s-3.515-.013-4.74-.07c-1.225-.055-2.06-.25-2.793-.534a5.637 5.637 0 0 1-2.037-1.326 5.637 5.637 0 0 1-1.326-2.037c-.285-.732-.48-1.568-.535-2.792-.057-1.225-.07-1.617-.07-4.74s.013-3.515.07-4.74c.055-1.225.25-2.06.534-2.793a5.637 5.637 0 0 1 1.326-2.037 5.637 5.637 0 0 1 2.037-1.326c.732-.285 1.568-.48 2.792-.535 1.225-.057 1.617-.07 4.74-.07zm0 2.072c-3.07 0-3.434.012-4.647.067-1.12.05-1.73.238-2.135.395-.537.21-.92.458-1.323.86a3.563 3.563 0 0 0-.86 1.323c-.157.405-.345 1.014-.396 2.135-.056 1.213-.068 1.576-.068 4.647 0 3.07.012 3.434.067 4.647.05 1.12.238 1.73.395 2.135.21.537.458.92.86 1.323.403.402.786.65 1.323.86.405.157 1.014.345 2.135.396 1.213.056 1.576.068 4.647.068 3.07 0 3.435-.012 4.647-.067 1.12-.05 1.73-.238 2.135-.395.537-.21.92-.458 1.323-.86.402-.403.65-.786.86-1.323.157-.405.345-1.014.396-2.135.056-1.213.068-1.576.068-4.647 0-3.07-.012-3.434-.067-4.647-.05-1.12-.238-1.73-.395-2.135a3.563 3.563 0 0 0-.86-1.323 3.563 3.563 0 0 0-1.323-.86c-.405-.157-1.014-.345-2.135-.396-1.213-.056-1.576-.068-4.647-.068zm0 3.523a5.905 5.905 0 1 1 0 11.81 5.905 5.905 0 0 1 0-11.81zm0 9.738a3.833 3.833 0 1 0 0-7.666 3.833 3.833 0 0 0 0 7.666zm7.52-9.972a1.38 1.38 0 1 1-2.76 0 1.38 1.38 0 0 1 2.76 0z"
                                 fill="#081a6f" class="social-inner"></path>
                         </g>
                     </svg>

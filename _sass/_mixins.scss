@@ -1,0 +1,77 @@
+// Clearfix
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Hover underline animation
+@mixin underline-hover {
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: currentColor;
+    height: 1px;
+    width: 20px;
+    left: 50%;
+    bottom: 14px;
+    margin-left: -10px;
+    transform-origin: center;
+    transition: transform $transition-duration $transition-easing;
+    will-change: transform;
+    transform: scaleX(0);
+  }
+
+  &:hover,
+  &.active {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+// Image hover effects
+@mixin image-hover {
+  filter: grayscale(100%);
+  opacity: .6;
+  transition: opacity $transition-duration $transition-easing 0ms;
+
+  &:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+}
+
+// Flexbox centering
+@mixin flex-center {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
+
+// Media queries
+@mixin mobile {
+  @media (max-width: $breakpoint-tablet - 1) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop - 1) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+} 
