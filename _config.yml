@@ -22,7 +22,7 @@ twitter_username: bondt
 github_username: b0ndt
 
 # Google Analytics
-analytics_id: "UA-127964474-1"
+analytics_id: "G-LNBW1L9M8Z"
 
 # Build settings
 markdown: kramdown
@@ -89,3 +89,6 @@ assets:
   plugins:
     css: { autoprefixer: {} }
     img: { optim: {} }
+
+include:
+  - _headers ./profiles
