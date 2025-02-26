@@ -5,43 +5,44 @@
     </div>
   </div>
 </nav>
-<amp-sidebar id="sidebar" layout="nodisplay" side="right">
+<amp-sidebar id="sidebar" layout="nodisplay" side="right" role="navigation" aria-label="Main menu">
   <nav toolbar="(min-width: 1024px)" toolbar-target="target-element">
-    <ul class="nav navbar-nav clearfix">
+    <ul class="nav navbar-nav clearfix" role="menu">
       {% if page.layout == 'default' %}
-      <li>
-        <a on="tap:sidebar.close,why.scrollTo">Introduction</a>
+      <li role="none">
+        <a on="tap:sidebar.close,why.scrollTo" role="menuitem">Introduction</a>
       </li>
-      <li>
-        <a on="tap:sidebar.close,what.scrollTo">What I do</a>
+      <li role="none">
+        <a on="tap:sidebar.close,what.scrollTo" role="menuitem">What I do</a>
       </li>
-      <li>
-        <a on="tap:sidebar.close,expertise.scrollTo">Work areas</a>
+      <li role="none">
+        <a on="tap:sidebar.close,expertise.scrollTo" role="menuitem">Work areas</a>
       </li>
-      <li>
-        <a on="tap:sidebar.close,skills.scrollTo">Skills</a>
+      <li role="none">
+        <a on="tap:sidebar.close,skills.scrollTo" role="menuitem">Skills</a>
       </li>
-      <li>
-        <a on="tap:sidebar.close,clients.scrollTo">Brands</a>
+      <li role="none">
+        <a on="tap:sidebar.close,clients.scrollTo" role="menuitem">Brands</a>
       </li>
-      <li>
-        <a on="tap:sidebar.close,how.scrollTo">How I work</a>
+      <li role="none">
+        <a on="tap:sidebar.close,how.scrollTo" role="menuitem">How I work</a>
       </li>
-      <li>
-        <a on="tap:sidebar.close,contact.scrollTo">Contact</a>
+      <li role="none">
+        <a on="tap:sidebar.close,contact.scrollTo" role="menuitem">Contact</a>
       </li>
       {% else %}
-      <li>
-        <a href="/" title="Home">Home</a>
+      <li role="none">
+        <a href="/" title="Home" role="menuitem">Home</a>
       </li>
-      <li>
-        <a href="/imprint/" title="Imprint">Imprint</a>
+      <li role="none">
+        <a href="/imprint/" title="Imprint" role="menuitem">Imprint</a>
       </li>
-      <li>
-        <a href="/data-privacy/" title="Data Privacy">Data Privacy</a>
+      <li role="none">
+        <a href="/data-privacy/" title="Data Privacy" role="menuitem">Data Privacy</a>
       </li>
       {% endif %}
     </ul>
   </nav>
 </amp-sidebar>
-<button class="hamburger" on='tap:sidebar.toggle'></button>
+<button class="hamburger" on='tap:sidebar.toggle' aria-label="Menu" aria-expanded="false"
+  aria-controls="sidebar"></button>

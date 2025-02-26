@@ -430,16 +430,17 @@ welcome: Hey there! I'm Boris – Freelance tech consultant & developer.<br>Nice
         </div>
     </article>
 </section>
-<section id="contact" class="social-footer full-width">
+<section id="contact" class="social-footer full-width" role="region" aria-labelledby="contact-heading">
     <div class="social-footer__wrap">
         <header>
-            <h3 class="header-text">Let's talk</h3>
+            <h3 class="header-text" id="contact-heading">Let's talk</h3>
         </header>
 
-        <ul class="socialmedia">
-            <li class="socialmedia__item">
-                <a class="socialmedia__link" rel="noreferrer" href="tel:+49-160-155-9634">
-                    <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+        <ul class="socialmedia" role="list">
+            <li class="socialmedia__item" role="listitem">
+                <a class="socialmedia__link" rel="noreferrer" href="tel:+49-160-155-9634" aria-label="Call me on phone">
+                    <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-hidden="true" focusable="false">
                         <title>Phone</title>
                         <g>
                             <circle fill="none" stroke="#081a6f" cx="22" cy="22" r="21.5" />
@@ -450,10 +451,12 @@ welcome: Hey there! I'm Boris – Freelance tech consultant & developer.<br>Nice
                     </svg>
                 </a>
             </li>
-            <li class="socialmedia__item">
+            <li class="socialmedia__item" role="listitem">
                 <a class="socialmedia__link" target="_blank" rel="noreferrer"
-                    href="https://api.whatsapp.com/send?phone=491601559634&text=Hey,%20let's%20talk!">
-                    <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+                    href="https://api.whatsapp.com/send?phone=491601559634&text=Hey,%20let's%20talk!"
+                    aria-label="Chat with me on WhatsApp">
+                    <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-hidden="true" focusable="false">
                         <title>WhatsApp</title>
                         <g>
                             <circle fill="none" stroke="#081a6f" cx="22" cy="22" r="21.5" />
@@ -463,9 +466,11 @@ welcome: Hey there! I'm Boris – Freelance tech consultant & developer.<br>Nice
                     </svg>
                 </a>
             </li>
-            <li class="socialmedia__item">
-                <a class="socialmedia__link" target="_blank" rel="noreferrer" href="mailto:hey@boris.io">
-                    <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <li class="socialmedia__item" role="listitem">
+                <a class="socialmedia__link" target="_blank" rel="noreferrer" href="mailto:hey@boris.io"
+                    aria-label="Send me an email">
+                    <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" role="img"
+                        aria-hidden="true" focusable="false">
                         <title>Email</title>
                         <g>
                             <circle fill="none" stroke="#081a6f" cx="22" cy="22" r="21.5" />

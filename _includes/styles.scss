@@ -96,8 +96,20 @@ h6 {
 * {
   box-sizing: border-box;
   &:focus {
-    outline: 0;
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
   }
+}
+
+/* Add a focus-visible utility for modern browsers */
+*:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* For mouse users, we can be less intrusive */
+*:focus:not(:focus-visible) {
+  outline: 0;
 }
 
 html {
@@ -136,22 +148,36 @@ a {
   font-family: $oswald, $sans;
   background-color: transparent;
   text-decoration: none;
+  color: var(--color-link);
   opacity: 1;
+  transition: color var(--transition-duration) var(--transition-easing);
+  
   svg {
     opacity: 0.8;
+    transition: opacity var(--transition-duration) var(--transition-easing);
   }
+  
   &:active,
   &:hover {
     outline: 0;
+    color: var(--color-link-hover);
+    text-decoration: underline;
+    
     svg {
       opacity: 1;
     }
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+    text-decoration: underline;
   }
 }
 
 b,
 strong {
-  color: $darkblue;
+  color: var(--color-darkblue);
   font-family: $oswald, $sans;
   font-weight: 700;
 }
