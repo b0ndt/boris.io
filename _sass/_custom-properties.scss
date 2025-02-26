@@ -1,0 +1,53 @@
+// CSS Custom Properties
+:root {
+  // Colors
+  --color-black: #222;
+  --color-blue: #0033af;
+  --color-darkblue: #000936;
+  --color-green: #071c15;
+  --color-white: #fff;
+  --color-grey: #fcfcfc;
+  --color-darkgrey: #f3f3f3;
+  --color-darkestgrey: #d6d6d6;
+
+  // Typography
+  --font-sans: 'sans-serif';
+  --font-mono: 'monospace';
+  --font-pt: 'PT Sans';
+  --font-oswald: 'Oswald';
+
+  // Font sizes
+  --base-font-size: 16px;
+  --text-small: 0.875rem;    // 14px
+  --text-base: 1rem;         // 16px
+  --text-medium: 1.25rem;    // 20px
+  --text-large: 2rem;        // 32px
+  --text-xlarge: 3rem;       // 48px
+
+  // Line heights
+  --line-height-headings: 1.5;
+  --line-height-body: 1.5;
+  --line-height-large: 1.6;
+
+  // Spacing
+  --spacing-xs: 0.5rem;      // 8px
+  --spacing-sm: 1rem;        // 16px
+  --spacing-md: 1.5rem;      // 24px
+  --spacing-lg: 2rem;        // 32px
+  --spacing-xl: 3rem;        // 48px
+  --spacing-xxl: 4.5rem;     // 72px
+  --spacing-base: var(--spacing-sm);
+  --spacing-double: var(--spacing-lg);
+
+  // Container & Grid
+  --container-width: 85%;
+  --container-max-width: 1400px;
+  --container-min-width: 320px;
+  --max-content-width: 1200px;
+  --banner-height: 400px;
+  --menu-height: 55px;
+
+  // Animation
+  --transition-duration: 220ms;
+  --transition-easing: ease-in-out;
+} 

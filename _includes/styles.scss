@@ -3,22 +3,23 @@ $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1200px; // Changed from 1024px to 1200px to improve tablet experience
 
 @import "variables";
+@import "custom-properties"; // Import our new CSS custom properties
 @import "mixins";
 
 // Typography overrides - Simplified
 html {
-  font-size: $base-font-size;
-  line-height: $line-height-body;
+  font-size: var(--base-font-size);
+  line-height: var(--line-height-body);
 }
 
 body {
-  font-size: $text-base;
-  line-height: $line-height-body;
+  font-size: var(--text-base);
+  line-height: var(--line-height-body);
 }
 
 p {
-  font-size: $text-base;
-  line-height: $line-height-body;
+  font-size: var(--text-base);
+  line-height: var(--line-height-body);
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
@@ -26,16 +27,56 @@ p {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 1rem;
-  line-height: $line-height-headings;
+  line-height: var(--line-height-headings);
   font-weight: 400;
 }
 
-h1 { font-size: $text-xlarge; }
-h2 { font-size: $text-large; }
-h3 { font-size: $text-large; }
-h4 { font-size: $text-medium; }
-h5 { font-size: $text-medium; }
-h6 { font-size: $text-large; }
+h1 {
+  font-family: var(--font-oswald), var(--font-sans);
+  font-size: var(--text-xlarge);
+  margin: 0;
+  line-height: var(--line-height-large);
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-block-end: 0.25em;
+}
+
+h2 {
+  font-size: var(--text-large);
+  margin-block-start: 0;
+  margin-block-end: 0.25em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: var(--text-large);
+  margin-block-start: 0;
+  margin-block-end: 0.25em;
+  font-weight: 400;
+  font-family: var(--font-oswald), var(--font-sans);
+}
+
+h4 {
+  font-size: var(--text-medium);
+  margin-block-start: 0;
+  margin-block-end: 0.25em;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: var(--text-medium);
+  margin-block-start: 0;
+  margin-block-end: 0.25em;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: var(--text-large);
+  margin-block-start: 0;
+  margin-block-end: 0.25em;
+  font-weight: 400;
+  font-family: var(--font-oswald), var(--font-sans);
+}
 
 @import "base";
 @import "layout";
@@ -88,8 +129,7 @@ summary {
 %extend {
   position: relative;
   min-height: 1px;
-  padding-left: $spacing-base;
-  padding-right: $spacing-base;
+  padding-inline: var(--spacing-base); /* Replaces padding-left and padding-right */
 }
 
 a {
@@ -130,8 +170,7 @@ ul {
 /* Layout styles */
 
 .row {
-  margin-left: -$spacing-base;
-  margin-right: -$spacing-base;
+  margin-inline: -$spacing-base;
   @include clearfix;
 }
 
@@ -152,7 +191,7 @@ ul {
   }
 
   .container {
-    width: $container-width;
+    width: var(--container-width);
   }
 
   .navbar-nav {
@@ -162,8 +201,7 @@ ul {
       float: left;
       line-height: 37px;
       > a {
-        padding-top: $spacing-base;
-        padding-bottom: $spacing-base;
+        padding-block: var(--spacing-base);
         position: relative;
         @include underline-hover;
       }
@@ -203,8 +241,7 @@ ul {
 
 .css-crop {
   width: 100%;
-  height: 0;
-  padding-bottom: 50%;
+  aspect-ratio: 2 / 1; /* 2:1 aspect ratio, equivalent to padding-bottom: 50% */
   background-repeat: no-repeat;
   &.bg-cover {
     background-size: cover;
@@ -268,14 +305,14 @@ ul {
 .cv-viewer {
   opacity: 1;
   display: block;
-  background: $white;
+  background: var(--color-white);
   border-radius: 1px;
   z-index: 10;
-  background-color: $grey;
+  background-color: var(--color-grey);
   margin: 0 auto;
   width: 100%;
   max-width: initial;
-  font-family: $pt, $sans;
+  font-family: var(--font-pt), var(--font-sans);
   font-weight: 300;
   padding: 0;
   
@@ -283,34 +320,30 @@ ul {
   section {
     position: relative;
     word-wrap: break-word;
-    max-width: $max-content-width;
+    max-width: var(--max-content-width);
     padding: 0 5%;
     margin: 0 auto;
     width: 100%;
     
     &.full-width {
       max-width: none;
-      padding-left: 0;
-      padding-right: 0;
-      padding-bottom: $spacing-lg; // Consistent padding
-      background-color: $darkgrey;
+      padding-inline: 0; /* Replaces padding-left and padding-right */
+      padding-block-end: var(--spacing-lg); /* Replaces padding-bottom */
+      background-color: var(--color-darkgrey);
       header,
       article {
-        max-width: $max-content-width;
-        padding-left: 5%;
-        padding-right: 5%;
+        max-width: var(--max-content-width);
+        padding-inline: 5%; /* Replaces padding-left and padding-right */
         margin: 0 auto;
         p,
         .header-text {
-          padding-left: $spacing-base;
-          padding-right: $spacing-base;
+          padding-inline: var(--spacing-base); /* Replaces padding-left and padding-right */
         }
         & > p,
         & > h3,
         & > .header-text {
           @include tablet {
-            padding-left: $spacing-xl;
-            padding-right: $spacing-xl;
+            padding-inline: var(--spacing-xl); /* Replaces padding-left and padding-right */
           }
         }
       }
@@ -323,16 +356,16 @@ ul {
     
     // Consistent header spacing
     > header {
-      margin-bottom: $spacing-lg;
+      margin-block-end: var(--spacing-lg); /* Replaces margin-bottom */
     }
     
     // Last section needs no bottom margin
     &:last-child {
-      margin-bottom: 0;
+      margin-block-end: 0; /* Replaces margin-bottom */
     }
     
     article:last-child > .timetable-right:last-child {
-      padding-bottom: $spacing-lg;
+      padding-block-end: var(--spacing-lg); /* Replaces padding-bottom */
     }
   }
 
@@ -399,7 +432,7 @@ ul {
       max-height: 280px;
       overflow: hidden;
     }
-    color: $white;
+    color: var(--color-white);
     padding-top: 0;
     
     amp-img {
@@ -415,20 +448,11 @@ ul {
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: $darkblue;
+      background-color: var(--color-darkblue);
       box-shadow: 
         0 -30px 60px 10px rgba(2, 3, 33, 0.7) inset,
         0 -15px 30px 5px rgba(2, 3, 33, 0.5) inset;
     }
-  }
-  h1 {
-    font-family: $oswald, $sans;
-    font-size: $text-xlarge;
-    margin: 0;
-    line-height: $line-height-large;
-    text-transform: uppercase;
-    font-weight: 300;
-    margin-bottom: 0.25em;
   }
   h2 {
     margin-top: 0;
@@ -537,7 +561,7 @@ ul {
     bottom: 0;
     z-index: 3;
     .css-crop {
-      padding-bottom: 100%;
+      aspect-ratio: 1 / 1; /* 1:1 aspect ratio, equivalent to padding-bottom: 100% */
     }
     
     // Fix for tablet view using mixins
