@@ -110,6 +110,7 @@
   width: 100%;
   aspect-ratio: 2/1;
   background-repeat: no-repeat;
+  position: relative;
   
   &.bg-cover {
     background-size: cover;
@@ -119,6 +120,13 @@
   &.bg-contain {
     background-size: contain;
     background-position: center;
+  }
+
+  #scalingImage {
+    cursor: pointer;
+    transform-origin: 20px bottom;
+    transition: transform 0.3s ease-out;
+    will-change: transform;
   }
 
   // For browsers that don't support aspect-ratio

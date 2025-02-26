@@ -161,7 +161,6 @@ a {
   &:hover {
     outline: 0;
     color: var(--color-link-hover);
-    text-decoration: underline;
     
     svg {
       opacity: 1;
@@ -171,7 +170,6 @@ a {
   &:focus {
     outline: 2px solid var(--color-focus);
     outline-offset: 2px;
-    text-decoration: underline;
   }
 }
 
@@ -546,12 +544,12 @@ ul {
   .menu {
     background: $white;
     border-bottom: 1px solid $darkestgrey;
-    position: sticky;
-    position: -webkit-sticky;
     top: -1px;
     z-index: 2;
     @include desktop {
       min-height: $menu-height;
+      position: sticky;
+      position: -webkit-sticky;
     }
   }
   .menu-bar {
@@ -778,6 +776,9 @@ ul {
   &.small {
     transform: scale(0.31);
     transform-origin: 20px 180px;
+  }
+  @include desktop {
+    transform: scale(.31);
   }
 }
 
