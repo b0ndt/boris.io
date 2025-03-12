@@ -4,8 +4,6 @@
 @import "clearfix";
 
 @import "consent";
-@import "circles";
-@import "venn";
 @import "grid";
 
 /* General styles */
@@ -104,7 +102,7 @@ ul {
   @extend %extend;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .col-sm-4 {
     float: left;
     width: 33.33333333%;
@@ -182,11 +180,6 @@ ul {
   display: none;
 }
 
-@media print {
-  .hidden-print {
-    display: none;
-  }
-}
 
 .css-crop {
   width: 100%;
@@ -492,7 +485,7 @@ ul {
     top: -1px;
     z-index: 2;
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       min-height: 55px;
     }
   }
@@ -689,14 +682,14 @@ ul {
     }
 
     h4 {
-      @media (min-width: 1024px) {
+      @media (min-width: 768px) {
         text-align: right;
         margin-top: -4px;
       }
     }
 
     h5 {
-      @media (min-width: 1024px) {
+      @media (min-width: 768px) {
         text-align: right;
       }
     }
@@ -841,7 +834,7 @@ footer {
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   .cv-viewer {
     .menu {
       position: relative;
