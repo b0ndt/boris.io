@@ -1,14 +1,8 @@
-<amp-analytics type="googleanalytics" config="https://amp.analytics-debugger.com/ga4.json" data-credentials="include">
+<amp-analytics type="googleanalytics">
   <script type="application/json">
     {
       "vars": {
-                  "GA4_MEASUREMENT_ID": "{{ site.analytics_id }}",
-                  "GA4_ENDPOINT_HOSTNAME": "www.google-analytics.com",
-                  "DEFAULT_PAGEVIEW_ENABLED": true,    
-                  "GOOGLE_CONSENT_ENABLED": false,
-                  "WEBVITALS_TRACKING": false,
-                  "PERFORMANCE_TIMING_TRACKING": true,
-                  "SEND_DOUBLECLICK_BEACON": false
+        "gtag_id": "{{ site.analytics_id }}"
       }
     }
   </script>
