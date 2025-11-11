@@ -180,7 +180,8 @@ strong {
   font-weight: 700;
 }
 
-img {
+// img selector removed - we only use amp-img tags in AMP
+amp-img img {
   border: 0;
   max-width: 100%;
 }
