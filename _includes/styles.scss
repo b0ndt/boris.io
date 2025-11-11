@@ -940,3 +940,13 @@ svg:not(:root) {
 .page-break {
   page-break-before: always;
 }
+
+// print visibility helpers
+.print-only {
+  display: none;
+}
+@media print {
+  .print-only {
+    display: block;
+  }
+}
