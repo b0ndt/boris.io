@@ -546,6 +546,7 @@ ul {
     border-bottom: 1px solid $darkestgrey;
     top: -1px;
     z-index: 2;
+    padding-top: 0;
     @include desktop {
       min-height: $menu-height;
       position: sticky;
