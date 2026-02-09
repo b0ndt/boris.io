@@ -10,6 +10,7 @@ $breakpoint-desktop: 1200px; // Changed from 1024px to 1200px to improve tablet 
 html {
   font-size: var(--base-font-size);
   line-height: var(--line-height-body);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -350,6 +351,11 @@ ul {
     margin: 0 auto;
     width: 100%;
     
+    &.text_story article {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
     &.full-width {
       max-width: none;
       padding-inline: 0;
@@ -358,7 +364,7 @@ ul {
       header,
       article {
         max-width: var(--max-content-width);
-        padding-inline: 5%; /* Replaces padding-left and padding-right */
+        padding-inline: 5%;
         margin: 0 auto;
         p,
         .header-text {
@@ -713,11 +719,18 @@ ul {
       margin: $spacing-xs 0 $spacing-sm;
       width: 100%;
       background-color: $darkestgrey;
-      height: 1px;
+      height: 2px;
+      border-radius: 1px;
     }
     .competency-level {
       background-color: $darkblue;
       height: 100%;
+      border-radius: 1px;
+    }
+    p {
+      font-size: $text-small !important;
+      color: rgba($black, 0.6) !important;
+      line-height: 1.6 !important;
     }
   }
   .timetable-left {
@@ -846,7 +859,7 @@ ul {
 
   .social-footer__wrap {
     text-align: center;
-    padding-bottom: $spacing-xxl;
+    padding-bottom: $spacing-lg;
 
     h3 {
       text-align: center;
