@@ -350,28 +350,6 @@ ul {
     margin: 0 auto;
     width: 100%;
     
-    &.looking-section {
-      background-color: var(--color-darkblue);
-      color: var(--color-white);
-      p {
-        color: rgba(255, 255, 255, 0.95);
-        font-size: 1.1rem;
-      }
-      strong {
-        color: #fff;
-        font-family: $oswald, $sans;
-      }
-      em {
-        color: rgba(255, 255, 255, 0.95);
-      }
-      .header-text {
-        color: #fff;
-        &:after {
-          background: rgba(255, 255, 255, 0.4);
-        }
-      }
-    }
-    
     &.full-width {
       max-width: none;
       padding-inline: 0;
@@ -408,11 +386,31 @@ ul {
     
     // Last section needs no bottom margin
     &:last-child {
-      margin-block-end: 0; /* Replaces margin-bottom */
+      margin-block-end: 0;
     }
     
     article:last-child > .timetable-right:last-child {
-      padding-block-end: var(--spacing-lg); /* Replaces padding-bottom */
+      padding-block-end: var(--spacing-lg);
+    }
+
+    // "Open for opportunities" CTA — must come after .full-width to override background
+    &.full-width.looking-section {
+      background-color: $darkblue;
+      color: $white;
+      p {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.1rem;
+      }
+      strong {
+        color: #fff;
+        font-family: $oswald, $sans;
+      }
+      .header-text {
+        color: #fff;
+        &:after {
+          background: rgba(255, 255, 255, 0.4);
+        }
+      }
     }
   }
 
