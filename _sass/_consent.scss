@@ -1,23 +1,31 @@
 amp-consent {
-    min-height: 30px;
-    padding: 8px;
-    color: $black;
+    min-height: auto;
+    padding: 12px 20px;
+    color: rgba($black, 0.8);
     position: fixed;
     bottom: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    left: 0;
+    right: 0;
     display: block;
-    background: $darkestgrey;
+    background: rgba($white, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     font-family: $pt;
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.4;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.08);
+    z-index: 100;
 
     .consentPopup {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: center;
-        align-content: stretch;
+        align-content: center;
         align-items: center;
+        max-width: $max-content-width;
+        margin: 0 auto;
+        gap: 16px;
     }
 
     &.amp-active {
@@ -28,7 +36,8 @@ amp-consent {
         order: 0;
         flex: 1 1 auto;
         align-self: auto;
-        padding-right: 8px;
+        margin: 0;
+        font-size: 13px;
     }
 
     a {
@@ -39,34 +48,36 @@ amp-consent {
     }
 
     button {
-        margin-top: 1em;
-        margin-bottom: 1em;
-        border: none;
-        border-radius: 2px;
+        border: 1px solid $darkblue;
+        border-radius: 4px;
         color: $white;
-        height: 26px;
-        min-width: 70px;
-        padding: 0 16px;
+        height: 32px;
+        min-width: 80px;
+        padding: 0 20px;
         order: 0;
-        flex: 0 1 auto;
+        flex: 0 0 auto;
         align-self: auto;
         text-transform: uppercase;
-        letter-spacing: 0;
+        font-size: 12px;
+        letter-spacing: 0.05em;
         cursor: pointer;
         vertical-align: middle;
-        line-height: 26px;
+        line-height: 30px;
         text-align: center;
         background: $darkblue;
-        font-family: $pt;
+        font-family: $oswald, $sans;
+        font-weight: 300;
+        transition: background $transition-duration $transition-easing,
+                    color $transition-duration $transition-easing;
+
+        &:hover {
+            background: transparent;
+            color: $darkblue;
+        }
     }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

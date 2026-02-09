@@ -350,10 +350,28 @@ ul {
     margin: 0 auto;
     width: 100%;
     
+    &.looking-section {
+      background-color: var(--color-darkblue);
+      color: var(--color-white);
+      p {
+        color: rgba(255, 255, 255, 0.85);
+      }
+      strong {
+        color: var(--color-white);
+        font-family: $oswald, $sans;
+      }
+      .header-text {
+        color: var(--color-white);
+        &:after {
+          background: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+    
     &.full-width {
       max-width: none;
-      padding-inline: 0; /* Replaces padding-left and padding-right */
-      padding-block-end: var(--spacing-lg); /* Replaces padding-bottom */
+      padding-inline: 0;
+      padding-block-end: var(--spacing-lg);
       background-color: var(--color-darkgrey);
       header,
       article {
@@ -408,11 +426,11 @@ ul {
       padding-bottom: $spacing-xs;
     }
     p {
-      font-size: $text-base;
-      line-height: $line-height-body;
-      margin-bottom: $spacing-md; // Consistent paragraph spacing
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: $spacing-lg;
+      color: rgba($black, 0.85);
       
-      // Last paragraph in an article needs no bottom margin
       &:last-child {
         margin-bottom: 0;
       }
@@ -451,10 +469,12 @@ ul {
   }
   .banner {
     position: relative;
-    height: 320px;
+    height: 50vh;
+    min-height: 320px;
+    max-height: 500px;
     @include desktop {
-      height: calc(100vh - 54px);
-      max-height: 280px;
+      height: 60vh;
+      max-height: 560px;
       overflow: hidden;
     }
     color: var(--color-white);
@@ -473,10 +493,7 @@ ul {
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--color-darkblue);
-      box-shadow: 
-        0 -30px 60px 10px rgba(2, 3, 33, 0.7) inset,
-        0 -15px 30px 5px rgba(2, 3, 33, 0.5) inset;
+      background: linear-gradient(170deg, rgba(0, 9, 54, 0.85) 0%, rgba(0, 9, 54, 0.95) 100%);
     }
   }
   h2 {
@@ -519,12 +536,24 @@ ul {
     cursor: pointer;
   }
   header {
-    padding-top: $spacing-xl;
+    padding-top: $spacing-xxl;
     font-weight: initial;
     text-align: center;
     .header-text {
       text-transform: uppercase;
       text-align: center;
+      letter-spacing: 0.1em;
+      font-weight: 300;
+      position: relative;
+      display: inline-block;
+      &:after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: $darkblue;
+        margin: $spacing-sm auto 0;
+      }
     }
   }
   .navbar {
@@ -598,11 +627,12 @@ ul {
     }
   }
   .user-title {
-    text-shadow: 0 0 5px $black;
-    padding: 0 8px;
-    height: 58%;
-    margin: auto;
-    display: block;
+    text-shadow: none;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -610,16 +640,36 @@ ul {
     right: 0;
     z-index: 2;
     h1 {
-      border-bottom: 2px solid $white;
+      border-bottom: 2px solid rgba($white, 0.3);
       display: inline-block;
       position: relative;
+      letter-spacing: 0.15em;
+      font-size: 3.5rem;
+      @include mobile {
+        font-size: 2.5rem;
+      }
       svg {
-        filter: drop-shadow(0 0 5px $black);
+        filter: drop-shadow(0 0 5px rgba($black, 0.3));
         height: 18px;
         width: 18px;
         position: absolute;
         right: 0.07em;
         top: 0.7em;
+      }
+    }
+    h2 {
+      font-family: $pt, $sans;
+      font-weight: 300;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      max-width: 600px;
+      text-align: center;
+      opacity: 0.85;
+      letter-spacing: 0.02em;
+      margin-top: $spacing-md;
+      @include mobile {
+        font-size: 1rem;
+        padding: 0 $spacing-sm;
       }
     }
   }
@@ -790,22 +840,37 @@ ul {
 
   .social-footer__wrap {
     text-align: center;
+    padding-bottom: $spacing-xxl;
 
     h3 {
       text-align: center;
-      padding-bottom: 20px;
+      padding-bottom: $spacing-lg;
     }
 
     .socialmedia {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: $spacing-sm;
+      
       li {
         display: inline-block;
-        margin: 0 20px;
+        margin: 0 12px;
         a {
           display: block;
           padding-bottom: 20px;
           svg {
-            width: 45px;
-            height: 45px;
+            width: 44px;
+            height: 44px;
+            transition: transform $transition-duration $transition-easing;
+            
+            circle {
+              transition: stroke $transition-duration $transition-easing;
+            }
+          }
+          
+          &:hover svg {
+            transform: translateY(-3px);
           }
         }
       }
@@ -815,8 +880,10 @@ ul {
 
 footer {
   text-align: center;
-  padding: 14px 0;
+  padding: 20px 0;
   border-top: 1px solid $darkestgrey;
+  font-size: $text-small;
+  color: rgba($black, 0.5);
   a {
     position: relative;
     @include underline-hover;
