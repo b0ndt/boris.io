@@ -504,7 +504,7 @@ ul {
       top: 0;
       width: 100%;
       height: 100%;
-      background: $darkblue;
+      background: linear-gradient(to bottom, #000210 0%, #000730 100%);
     }
   }
   h2 {
@@ -720,6 +720,9 @@ ul {
       border-left: none; // Remove left border
       padding-left: $spacing-lg; // Adjust padding
     }
+  }
+  #expertise > header {
+    margin-block-end: $spacing-xxl;
   }
   .competency {
     .competency-bar {
