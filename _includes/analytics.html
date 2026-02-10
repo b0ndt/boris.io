@@ -9,6 +9,136 @@
             "send_page_view": true
           }
         }
+      },
+      "triggers": {
+        "contact_phone": {
+          "on": "click",
+          "selector": "a[href^='tel:']",
+          "vars": {
+            "event_name": "contact_click",
+            "method": "phone"
+          }
+        },
+        "contact_whatsapp": {
+          "on": "click",
+          "selector": "a[href*='whatsapp']",
+          "vars": {
+            "event_name": "contact_click",
+            "method": "whatsapp"
+          }
+        },
+        "contact_email": {
+          "on": "click",
+          "selector": "a[href^='mailto:']",
+          "vars": {
+            "event_name": "contact_click",
+            "method": "email"
+          }
+        },
+        "contact_linkedin": {
+          "on": "click",
+          "selector": "a[href*='linkedin']",
+          "vars": {
+            "event_name": "contact_click",
+            "method": "linkedin"
+          }
+        },
+        "contact_github": {
+          "on": "click",
+          "selector": "a[href*='github']",
+          "vars": {
+            "event_name": "contact_click",
+            "method": "github"
+          }
+        },
+        "contact_instagram": {
+          "on": "click",
+          "selector": "a[href*='instagram']",
+          "vars": {
+            "event_name": "contact_click",
+            "method": "instagram"
+          }
+        },
+        "scroll_25": {
+          "on": "scroll",
+          "scrollSpec": { "verticalBoundaries": [25] },
+          "vars": {
+            "event_name": "scroll_depth",
+            "percent_scrolled": "25"
+          }
+        },
+        "scroll_50": {
+          "on": "scroll",
+          "scrollSpec": { "verticalBoundaries": [50] },
+          "vars": {
+            "event_name": "scroll_depth",
+            "percent_scrolled": "50"
+          }
+        },
+        "scroll_75": {
+          "on": "scroll",
+          "scrollSpec": { "verticalBoundaries": [75] },
+          "vars": {
+            "event_name": "scroll_depth",
+            "percent_scrolled": "75"
+          }
+        },
+        "scroll_100": {
+          "on": "scroll",
+          "scrollSpec": { "verticalBoundaries": [90] },
+          "vars": {
+            "event_name": "scroll_depth",
+            "percent_scrolled": "100"
+          }
+        },
+        "section_about": {
+          "on": "visible",
+          "visibilitySpec": {
+            "selector": "#why",
+            "visiblePercentageMin": 50,
+            "totalTimeMin": 1000
+          },
+          "vars": {
+            "event_name": "section_view",
+            "section_name": "about"
+          }
+        },
+        "section_opportunities": {
+          "on": "visible",
+          "visibilitySpec": {
+            "selector": "#looking",
+            "visiblePercentageMin": 50,
+            "totalTimeMin": 1000
+          },
+          "vars": {
+            "event_name": "section_view",
+            "section_name": "open_for_work"
+          }
+        },
+        "section_skills": {
+          "on": "visible",
+          "visibilitySpec": {
+            "selector": "#skills",
+            "visiblePercentageMin": 50,
+            "totalTimeMin": 1000
+          },
+          "vars": {
+            "event_name": "section_view",
+            "section_name": "skills"
+          }
+        },
+        "section_contact": {
+          "on": "visible",
+          "visibilitySpec": {
+            "selector": "#contact",
+            "visiblePercentageMin": 50,
+            "totalTimeMin": 1000
+          },
+          "vars": {
+            "event_name": "section_view",
+            "section_name": "contact"
+          }
+        }
       }
     }
   </script>
