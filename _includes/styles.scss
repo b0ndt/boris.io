@@ -405,6 +405,7 @@ ul {
     &.full-width.looking-section {
       background-color: $darkblue;
       color: $white;
+      padding-bottom: $spacing-xxl;
       p {
         color: rgba(255, 255, 255, 0.95);
         font-size: 1.1rem;
@@ -724,12 +725,12 @@ ul {
     .competency-bar {
       margin: $spacing-xs 0 $spacing-sm;
       width: 100%;
-      background-color: $darkestgrey;
-      height: 2px;
+      background-color: rgba($darkestgrey, 0.5);
+      height: 1px;
       border-radius: 1px;
     }
     .competency-level {
-      background-color: $darkblue;
+      background-color: rgba($darkblue, 0.25);
       height: 100%;
       border-radius: 1px;
     }
