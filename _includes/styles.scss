@@ -221,10 +221,12 @@ ul {
   }
 
   .navbar-nav {
-    float: left;
+    float: none;
     margin: 0;
+    display: flex;
+    justify-content: center;
     > li {
-      float: left;
+      float: none;
       line-height: 37px;
       > a {
         padding-block: var(--spacing-base);
@@ -598,7 +600,7 @@ ul {
     margin: 0 auto;
     width: 100%;
     .nav {
-      overflow: hidden;
+      overflow: visible;
       display: flex;
       justify-content: center;
       font-size: $text-base;
