@@ -356,6 +356,7 @@ ul {
     &.text_story article {
       max-width: 720px;
       margin: 0 auto;
+      padding-block-end: $spacing-xl;
     }
 
     &.full-width {
@@ -1086,6 +1087,37 @@ amp-carousel div {
       }
     }
     
+    // Dated story / strengths sections: single column on tablet
+    .dated_story, .strengths {
+      .col-sm-4.timetable-left:not(.marked) {
+        display: none;
+      }
+      .col-sm-8.timetable-right {
+        width: 100%;
+        border-left: none;
+        padding-left: $spacing-sm;
+        > header {
+          text-align: center;
+        }
+      }
+      .col-sm-4.timetable-left.marked {
+        display: none;
+      }
+      .col-sm-4.timetable-left:not(.marked) + .col-sm-8,
+      article .col-sm-8 {
+        width: 100%;
+      }
+      // Skill stack: show category labels
+      .col-sm-4.timetable-left:has(h4) {
+        display: block;
+        width: 100%;
+        text-align: left;
+        h4 {
+          text-align: left;
+        }
+      }
+    }
+
     // Improve the dot/circle icon positioning globally
     .timetable-left.marked span {
       left: -8px;
