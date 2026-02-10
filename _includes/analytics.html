@@ -1,8 +1,14 @@
-<amp-analytics type="googleanalytics">
+<amp-analytics type="gtag" data-credentials="include">
   <script type="application/json">
     {
       "vars": {
-        "gtag_id": "{{ site.analytics_id }}"
+        "gtag_id": "{{ site.analytics_id }}",
+        "config": {
+          "{{ site.analytics_id }}": {
+            "groups": "default",
+            "send_page_view": true
+          }
+        }
       }
     }
   </script>
