@@ -481,8 +481,8 @@ ul {
     min-height: 320px;
     max-height: 500px;
     @include desktop {
-      height: 60vh;
-      max-height: 560px;
+      height: 45vh;
+      max-height: 420px;
       overflow: hidden;
     }
     color: var(--color-white);
@@ -599,7 +599,8 @@ ul {
     width: 100%;
     .nav {
       overflow: hidden;
-      margin-left: 17%;
+      display: flex;
+      justify-content: center;
       font-size: $text-base;
       > li > a {
         font-family: $oswald, $sans;
@@ -651,7 +652,7 @@ ul {
       border-bottom: 2px solid rgba($white, 0.3);
       display: inline-block;
       position: relative;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.08em;
       font-size: 3.5rem;
       padding-bottom: 0.1em;
       @include mobile {
@@ -703,6 +704,9 @@ ul {
     }
     & > header {
       padding-bottom: $spacing-md;
+      @include desktop {
+        text-align: left;
+      }
       .header-text {
         text-align: left;
       }
