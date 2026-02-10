@@ -652,7 +652,7 @@ ul {
       border-bottom: 2px solid rgba($white, 0.3);
       display: inline-block;
       position: relative;
-      letter-spacing: 0.08em;
+      letter-spacing: -0.02em;
       font-size: 3.5rem;
       padding-bottom: 0.1em;
       @include mobile {
@@ -664,7 +664,7 @@ ul {
         svg {
           position: absolute;
           top: 38%;
-          left: 26%;
+          left: 38%;
           width: 30%;
           height: 30%;
         }
