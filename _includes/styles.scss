@@ -384,12 +384,7 @@ ul {
     position: relative;
     height: 400px;
     max-height: 528px;
-    // background-image: $diagonal, $layer, $header;
-    background-color: $darkblue;
-    // background-size: 5px, 5px, cover;
-    // background-repeat: repeat, repeat, no-repeat;
-    // background-position: center center;
-    box-shadow: 0 -50px 100px 20px #020321 inset;
+    background: linear-gradient(to bottom, #000624 0%, #000936 100%);
     color: $white;
     padding-top: 0;
   }
@@ -659,13 +654,17 @@ ul {
 
   .competency {
     .competency-bar {
-      margin: 0;
+      margin: 4px 0 8px;
       width: 100%;
+      background-color: rgba(0, 0, 0, 0.08);
       height: 1px;
+      border-radius: 1px;
     }
 
     .competency-level {
+      background-color: rgba($darkblue, 0.25);
       height: 100%;
+      border-radius: 1px;
     }
 
     p {
