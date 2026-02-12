@@ -1,0 +1,10 @@
+[build]
+command = "bundle exec jekyll build"
+publish = "_site"
+functions = "functions"
+
+[build.environment]
+RUBY_VERSION = "2.7.8"
+BUNDLER_VERSION = "2.4.17"
+NODE_VERSION = "20"
+JEKYLL_ENV = "production"
