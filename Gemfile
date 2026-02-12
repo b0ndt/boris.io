@@ -9,3 +9,8 @@ end
 gem "sprockets", "~> 3.7"
 gem "webrick", "~> 1.7.0"
 gem "kramdown-parser-gfm", "~> 1.1.0"
+
+# Ruby 3.4+ removed these from default gems
+gem "csv"
+gem "logger"
+gem "base64"
