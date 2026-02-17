@@ -1,0 +1,56 @@
+# Boris Fründt
+
+> CTO and Technical Product Executive — nearly 20 years building products and the teams that ship them. Based in Potsdam, Germany.
+
+## Who I am
+
+Good products need someone who speaks both languages — business and engineering. That's been my role for nearly two decades.
+
+It started with 7 years at IBM, learning how technology works at scale — global teams, complex architectures, and the patience required to move large organizations. Then 7 years at Jung von Matt, one of Europe's leading creative agencies, growing from developer to Technical Director, building digital products for major brands and growing a tech team from zero to 14 people in 18 months.
+
+As a freelancer for 5+ years, I learned to take full ownership — from pitch to production. The best client relationships are built on honesty, not slide decks. Most recently, as CTO of a connected products startup (SWAN), I led 23 engineers through product strategy, hardware-software integration, and eventually acquisition by a US company.
+
+The common thread: I sit at the intersection of product and engineering. I can talk to designers about user needs and then explain to the backend team why we need to rethink the data model. Turning "that won't work" into "oh wait, it does" — that's what I do.
+
+## Core strengths
+
+- Scaling and leading engineering and product teams (up to 23 people)
+- Technical product strategy — bridging business goals and technical architecture
+- Full-stack development (React, Next.js, Node.js, TypeScript)
+- IoT and connected systems (hardware-software integration, device-to-cloud)
+- AI strategy and integration (working with AI since IBM Watson in 2015)
+- Building team culture — mentoring, direct communication, constructive dissatisfaction
+- Agile methodologies, Design Thinking, user-centered product development
+
+## Career
+
+- **SWAN** — CTO (2025, smart mirror startup, 23 engineers, through to acquisition)
+- **Freelance** — Technical Product Manager & Developer (2019–present)
+- **digetiers** — Interim Senior Manager (2022, AI-based vehicle pricing)
+- **Jung von Matt** — Technical Director (2017–2018, built tech team 0→14)
+- **IBM iX** — Web Application Architect & Consultant (2015–2016)
+- **Jung von Matt** — Senior Web Developer & Team Lead (2009–2014)
+- **IBM** — Web Developer (2007–2009)
+
+## Education
+
+- B.Sc. Business Information Systems — Berlin School of Economics and Law + IBM Germany (dual study, 2004–2007)
+
+## How I work
+
+- Product vision first — then figure out how to build it
+- Direct communication — honest disagreement beats polite misunderstanding
+- Leadership means removing obstacles, not scheduling meetings
+- Humor, empathy, and transparency aren't soft skills — they're the hard ones
+- Remaining constructively dissatisfied — always questioning, always improving
+
+## Currently
+
+Open to new opportunities starting April/May 2026. Looking for senior roles in Product Leadership, Engineering Management, or Technical Direction. Berlin/remote preferred. Purpose over prestige.
+
+## Links
+
+- [Website](https://boris.io/)
+- [LinkedIn](https://www.linkedin.com/in/borisfruendt)
+- [GitHub](https://github.com/b0ndt)
+- [Email](mailto:hey@boris.io)
