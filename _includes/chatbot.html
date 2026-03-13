@@ -411,10 +411,43 @@
     messagesEl.scrollTop = messagesEl.scrollHeight;
   }
 
+
+  function renderMarkdown(text) {
+    // Escape HTML first
+    var escaped = text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+
+    return escaped
+      // Bold
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      // Italic
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      // Links [text](url)
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+      // Mailto [text](mailto:...)
+      .replace(/\[([^\]]+)\]\((mailto:[^\)]+)\)/g, '<a href="$2">$1</a>')
+      // Auto-link bare URLs
+      .replace(/(^|[\s(])((https?:\/\/)[^\s<>"]+)/g, '$1<a href="$2" target="_blank" rel="noopener">$2</a>')
+      // Auto-link bare emails
+      .replace(/(^|[\s])([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g, '$1<a href="mailto:$2">$2</a>')
+      // Bullet lists
+      .replace(/^[\-\*] (.+)$/gm, '<li>$1</li>')
+      .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+      // Line breaks
+      .replace(/
+/g, '<br>');
+  }
+
   function appendMessage(role, text) {
     var div = document.createElement('div');
     div.className = 'boris-msg boris-msg-' + role;
-    div.textContent = text;
+    if (role === 'assistant') {
+      div.innerHTML = renderMarkdown(text);
+    } else {
+      div.textContent = text;
+    }
     messagesEl.appendChild(div);
     scrollToBottom();
     return div;
