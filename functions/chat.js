@@ -1,39 +1,7 @@
 // Netlify Function: chat.js
 // POST /.netlify/functions/chat
-// Body: { messages: [{role: "user"|"assistant", content: string}] }
+// Body: { messages: [{role, content}] }
 // Returns: { reply: string } or { error: string }
-
-// In-memory rate limiting: Map<ip, {count, resetAt}>
-const rateLimitMap = new Map();
-const RATE_LIMIT_MAX = 20;
-const RATE_LIMIT_WINDOW_MS = 60 * 1000;
-
-function checkRateLimit(ip) {
-  const now = Date.now();
-  const entry = rateLimitMap.get(ip);
-
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
-    return true;
-  }
-
-  if (entry.count >= RATE_LIMIT_MAX) {
-    return false;
-  }
-
-  entry.count += 1;
-  return true;
-}
-
-// Cleanup old entries occasionally to prevent memory leaks
-function cleanupRateLimit() {
-  const now = Date.now();
-  for (const [ip, entry] of rateLimitMap.entries()) {
-    if (now > entry.resetAt) {
-      rateLimitMap.delete(ip);
-    }
-  }
-}
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -41,9 +9,26 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
 };
 
-// In-memory cache for llms.txt
+// ─── Rate limiting ────────────────────────────────────────────────────────────
+const rateLimitMap = new Map();
+const RATE_LIMIT_MAX = 20;
+const RATE_LIMIT_WINDOW_MS = 60 * 1000;
+
+function checkRateLimit(ip) {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return true;
+  }
+  if (entry.count >= RATE_LIMIT_MAX) return false;
+  entry.count += 1;
+  return true;
+}
+
+// ─── llms.txt cache ───────────────────────────────────────────────────────────
 let knowledgeCache = { content: '', fetchedAt: 0 };
-const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+const CACHE_TTL_MS = 60 * 60 * 1000;
 
 async function fetchKnowledge() {
   const now = Date.now();
@@ -51,44 +36,61 @@ async function fetchKnowledge() {
     return knowledgeCache.content;
   }
   try {
-    const res = await fetch('https://boris.io/llms.txt');
+    const res = await fetch('https://boris.io/llms.txt', { signal: AbortSignal.timeout(5000) });
     if (res.ok) {
-      knowledgeCache = { content: await res.text(), fetchedAt: now };
+      const text = await res.text();
+      if (text && text.length > 100) {
+        knowledgeCache = { content: text, fetchedAt: now };
+        console.log('llms.txt fetched:', text.length, 'chars');
+      }
+    } else {
+      console.error('llms.txt fetch failed:', res.status);
     }
   } catch (e) {
-    console.error('Failed to fetch llms.txt:', e.message);
+    console.error('llms.txt fetch error:', e.message);
   }
   return knowledgeCache.content;
 }
 
+// ─── Brave Search ─────────────────────────────────────────────────────────────
+async function braveSearch(query) {
+  const apiKey = process.env.BRAVE_SEARCH_API_KEY;
+  if (!apiKey) return null;
+  try {
+    const url = `https://api.search.brave.com/res/v1/web/search?q=${encodeURIComponent(query)}&count=3&search_lang=en`;
+    const res = await fetch(url, {
+      headers: { 'Accept': 'application/json', 'X-Subscription-Token': apiKey },
+      signal: AbortSignal.timeout(4000),
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return (data.web?.results || [])
+      .slice(0, 3)
+      .map(r => `${r.title}: ${r.description}`)
+      .join('\n');
+  } catch (e) {
+    console.error('Brave search error:', e.message);
+    return null;
+  }
+}
+
+// ─── Main handler ─────────────────────────────────────────────────────────────
 exports.handler = async function (event) {
-  // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 204, headers: CORS_HEADERS, body: '' };
   }
-
   if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      headers: CORS_HEADERS,
-      body: JSON.stringify({ error: 'Method not allowed' }),
-    };
+    return { statusCode: 405, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
 
   // Rate limiting
-  const ip =
-    event.headers['x-forwarded-for']?.split(',')[0].trim() ||
-    event.headers['client-ip'] ||
-    'unknown';
-
-  if (Math.random() < 0.05) cleanupRateLimit(); // Cleanup ~5% of requests
-
+  const ip = event.headers['x-forwarded-for']?.split(',')[0].trim() || 'unknown';
+  if (Math.random() < 0.05) {
+    const now = Date.now();
+    for (const [k, v] of rateLimitMap) if (now > v.resetAt) rateLimitMap.delete(k);
+  }
   if (!checkRateLimit(ip)) {
-    return {
-      statusCode: 429,
-      headers: CORS_HEADERS,
-      body: JSON.stringify({ error: 'Too many requests. Please wait a minute and try again.' }),
-    };
+    return { statusCode: 429, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Too many requests. Please wait a moment.' }) };
   }
 
   // Parse body
@@ -96,47 +98,36 @@ exports.handler = async function (event) {
   try {
     const body = JSON.parse(event.body || '{}');
     messages = body.messages;
-    if (!Array.isArray(messages) || messages.length === 0) {
-      throw new Error('Invalid messages');
+    if (!Array.isArray(messages) || messages.length === 0) throw new Error('Invalid messages');
+    for (const m of messages) {
+      if (!m.role || !m.content || !['user', 'assistant'].includes(m.role)) throw new Error('Invalid message');
     }
-    // Validate message format
-    for (const msg of messages) {
-      if (!msg.role || !msg.content || typeof msg.content !== 'string') {
-        throw new Error('Invalid message format');
-      }
-      if (!['user', 'assistant'].includes(msg.role)) {
-        throw new Error('Invalid message role');
-      }
-    }
-    // Enforce max history
-    if (messages.length > 20) {
-      messages = messages.slice(-20);
-    }
+    if (messages.length > 20) messages = messages.slice(-20);
   } catch (err) {
-    return {
-      statusCode: 400,
-      headers: CORS_HEADERS,
-      body: JSON.stringify({ error: 'Invalid request body: ' + err.message }),
-    };
+    return { statusCode: 400, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Bad request: ' + err.message }) };
   }
-
-  const knowledge = await fetchKnowledge();
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
-    console.error('ANTHROPIC_API_KEY not configured');
-    return {
-      statusCode: 500,
-      headers: CORS_HEADERS,
-      body: JSON.stringify({ error: 'Service not configured. Please contact hey@boris.io directly.' }),
-    };
+    return { statusCode: 500, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Service not configured. Contact hey@boris.io.' }) };
   }
 
-  const systemPrompt = `You are an AI assistant on Boris Fründt's personal website boris.io. Answer questions about Boris helpfully and concisely, using the knowledge provided. Be friendly, direct, and slightly witty — matching Boris's personality. Never make up information not in the knowledge base. If you don't know something, say so honestly. Keep responses to 2-4 sentences unless detail is clearly needed.
+  // Fetch knowledge
+  const knowledge = await fetchKnowledge();
 
-Here is everything you know about Boris:
+  // Optionally augment with web search for the latest user message
+  const lastUserMessage = [...messages].reverse().find(m => m.role === 'user')?.content || '';
+  let webContext = '';
+  if (process.env.BRAVE_SEARCH_API_KEY) {
+    const searchResults = await braveSearch(`Boris Fründt ${lastUserMessage}`);
+    if (searchResults) webContext = `\n\nAdditional web search results:\n${searchResults}`;
+  }
 
-${knowledge}`;
+  const systemPrompt = `You are an AI assistant on Boris Fründt's personal website boris.io. Answer questions about Boris helpfully and concisely. Be friendly, direct, and slightly witty — matching Boris's personality. Never make up information. If you genuinely don't know something, say so and suggest contacting Boris directly at hey@boris.io. Keep responses to 2-4 sentences unless more detail is clearly needed.
+
+Here is Boris's profile:
+
+${knowledge || '(Knowledge currently unavailable — please contact Boris at hey@boris.io)'}${webContext}`;
 
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
@@ -150,34 +141,20 @@ ${knowledge}`;
         model: 'claude-haiku-4-5',
         max_tokens: 512,
         system: systemPrompt,
-        messages: messages,
+        messages,
       }),
     });
 
     if (!response.ok) {
-      const errorBody = await response.text();
-      console.error('Anthropic API error:', response.status, errorBody);
-      return {
-        statusCode: 502,
-        headers: CORS_HEADERS,
-        body: JSON.stringify({ error: 'AI service unavailable. Try again in a moment.' }),
-      };
+      console.error('Anthropic error:', response.status, await response.text());
+      return { statusCode: 502, headers: CORS_HEADERS, body: JSON.stringify({ error: 'AI service temporarily unavailable.' }) };
     }
 
     const data = await response.json();
-    const reply = data.content?.[0]?.text || 'Sorry, I got an empty response. Try asking again.';
-
-    return {
-      statusCode: 200,
-      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ reply }),
-    };
+    const reply = data.content?.[0]?.text || 'Sorry, empty response. Try again.';
+    return { statusCode: 200, headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' }, body: JSON.stringify({ reply }) };
   } catch (err) {
-    console.error('Chat function error:', err);
-    return {
-      statusCode: 500,
-      headers: CORS_HEADERS,
-      body: JSON.stringify({ error: 'Something went wrong. You can always reach Boris at hey@boris.io.' }),
-    };
+    console.error('Handler error:', err);
+    return { statusCode: 500, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Something went wrong. You can reach Boris at hey@boris.io.' }) };
   }
 };
