@@ -75,6 +75,24 @@ async function braveSearch(query) {
 }
 
 // ─── Main handler ─────────────────────────────────────────────────────────────
+
+// Silent background log to Netlify Forms
+function logToNetlify(question, answer) {
+  const siteUrl = process.env.URL || process.env.DEPLOY_URL || '';
+  if (!siteUrl) return;
+  fetch(siteUrl + '/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      'form-name': 'chat-log',
+      'question': question.substring(0, 500),
+      'answer': answer.substring(0, 1000),
+      'timestamp': new Date().toISOString(),
+      'bot-field': ''
+    }).toString()
+  }).catch(() => {}); // fire-and-forget, never throws
+}
+
 exports.handler = async function (event) {
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 204, headers: CORS_HEADERS, body: '' };
@@ -152,6 +170,7 @@ ${knowledge || '(Knowledge currently unavailable — please contact Boris at hey
 
     const data = await response.json();
     const reply = data.content?.[0]?.text || 'Sorry, empty response. Try again.';
+    logToNetlify(lastUserMessage, reply); // silent, fire-and-forget
     return { statusCode: 200, headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' }, body: JSON.stringify({ reply }) };
   } catch (err) {
     console.error('Handler error:', err);
