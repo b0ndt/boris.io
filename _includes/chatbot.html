@@ -54,7 +54,7 @@
   /* ===== Chatbot Widget Styles ===== */
   #boris-chat-root {
     position: fixed;
-    top: 24px;
+    bottom: 28px;
     right: 28px;
     z-index: 9999;
     font-family: 'PT Sans', sans-serif;
@@ -62,37 +62,75 @@
 
   /* ---- Trigger Button ---- */
   #boris-chat-btn {
-    width: auto;
-    height: 40px;
-    border-radius: 20px;
-    padding: 0 16px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
     background: #000936;
-    border: 2px solid #0033af;
+    border: 1.5px solid rgba(0, 51, 175, 0.6);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(0, 51, 175, 0.3);
-    transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
+    box-shadow: 0 4px 24px rgba(0, 9, 54, 0.5), 0 1px 3px rgba(0,0,0,0.3);
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
     outline: none;
     padding: 0;
+    position: relative;
+  }
+
+  #boris-chat-btn::before {
+    content: 'Ask about Boris';
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000936;
+    color: #e2e8f0;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 51, 175, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    transform: translateY(-50%) translateX(4px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+
+  #boris-chat-btn:hover::before,
+  #boris-chat-btn:focus-visible::before {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
   }
 
   #boris-chat-btn:hover,
   #boris-chat-btn:focus-visible {
-    box-shadow: 0 4px 28px rgba(0, 51, 175, 0.7), 0 0 0 3px rgba(0, 51, 175, 0.25);
-    transform: scale(1.07);
-    background: #000a43;
+    box-shadow: 0 6px 32px rgba(0, 51, 175, 0.5), 0 1px 3px rgba(0,0,0,0.3);
+    border-color: rgba(0, 51, 175, 1);
+    transform: scale(1.06);
   }
 
   #boris-chat-btn:active {
-    transform: scale(0.96);
+    transform: scale(0.95);
+  }
+
+  @keyframes boris-pulse {
+    0%, 100% { box-shadow: 0 4px 24px rgba(0, 9, 54, 0.5), 0 0 0 0 rgba(0, 51, 175, 0.4); }
+    50% { box-shadow: 0 4px 24px rgba(0, 9, 54, 0.5), 0 0 0 8px rgba(0, 51, 175, 0); }
+  }
+
+  #boris-chat-btn:not([aria-expanded="true"]) {
+    animation: boris-pulse 3s ease-in-out infinite;
   }
 
   /* ---- Chat Panel ---- */
   #boris-chat-panel {
     position: absolute;
-    top: 70px;
+    bottom: 70px;
     right: 0;
     width: 380px;
     height: 520px;
@@ -105,10 +143,10 @@
     overflow: hidden;
     /* Hidden state */
     opacity: 0;
-    transform: translateY(-16px) scale(0.97);
+    transform: translateY(12px) scale(0.97);
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.25s ease;
-    transform-origin: top right;
+    transform-origin: bottom right;
   }
 
   #boris-chat-panel.boris-chat-open {
@@ -343,19 +381,19 @@
   /* ---- Mobile Responsive ---- */
   @media (max-width: 480px) {
     #boris-chat-root {
-      top: 16px;
-      right: 16px;
+      bottom: 20px;
+      right: 20px;
     }
 
     #boris-chat-panel {
       position: fixed;
-      top: 0;
+      bottom: 0;
       right: 0;
       left: 0;
       width: 100%;
       height: 80vh;
-      border-radius: 0 0 20px 20px;
-      transform-origin: top center;
+      border-radius: 20px 20px 0 0;
+      transform-origin: bottom center;
     }
 
     #boris-chat-panel.boris-chat-open {
@@ -363,7 +401,7 @@
     }
 
     #boris-chat-panel:not(.boris-chat-open) {
-      transform: translateY(-100%);
+      transform: translateY(100%);
     }
   }
 </style>
