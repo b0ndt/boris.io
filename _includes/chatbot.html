@@ -495,7 +495,7 @@
       color: #6ee7b7;
       font-size: 13px;
       text-align: center;
-      padding: 4px 0;
+      padding: 14px 0;
     }
 </style>
 
@@ -756,7 +756,8 @@
     messagesEl.scrollTop = messagesEl.scrollHeight;
   }
 
-  contactSubmit.addEventListener('click', function () {
+  contactSubmit.addEventListener('click', function (e) {
+    e.stopPropagation();
     var name = contactName.value.trim();
     var email = contactEmail.value.trim();
     if (!email) { contactEmail.focus(); return; }
