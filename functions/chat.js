@@ -78,19 +78,21 @@ async function braveSearch(query) {
 
 // Silent background log to Netlify Forms
 function logToNetlify(question, answer) {
-  const siteUrl = process.env.URL || process.env.DEPLOY_URL || '';
+  const siteUrl = process.env.DEPLOY_URL || process.env.URL || '';
   if (!siteUrl) return;
+  const payload = new URLSearchParams({
+    'form-name': 'chat-log',
+    'question': question.substring(0, 500),
+    'answer': answer.substring(0, 1000),
+    'timestamp': new Date().toISOString(),
+  }).toString();
   fetch(siteUrl + '/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-      'form-name': 'chat-log',
-      'question': question.substring(0, 500),
-      'answer': answer.substring(0, 1000),
-      'timestamp': new Date().toISOString(),
-      'bot-field': ''
-    }).toString()
-  }).catch(() => {}); // fire-and-forget, never throws
+    body: payload,
+  }).then(r => {
+    if (!r.ok) console.error('Netlify form submit failed:', r.status);
+  }).catch(e => console.error('Netlify form submit error:', e.message));
 }
 
 exports.handler = async function (event) {
