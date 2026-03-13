@@ -11,7 +11,8 @@
     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M13 2C7.477 2 3 6.09 3 11.125c0 2.8 1.37 5.303 3.527 6.977L5.5 22l4.766-2.49C11.27 19.834 12.12 20 13 20c5.523 0 10-4.09 10-9.125S18.523 2 13 2z" fill="#e2e8f0"/>
     </svg>
-  </button>
+    <span id="boris-chat-tooltip" aria-hidden="true">Ask about Boris</span>
+    </button>
 
   <!-- Chat panel -->
   <div
@@ -76,14 +77,14 @@
     outline: none;
     padding: 0;
     position: relative;
+    touch-action: manipulation;
   }
 
-  #boris-chat-btn::before {
-    content: 'Ask about Boris';
+  #boris-chat-tooltip {
     position: absolute;
     right: calc(100% + 12px);
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateX(4px);
     background: #000936;
     color: #e2e8f0;
     font-family: 'PT Sans', sans-serif;
@@ -97,14 +98,17 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.18s ease, transform 0.18s ease;
-    transform: translateY(-50%) translateX(4px);
     box-shadow: 0 2px 12px rgba(0,0,0,0.3);
   }
 
-  #boris-chat-btn:hover::before,
-  #boris-chat-btn:focus-visible::before {
+  #boris-chat-btn:hover #boris-chat-tooltip,
+  #boris-chat-btn:focus-visible #boris-chat-tooltip {
     opacity: 1;
     transform: translateY(-50%) translateX(0);
+  }
+
+  @media (hover: none) {
+    #boris-chat-tooltip { display: none; }
   }
 
   #boris-chat-btn:hover,
@@ -413,6 +417,7 @@
   var MAX_HISTORY = 20;
   var ENDPOINT = '/.netlify/functions/chat';
 
+  var root = document.getElementById('boris-chat-root');
   var btn = document.getElementById('boris-chat-btn');
   var panel = document.getElementById('boris-chat-panel');
   var closeBtn = document.getElementById('boris-chat-close');
@@ -475,8 +480,7 @@
       .replace(/^[\-\*] (.+)$/gm, '<li>$1</li>')
       .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
       // Line breaks
-      .replace(/
-/g, '<br>');
+      .replace(/\n/g, '<br>');
   }
 
   function appendMessage(role, text) {
@@ -577,14 +581,40 @@
     setLoading(false);
   }
 
-  // Event: Open/close button
-  btn.addEventListener('click', function () {
+  // Event: Open/close button (click + touchend for mobile)
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
     if (isOpen) {
       closePanel();
     } else {
       openPanel();
     }
   });
+
+  // Consent banner awareness — push button up when banner is visible
+  function adjustForConsent() {
+    var consent = document.querySelector('amp-consent');
+    if (consent) {
+      var h = consent.offsetHeight;
+      if (h > 0) {
+        root.style.bottom = (h + 12) + 'px';
+        return;
+      }
+    }
+    root.style.bottom = '';
+  }
+
+  adjustForConsent();
+  var consentObserver = new MutationObserver(adjustForConsent);
+  var consentEl = document.querySelector('amp-consent');
+  if (consentEl) {
+    consentObserver.observe(consentEl, { attributes: true, childList: true, subtree: true });
+    // Also observe style changes (display none/block)
+    consentObserver.observe(consentEl, { attributeFilter: ['style', 'class'] });
+  }
+  // Fallback: re-check after short delay (AMP consent renders async)
+  setTimeout(adjustForConsent, 800);
+  setTimeout(adjustForConsent, 2500);
 
   // Event: Close button
   closeBtn.addEventListener('click', closePanel);
