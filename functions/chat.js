@@ -3,11 +3,23 @@
 // Body: { messages: [{role, content}] }
 // Returns: { reply: string } or { error: string }
 
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'Content-Type',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-};
+const ALLOWED_ORIGINS = [
+  'https://boris.io',
+  'https://www.boris.io',
+];
+
+function getCorsHeaders(origin) {
+  // Allow configured origins + any Netlify deploy preview
+  const allowed =
+    ALLOWED_ORIGINS.includes(origin) ||
+    /^https:\/\/[a-z0-9-]+--boris\.netlify\.app$/.test(origin || '');
+  return {
+    'Access-Control-Allow-Origin': allowed ? origin : ALLOWED_ORIGINS[0],
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Vary': 'Origin',
+  };
+}
 
 // ─── Rate limiting ────────────────────────────────────────────────────────────
 const rateLimitMap = new Map();
@@ -96,6 +108,9 @@ function logToNetlify(question, answer) {
 }
 
 exports.handler = async function (event) {
+  const origin = event.headers?.origin || event.headers?.Origin || '';
+  const CORS_HEADERS = getCorsHeaders(origin);
+
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 204, headers: CORS_HEADERS, body: '' };
   }
