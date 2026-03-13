@@ -434,8 +434,10 @@
     }
   }
 
-    .boris-msg a {
-      color: #ffffff;
+    .boris-msg a,
+    .boris-msg a:visited,
+    .boris-msg a:link {
+      color: #ffffff !important;
       text-decoration: underline;
       text-underline-offset: 2px;
     }
@@ -654,9 +656,11 @@
         // Remove the last user message from history on error
         messages.pop();
       } else {
-        var reply = data.reply || 'Got an empty response — try again?';
+        var rawReply = data.reply || 'Got an empty response — try again?';
+        var showContact = rawReply.includes('[CONTACT_OFFER]');
+        var reply = rawReply.replace('[CONTACT_OFFER]', '').trim();
         appendMessage('assistant', reply);
-    if (showContact) showContactForm();
+        if (showContact) showContactForm();
         messages.push({ role: 'assistant', content: reply });
       }
     } catch (err) {
