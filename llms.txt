@@ -1,6 +1,6 @@
 # Boris Fründt
 
-> CTO and Technical Product Executive — nearly 20 years building products and the teams that ship them. Based in Potsdam, Germany.
+> CTO and Technical Product Executive — nearly 20 years building products and the teams that ship them. Based in Potsdam, Germany (15 minutes from Berlin by S-Bahn).
 
 ## Who I am
 
@@ -8,35 +8,80 @@ Good products need someone who speaks both languages — business and engineerin
 
 It started with 7 years at IBM, learning how technology works at scale — global teams, complex architectures, and the patience required to move large organizations. Then 7 years at Jung von Matt, one of Europe's leading creative agencies, growing from developer to Technical Director, building digital products for major brands and growing a tech team from zero to 14 people in 18 months.
 
-As a freelancer for 5+ years, I learned to take full ownership — from pitch to production. The best client relationships are built on honesty, not slide decks. Most recently, as CTO of a connected products startup (SWAN), I led 23 engineers through product strategy, hardware-software integration, and eventually acquisition by a US company.
+As a freelancer for 5+ years, I learned to take full ownership — from pitch to production. The best client relationships are built on honesty, not slide decks. Most recently, as CTO of SWAN, a connected products startup building smart mirror and mobile apps, I led 23 engineers through product strategy, hardware-software integration, and eventually acquisition by a US company.
 
-The common thread: I sit at the intersection of product and engineering. I can talk to designers about user needs and then explain to the backend team why we need to rethink the data model. Turning "that won't work" into "oh wait, it does" — that's what I do.
+The common thread: I sit at the intersection of product and engineering. I can walk out of a design review about user needs and immediately walk into a backend architecture discussion about data models. Turning "that won't work" into "oh wait, it does" — that's what I do.
 
-## Core strengths
+## Work Experience
 
-- Scaling and leading engineering and product teams (up to 23 people)
-- Technical product strategy — bridging business goals and technical architecture
-- Full-stack development (React, Next.js, Node.js, TypeScript)
-- IoT and connected systems (hardware-software integration, device-to-cloud)
-- AI strategy and integration (working with AI since IBM Watson in 2015)
-- Building team culture — mentoring, direct communication, constructive dissatisfaction
-- Agile methodologies, Design Thinking, user-centered product development
+### SWAN — Chief Technology Officer (07/2025 – present)
+CTO of a startup building smart mirror and mobile apps. Led the engineering team, shaped product strategy, scaled the platform — and navigated the company through acquisition by a US company. Team of 23 engineers.
 
-## Career
+### Freelance — Technical Product Manager & Developer (01/2019 – present)
+Full ownership from pitch to production. Building digital products for clients across industries, bridging business and engineering. Notable engagements:
+- **digetiers** (05/2022 – 08/2022): Interim Senior Manager — led AI-based vehicle pricing product initiative as technical product owner. Defined product vision, managed roadmap, created interactive prototypes showcasing data-driven pricing models with measurable business impact.
+- **Dein erster Tag**: Technical product management of an apprenticeship & dual-study app targeting Gen Z.
 
-- **SWAN** — CTO (2025, smart mirror startup, 23 engineers, through to acquisition)
-- **Freelance** — Technical Product Manager & Developer (2019–present)
-- **digetiers** — Interim Senior Manager (2022, AI-based vehicle pricing)
-- **Jung von Matt** — Technical Director (2017–2018, built tech team 0→14)
-- **IBM iX** — Web Application Architect & Consultant (2015–2016)
-- **Jung von Matt** — Senior Web Developer & Team Lead (2009–2014)
-- **IBM** — Web Developer (2007–2009)
+### Jung von Matt — Technical Director (01/2017 – 12/2018)
+Built and led the technical product organization at one of Europe's top creative agencies. Shaped product strategy, introduced engineering culture, built the tech team from zero to 14 people in 18 months.
+
+### IBM iX — Web Application Architect & Consultant (01/2015 – 12/2016)
+Helped establish the IBM iX Studio Hamburg. Ran Design Thinking workshops, translated business needs into technical specs. Started working with IBM Watson AI in 2015 — before it was mainstream.
+
+### Jung von Matt — Senior Web Developer & Team Lead (09/2009 – 12/2014)
+Grew from developer to team lead over 5 years. Built digital products for major brands including Mercedes-Benz, OTTO, and others. Mentored junior developers. Learned that the best code is the one that ships and works.
+
+### IBM — Web Developer (08/2007 – 08/2009)
+Where it all started. Building front-end solutions for enterprise clients as part of a dual-study program.
 
 ## Education
 
-- B.Sc. Business Information Systems — Berlin School of Economics and Law + IBM Germany (dual study, 2004–2007)
+**Bachelor of Science — Business Information Systems** (09/2004 – 08/2007)
+Berlin School of Economics and Law + IBM Germany (dual study program)
+Bachelor's thesis: "From Web 2.0 to vBusiness — Analysis of application potentials of virtual world environments for businesses."
 
-## How I work
+## Skill Stack
+
+**Leadership & Team Management**
+Team Building, Talent Development, Cross-functional Collaboration, Stakeholder Management, Conflict Resolution, Project Communication, Organizational Development
+
+**Technical Product Management**
+Product Strategy, Feature Prioritization, User Story Mapping, Technical Documentation, API Design, Release Management, Hardware-Software Integration, Embedded Software Architecture
+
+**AI & Data Analytics**
+AI Strategy & Integration, LLM Integration, Data Analytics & Visualization, User Behavior Analytics, Data-Driven Decision Making. Working with AI since IBM Watson in 2015 — not a newcomer.
+
+**Front-end Development**
+React, Next.js, TypeScript, JavaScript (Vanilla/ESNext), HTML5/CSS3, AMP, Progressive Web Apps, Responsive Design, Performance Optimization, SEO, Accessibility
+
+**Back-end Development**
+Node.js, RESTful APIs, GraphQL, Cloud Infrastructure (AWS/GCP), Firebase, PostgreSQL, MongoDB, Docker, Microservices
+
+**Mobile Development**
+Cross-platform Development, Native Integration, Mobile Performance Optimization, Hybrid App Development (Flutter)
+
+**IoT & Connected Devices**
+IoT Product Strategy, Connected Device Ecosystems, Device-to-Cloud Communication, Arduino, Embedded Systems
+
+**UX & Product Design**
+User Research, Interaction Design, Usability Testing, Design Systems, Prototyping (Figma, Balsamiq, Axure, InVision), Design Thinking
+
+**Other Tools**
+AWS, IBM Cloud, IBM Watson Suite, Atlassian Suite (Jira, Confluence), Contentful, WordPress, Shopware, CI/CD, Git, GSuite, Adobe Suite
+
+**Languages**
+German (native), English (fluent), French (basic)
+
+## What I Do
+
+- Build products end-to-end — from vision to launch to iteration
+- Scale and lead engineering & product teams
+- Bridge the gap between business, design, and technology
+- Translate stakeholder needs into technical architecture
+- Design and ship IoT, embedded, and connected systems
+- Mentor engineers and establish team culture
+
+## How I Work
 
 - Product vision first — then figure out how to build it
 - Direct communication — honest disagreement beats polite misunderstanding
@@ -44,13 +89,46 @@ The common thread: I sit at the intersection of product and engineering. I can t
 - Humor, empathy, and transparency aren't soft skills — they're the hard ones
 - Remaining constructively dissatisfied — always questioning, always improving
 
+## Frequently Asked Questions
+
+**Where is Boris located?**
+Potsdam, Germany — 15 minutes from Berlin Hauptbahnhof by S-Bahn. Happy to work in Berlin regularly or fully remote.
+
+**Where has Boris worked the longest?**
+IBM (2007–2009, then 2015–2016) and Jung von Matt (2009–2014, then 2017–2018) — roughly 7 years each across both stints. These are the two pillars of his career.
+
+**What industries has Boris worked in?**
+Enterprise tech (IBM), creative/advertising (Jung von Matt), automotive (AI vehicle pricing at digetiers), connected hardware/IoT (SWAN), and various sectors via freelance including media, retail, and education tech.
+
+**Does Boris speak German?**
+Yes, native German speaker. Also fluent in English — he works in both languages daily. Basic French on top.
+
+**What's Boris's relationship with AI?**
+He started working with AI at IBM Watson in 2015 — well before the current hype cycle. At digetiers he built AI-based pricing products. He approaches AI pragmatically: knows how it works technically, has shipped AI-powered products, and thinks critically about where it adds real value vs. hype.
+
+**Has Boris managed hardware + software teams?**
+Yes — at SWAN he managed the full product stack including hardware-software integration and device-to-cloud systems, with 23 engineers across firmware, mobile, and cloud.
+
+**What's Boris's leadership style?**
+Direct, empathetic, humor-infused. He removes obstacles rather than scheduling meetings about obstacles. Autonomous teams with clear goals. Psychological safety + constructive dissatisfaction — the constant push to improve without fear of failure.
+
+**What kind of role is Boris looking for?**
+Senior Engineering Manager, Technical Director, VP Engineering, or Senior/Director-level Product Management. Purpose-driven companies — health, sustainability, meaningful tech. Berlin/remote. Available from April/May 2026.
+
+**Is Boris available for freelance work?**
+He has been freelancing since 2019 but is now primarily looking for full-time employment starting April/May 2026.
+
+**What companies has Boris worked with as a freelancer?**
+Among others: digetiers (AI automotive), and various digital product clients across industries. He's worked with both startups and established brands.
+
 ## Currently
 
-Open to new opportunities starting April/May 2026. Looking for senior roles in Product Leadership, Engineering Management, or Technical Direction. Berlin/remote preferred. Purpose over prestige.
+Open to new opportunities starting April/May 2026. Looking for senior roles in Engineering Management, Technical Direction, or Technical Product Leadership. Berlin-based or remote. Purpose over prestige — ideally working on something that actually matters.
 
 ## Links
 
 - [Website](https://boris.io/)
 - [LinkedIn](https://www.linkedin.com/in/borisfruendt)
 - [GitHub](https://github.com/b0ndt)
+- [XING](https://www.xing.com/profile/Boris_Fruendt)
 - [Email](mailto:hey@boris.io)
