@@ -8,7 +8,7 @@
 <amp-sidebar id="sidebar" layout="nodisplay" side="right" role="navigation" aria-label="Main menu">
   <nav toolbar="(min-width: 1024px)" toolbar-target="target-element">
     <ul class="nav navbar-nav clearfix" role="menu">
-      {% if page.layout == 'default' %}
+      {% if page.layout == 'default' or page.layout == 'default-no-amp' %}
       <li role="none">
         <a on="tap:sidebar.close,why.scrollTo" role="menuitem">About</a>
       </li>
