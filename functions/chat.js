@@ -100,7 +100,7 @@ exports.handler = async function (event) {
     };
   }
 
-  const knowledge = process.env.BORIS_KNOWLEDGE || '';
+  const knowledge = (process.env.BORIS_KNOWLEDGE_1 || '') + (process.env.BORIS_KNOWLEDGE_2 || '');
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
