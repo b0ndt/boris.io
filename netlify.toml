@@ -8,16 +8,3 @@ RUBY_VERSION = "2.7.8"
 BUNDLER_VERSION = "2.4.17"
 NODE_VERSION = "20"
 JEKYLL_ENV = "production"
-
-# Set ANTHROPIC_API_KEY in the Netlify dashboard under Site Settings > Environment Variables
-# For local development, create a .env file or export it in your shell:
-#   export ANTHROPIC_API_KEY=sk-ant-...
-
-[context.deploy-preview.environment]
-# ANTHROPIC_API_KEY is inherited from site-level env vars set in Netlify dashboard
-# Add it there: Site Settings > Build & deploy > Environment > Environment variables
-# Key: ANTHROPIC_API_KEY
-# Value: sk-ant-api03-...
-
-[context.branch-deploy.environment]
-# Same as above — ANTHROPIC_API_KEY must be set in Netlify dashboard
