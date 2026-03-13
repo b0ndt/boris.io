@@ -434,15 +434,16 @@
     }
   }
 
-    .boris-msg a,
-    .boris-msg a:visited,
-    .boris-msg a:link {
+    #boris-chat-panel .boris-msg a,
+    #boris-chat-panel .boris-msg a:link,
+    #boris-chat-panel .boris-msg a:visited {
       color: #ffffff !important;
-      text-decoration: underline;
+      text-decoration: underline !important;
       text-underline-offset: 2px;
     }
-    .boris-msg a:hover {
+    #boris-chat-panel .boris-msg a:hover {
       opacity: 0.75;
+      color: #ffffff !important;
     }
 
     /* ---- Contact Capture Form ---- */
@@ -563,7 +564,7 @@
       // Auto-link bare URLs
       .replace(/(^|[\s(])((https?:\/\/)[^\s<>"]+)/g, '$1<a href="$2" target="_blank" rel="noopener">$2</a>')
       // Auto-link bare emails
-      .replace(/(^|[\s])([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g, '$1<a href="mailto:$2">$2</a>')
+      .replace(/([a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})/g, '<a href="mailto:$1">$1</a>')
       // Bullet lists
       .replace(/^[\-\*] (.+)$/gm, '<li>$1</li>')
       .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
@@ -657,10 +658,12 @@
         messages.pop();
       } else {
         var rawReply = data.reply || 'Got an empty response — try again?';
-        var showContact = rawReply.includes('[CONTACT_OFFER]');
         var reply = rawReply.replace('[CONTACT_OFFER]', '').trim();
         appendMessage('assistant', reply);
-        if (showContact) showContactForm();
+        // Show contact form after 2nd assistant message
+        if (messages.filter(function(m){ return m.role==='assistant'; }).length >= 1) {
+          showContactForm();
+        }
         messages.push({ role: 'assistant', content: reply });
       }
     } catch (err) {
