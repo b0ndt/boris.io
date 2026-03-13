@@ -1,6 +1,13 @@
 <!-- Chatbot Widget — boris.io -->
 <!-- Self-contained: no external dependencies -->
 <!-- Hidden form for Netlify Forms detection (do not remove) -->
+<form name="contact-lead" data-netlify="true" style="display:none" aria-hidden="true">
+  <input type="hidden" name="name" />
+  <input type="hidden" name="email" />
+  <input type="hidden" name="context" />
+</form>
+
+
 <form name="chat-log" data-netlify="true" netlify-honeypot="bot-field" style="display:none" aria-hidden="true">
   <input type="hidden" name="question" />
   <input type="hidden" name="answer" />
@@ -41,6 +48,13 @@
     </div>
 
     <!-- Input area -->
+    <div id="boris-contact-form" role="form" aria-label="Leave your contact details">
+      <p>Leave your name and email and Boris will get back to you.</p>
+      <input class="boris-contact-field" id="boris-contact-name" type="text" placeholder="Your name" autocomplete="name" />
+      <input class="boris-contact-field" id="boris-contact-email" type="email" placeholder="Your email" autocomplete="email" />
+      <button class="boris-contact-submit" id="boris-contact-submit" type="button">Send to Boris</button>
+    </div>
+
     <form id="boris-chat-form" autocomplete="off">
       <input
         type="text"
@@ -428,6 +442,58 @@
     .boris-msg a:hover {
       opacity: 0.75;
     }
+
+    /* ---- Contact Capture Form ---- */
+    #boris-contact-form {
+      background: #1a2235;
+      border: 1px solid rgba(0, 51, 175, 0.4);
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 8px;
+      display: none;
+    }
+    #boris-contact-form.visible { display: block; }
+    #boris-contact-form p {
+      color: #94a3b8;
+      font-size: 12px;
+      margin: 0 0 10px;
+    }
+    .boris-contact-field {
+      width: 100%;
+      background: #0d1421;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: #e2e8f0;
+      font-family: 'PT Sans', sans-serif;
+      font-size: 16px;
+      outline: none;
+      box-sizing: border-box;
+      margin-bottom: 8px;
+      transition: border-color 0.15s;
+    }
+    .boris-contact-field:focus { border-color: rgba(0,51,175,0.6); }
+    .boris-contact-field::placeholder { color: #4b5563; }
+    .boris-contact-submit {
+      width: 100%;
+      background: #0033af;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'PT Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 9px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .boris-contact-submit:hover { background: #0040d8; }
+    .boris-contact-sent {
+      color: #6ee7b7;
+      font-size: 13px;
+      text-align: center;
+      padding: 4px 0;
+    }
 </style>
 
 <script>
@@ -590,6 +656,7 @@
       } else {
         var reply = data.reply || 'Got an empty response — try again?';
         appendMessage('assistant', reply);
+    if (showContact) showContactForm();
         messages.push({ role: 'assistant', content: reply });
       }
     } catch (err) {
@@ -665,6 +732,40 @@
     ) {
       closePanel();
     }
+  });
+
+
+  // ---- Contact capture form ----
+  var contactForm = document.getElementById('boris-contact-form');
+  var contactName = document.getElementById('boris-contact-name');
+  var contactEmail = document.getElementById('boris-contact-email');
+  var contactSubmit = document.getElementById('boris-contact-submit');
+  var contactShown = false;
+
+  function showContactForm() {
+    if (contactShown) return;
+    contactShown = true;
+    contactForm.classList.add('visible');
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  contactSubmit.addEventListener('click', function () {
+    var name = contactName.value.trim();
+    var email = contactEmail.value.trim();
+    if (!email) { contactEmail.focus(); return; }
+    // Submit to Netlify Forms
+    var siteUrl = window.location.origin;
+    fetch(siteUrl + '/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        'form-name': 'contact-lead',
+        'name': name,
+        'email': email,
+        'context': messages.slice(-4).map(m => m.role + ': ' + m.content.substring(0, 100)).join(' | ')
+      }).toString()
+    }).catch(function(){});
+    contactForm.innerHTML = '<p class="boris-contact-sent">✓ Thanks! Boris will be in touch.</p>';
   });
 
 })();
