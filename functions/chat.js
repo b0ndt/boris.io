@@ -41,6 +41,26 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
 };
 
+// In-memory cache for llms.txt
+let knowledgeCache = { content: '', fetchedAt: 0 };
+const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+
+async function fetchKnowledge() {
+  const now = Date.now();
+  if (knowledgeCache.content && now - knowledgeCache.fetchedAt < CACHE_TTL_MS) {
+    return knowledgeCache.content;
+  }
+  try {
+    const res = await fetch('https://boris.io/llms.txt');
+    if (res.ok) {
+      knowledgeCache = { content: await res.text(), fetchedAt: now };
+    }
+  } catch (e) {
+    console.error('Failed to fetch llms.txt:', e.message);
+  }
+  return knowledgeCache.content;
+}
+
 exports.handler = async function (event) {
   // Handle CORS preflight
   if (event.httpMethod === 'OPTIONS') {
@@ -100,7 +120,7 @@ exports.handler = async function (event) {
     };
   }
 
-  const knowledge = (process.env.BORIS_KNOWLEDGE_1 || '') + (process.env.BORIS_KNOWLEDGE_2 || '');
+  const knowledge = await fetchKnowledge();
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
