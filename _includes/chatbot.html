@@ -54,7 +54,7 @@
   /* ===== Chatbot Widget Styles ===== */
   #boris-chat-root {
     position: fixed;
-    bottom: 28px;
+    top: 24px;
     right: 28px;
     z-index: 9999;
     font-family: 'PT Sans', sans-serif;
@@ -62,9 +62,10 @@
 
   /* ---- Trigger Button ---- */
   #boris-chat-btn {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    width: auto;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 16px;
     background: #000936;
     border: 2px solid #0033af;
     cursor: pointer;
@@ -91,7 +92,7 @@
   /* ---- Chat Panel ---- */
   #boris-chat-panel {
     position: absolute;
-    bottom: 70px;
+    top: 70px;
     right: 0;
     width: 380px;
     height: 520px;
@@ -104,10 +105,10 @@
     overflow: hidden;
     /* Hidden state */
     opacity: 0;
-    transform: translateY(16px) scale(0.97);
+    transform: translateY(-16px) scale(0.97);
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.25s ease;
-    transform-origin: bottom right;
+    transform-origin: top right;
   }
 
   #boris-chat-panel.boris-chat-open {
@@ -342,19 +343,19 @@
   /* ---- Mobile Responsive ---- */
   @media (max-width: 480px) {
     #boris-chat-root {
-      bottom: 16px;
+      top: 16px;
       right: 16px;
     }
 
     #boris-chat-panel {
       position: fixed;
-      bottom: 0;
+      top: 0;
       right: 0;
       left: 0;
       width: 100%;
       height: 80vh;
-      border-radius: 20px 20px 0 0;
-      transform-origin: bottom center;
+      border-radius: 0 0 20px 20px;
+      transform-origin: top center;
     }
 
     #boris-chat-panel.boris-chat-open {
@@ -362,7 +363,7 @@
     }
 
     #boris-chat-panel:not(.boris-chat-open) {
-      transform: translateY(100%);
+      transform: translateY(-100%);
     }
   }
 </style>
