@@ -1,0 +1,549 @@
+<!-- Chatbot Widget — boris.io -->
+<!-- Self-contained: no external dependencies -->
+<div id="boris-chat-root">
+  <!-- Floating trigger button -->
+  <button
+    id="boris-chat-btn"
+    aria-label="Chat with Boris's AI assistant"
+    aria-expanded="false"
+    aria-controls="boris-chat-panel"
+  >
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M13 2C7.477 2 3 6.09 3 11.125c0 2.8 1.37 5.303 3.527 6.977L5.5 22l4.766-2.49C11.27 19.834 12.12 20 13 20c5.523 0 10-4.09 10-9.125S18.523 2 13 2z" fill="#e2e8f0"/>
+    </svg>
+  </button>
+
+  <!-- Chat panel -->
+  <div
+    id="boris-chat-panel"
+    role="dialog"
+    aria-label="Chat with Boris's AI assistant"
+    aria-hidden="true"
+  >
+    <!-- Panel header -->
+    <div id="boris-chat-header">
+      <span id="boris-chat-title">Ask about Boris</span>
+      <button id="boris-chat-close" aria-label="Close chat">×</button>
+    </div>
+
+    <!-- Messages container -->
+    <div id="boris-chat-messages" aria-live="polite" aria-atomic="false" role="log">
+      <!-- Messages injected by JS -->
+    </div>
+
+    <!-- Input area -->
+    <form id="boris-chat-form" autocomplete="off">
+      <input
+        type="text"
+        id="boris-chat-input"
+        placeholder="Ask anything about Boris…"
+        autocomplete="off"
+        maxlength="500"
+        aria-label="Your message"
+      />
+      <button type="submit" id="boris-chat-send" aria-label="Send message">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 9L16 2L10 9L16 16L2 9Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<style>
+  /* ===== Chatbot Widget Styles ===== */
+  #boris-chat-root {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  /* ---- Trigger Button ---- */
+  #boris-chat-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #000936;
+    border: 2px solid #0033af;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 51, 175, 0.3);
+    transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
+    outline: none;
+    padding: 0;
+  }
+
+  #boris-chat-btn:hover,
+  #boris-chat-btn:focus-visible {
+    box-shadow: 0 4px 28px rgba(0, 51, 175, 0.7), 0 0 0 3px rgba(0, 51, 175, 0.25);
+    transform: scale(1.07);
+    background: #000a43;
+  }
+
+  #boris-chat-btn:active {
+    transform: scale(0.96);
+  }
+
+  /* ---- Chat Panel ---- */
+  #boris-chat-panel {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 380px;
+    height: 520px;
+    background: #111827;
+    border: 1px solid rgba(0, 51, 175, 0.35);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.04);
+    overflow: hidden;
+    /* Hidden state */
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform-origin: bottom right;
+  }
+
+  #boris-chat-panel.boris-chat-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+  }
+
+  /* ---- Panel Header ---- */
+  #boris-chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px 14px;
+    background: #000936;
+    border-bottom: 1px solid rgba(0, 51, 175, 0.3);
+    flex-shrink: 0;
+  }
+
+  #boris-chat-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #e2e8f0;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  #boris-chat-close {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 6px;
+    transition: color 0.15s, background 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #boris-chat-close:hover {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* ---- Messages Area ---- */
+  #boris-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scroll-behavior: smooth;
+  }
+
+  #boris-chat-messages::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  #boris-chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #boris-chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+  }
+
+  /* ---- Message Bubbles ---- */
+  .boris-msg {
+    max-width: 88%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #e2e8f0;
+    word-wrap: break-word;
+    animation: boris-msg-in 0.2s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes boris-msg-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .boris-msg-user {
+    background: #0033af;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+
+  .boris-msg-assistant {
+    background: #1e2733;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .boris-msg-error {
+    background: #3b1515;
+    align-self: flex-start;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    color: #fca5a5;
+    font-size: 13px;
+  }
+
+  /* ---- Typing Indicator ---- */
+  .boris-typing {
+    background: #1e2733;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 16px;
+    border-radius: 14px;
+    animation: boris-msg-in 0.2s ease forwards;
+    opacity: 0;
+  }
+
+  .boris-typing-dots {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    height: 14px;
+  }
+
+  .boris-typing-dots span {
+    width: 6px;
+    height: 6px;
+    background: #64748b;
+    border-radius: 50%;
+    animation: boris-dot-bounce 1.2s ease-in-out infinite;
+  }
+
+  .boris-typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .boris-typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes boris-dot-bounce {
+    0%, 60%, 100% {
+      transform: translateY(0);
+      background: #64748b;
+    }
+    30% {
+      transform: translateY(-5px);
+      background: #94a3b8;
+    }
+  }
+
+  /* ---- Input Area ---- */
+  #boris-chat-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+    background: #0d1421;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    flex-shrink: 0;
+  }
+
+  #boris-chat-input {
+    flex: 1;
+    background: #1e2733;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px 13px;
+    color: #e2e8f0;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s;
+    min-width: 0;
+  }
+
+  #boris-chat-input::placeholder {
+    color: #4b5563;
+  }
+
+  #boris-chat-input:focus {
+    border-color: rgba(0, 51, 175, 0.6);
+  }
+
+  #boris-chat-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  #boris-chat-send {
+    width: 38px;
+    height: 38px;
+    background: #0033af;
+    border: none;
+    border-radius: 10px;
+    color: #e2e8f0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.15s, transform 0.1s;
+    padding: 0;
+  }
+
+  #boris-chat-send:hover {
+    background: #0040d8;
+  }
+
+  #boris-chat-send:active {
+    transform: scale(0.94);
+  }
+
+  #boris-chat-send:disabled {
+    background: #1e2d4d;
+    cursor: not-allowed;
+    color: #4b5563;
+  }
+
+  /* ---- Mobile Responsive ---- */
+  @media (max-width: 480px) {
+    #boris-chat-root {
+      bottom: 16px;
+      right: 16px;
+    }
+
+    #boris-chat-panel {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 80vh;
+      border-radius: 20px 20px 0 0;
+      transform-origin: bottom center;
+    }
+
+    #boris-chat-panel.boris-chat-open {
+      transform: translateY(0) scale(1);
+    }
+
+    #boris-chat-panel:not(.boris-chat-open) {
+      transform: translateY(100%);
+    }
+  }
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  var MAX_HISTORY = 20;
+  var ENDPOINT = '/.netlify/functions/chat';
+
+  var btn = document.getElementById('boris-chat-btn');
+  var panel = document.getElementById('boris-chat-panel');
+  var closeBtn = document.getElementById('boris-chat-close');
+  var form = document.getElementById('boris-chat-form');
+  var input = document.getElementById('boris-chat-input');
+  var sendBtn = document.getElementById('boris-chat-send');
+  var messagesEl = document.getElementById('boris-chat-messages');
+
+  var messages = []; // {role, content}
+  var isOpen = false;
+  var isWaiting = false;
+  var hasShownIntro = false;
+
+  function openPanel() {
+    isOpen = true;
+    panel.classList.add('boris-chat-open');
+    panel.setAttribute('aria-hidden', 'false');
+    btn.setAttribute('aria-expanded', 'true');
+    if (!hasShownIntro) {
+      hasShownIntro = true;
+      appendMessage('assistant', 'Hey — I\'m not Boris, but I know quite a bit about him. Ask me anything.');
+    }
+    setTimeout(function () { input.focus(); }, 50);
+  }
+
+  function closePanel() {
+    isOpen = false;
+    panel.classList.remove('boris-chat-open');
+    panel.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.focus();
+  }
+
+  function scrollToBottom() {
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function appendMessage(role, text) {
+    var div = document.createElement('div');
+    div.className = 'boris-msg boris-msg-' + role;
+    div.textContent = text;
+    messagesEl.appendChild(div);
+    scrollToBottom();
+    return div;
+  }
+
+  function appendError(text) {
+    var div = document.createElement('div');
+    div.className = 'boris-msg boris-msg-error';
+    div.textContent = text;
+    messagesEl.appendChild(div);
+    scrollToBottom();
+    return div;
+  }
+
+  function showTyping() {
+    var div = document.createElement('div');
+    div.className = 'boris-typing';
+    div.id = 'boris-typing-indicator';
+    div.innerHTML = '<div class="boris-typing-dots"><span></span><span></span><span></span></div>';
+    messagesEl.appendChild(div);
+    scrollToBottom();
+    return div;
+  }
+
+  function removeTyping() {
+    var el = document.getElementById('boris-typing-indicator');
+    if (el) el.parentNode.removeChild(el);
+  }
+
+  function setLoading(loading) {
+    isWaiting = loading;
+    input.disabled = loading;
+    sendBtn.disabled = loading;
+    if (!loading) {
+      input.focus();
+    }
+  }
+
+  async function sendMessage(userText) {
+    if (!userText.trim() || isWaiting) return;
+
+    // Add user message to UI
+    appendMessage('user', userText);
+
+    // Add to history
+    messages.push({ role: 'user', content: userText });
+
+    // Trim history to MAX_HISTORY
+    if (messages.length > MAX_HISTORY) {
+      messages = messages.slice(messages.length - MAX_HISTORY);
+    }
+
+    setLoading(true);
+    var typingEl = showTyping();
+
+    try {
+      var response = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: messages }),
+      });
+
+      removeTyping();
+
+      var data;
+      try {
+        data = await response.json();
+      } catch (e) {
+        data = { error: 'Could not parse response.' };
+      }
+
+      if (!response.ok || data.error) {
+        var errorMsg = data.error || 'Something went wrong. Try again or reach Boris at hey@boris.io.';
+        appendError(errorMsg);
+        // Remove the last user message from history on error
+        messages.pop();
+      } else {
+        var reply = data.reply || 'Got an empty response — try again?';
+        appendMessage('assistant', reply);
+        messages.push({ role: 'assistant', content: reply });
+      }
+    } catch (err) {
+      removeTyping();
+      appendError('Network error. Check your connection or reach Boris at hey@boris.io.');
+      messages.pop();
+    }
+
+    setLoading(false);
+  }
+
+  // Event: Open/close button
+  btn.addEventListener('click', function () {
+    if (isOpen) {
+      closePanel();
+    } else {
+      openPanel();
+    }
+  });
+
+  // Event: Close button
+  closeBtn.addEventListener('click', closePanel);
+
+  // Event: Form submit
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    sendMessage(text);
+  });
+
+  // Event: ESC key closes panel
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isOpen) {
+      closePanel();
+    }
+  });
+
+  // Event: Click outside closes panel
+  document.addEventListener('click', function (e) {
+    if (
+      isOpen &&
+      !panel.contains(e.target) &&
+      e.target !== btn &&
+      !btn.contains(e.target)
+    ) {
+      closePanel();
+    }
+  });
+
+})();
+</script>
