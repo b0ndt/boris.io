@@ -19,26 +19,60 @@ CTO of a startup building smart mirror and mobile apps. Led the engineering team
 
 ### Freelance — Technical Product Manager & Developer (01/2019 – present)
 Full ownership from pitch to production. Building digital products for clients across industries, bridging business and engineering. Notable engagements:
-- **digetiers** (05/2022 – 08/2022): Interim Senior Manager — led AI-based vehicle pricing product initiative as technical product owner. Defined product vision, managed roadmap, created interactive prototypes showcasing data-driven pricing models with measurable business impact.
-- **Dein erster Tag**: Technical product management of an apprenticeship & dual-study app targeting Gen Z.
+
+- **digetiers** (05/2022 – 08/2022): Interim Senior Manager — led AI-based vehicle pricing product initiative as technical product owner. Defined product vision, managed roadmap and created interactive prototypes to showcase data-driven pricing models with measurable business impact.
+
+- **soulx**: Technical product management for a mental health app combining therapeutic expertise with practical tools. Led technical strategy and development roadmap.
+
+- **Dein erster Tag**: Technical product management of an apprenticeship & dual-study app targeting Gen Z — helping young users find modern career paths adapted to their specific needs.
+
+- **Technologiestiftung Berlin**: Product ownership, UI/UX design and prototype development for an open data platform showcasing activities around artists and cultural institutions in Berlin.
+
+- **SDA SE**: Development of a white label service mobile app for health insurance providers.
+
+- **XU Group**: Concept, prototype development, UI evaluation and creation of a modern white label learning platform to help educate employees.
 
 ### Jung von Matt — Technical Director (01/2017 – 12/2018)
-Built and led the technical product organization at one of Europe's top creative agencies. Shaped product strategy, introduced engineering culture, built the tech team from zero to 14 people in 18 months.
+Established the technical product organization at one of Europe's top creative agencies. Oversaw product strategy and implementation across digital initiatives. Introduced agile methodologies, created a culture of technical excellence, and built the tech team from zero to 14 people in 18 months — elevating the agency's digital capabilities significantly.
 
 ### IBM iX — Web Application Architect & Consultant (01/2015 – 12/2016)
-Helped establish the IBM iX Studio Hamburg. Ran Design Thinking workshops, translated business needs into technical specs. Started working with IBM Watson AI in 2015 — before it was mainstream.
+Helped establish the IBM iX Studio Hamburg with focus on technical product management. Facilitated Design Thinking workshops to define product vision and translated business requirements into technical specifications for development teams. Started working with IBM Watson AI in 2015 — before it was mainstream.
 
 ### Jung von Matt — Senior Web Developer & Team Lead (09/2009 – 12/2014)
-Grew from developer to team lead over 5 years. Built digital products for major brands including Mercedes-Benz, OTTO, and others. Mentored junior developers. Learned that the best code is the one that ships and works.
+Advanced to leadership after demonstrating technical excellence. Led development teams, mentored junior developers, and established coding standards that improved project delivery efficiency. Built digital products for major brands including Mercedes-Benz and OTTO.
 
-### IBM — Web Developer (08/2007 – 08/2009)
-Where it all started. Building front-end solutions for enterprise clients as part of a dual-study program.
+### IBM Interactive — Web Developer (08/2007 – 08/2009)
+Started professional career developing front-end solutions for enterprise clients. Gained proficiency in HTML, CSS, and JavaScript while working on projects requiring responsive design and cross-browser compatibility.
+
+## Selected Reference Projects
+
+### Deutscher Fussball Bund e.V. (2013/2014)
+Relaunch of Fussball.de — Germany's most-used amateur football platform with the world's largest player database. The project included a new consistent corporate design and a fully responsive, future-friendly website built from reusable Angular components.
+- Lead development of frontend architecture
+- Technical project management
+- Team coordination between client, creatives and developers
+
+### Daimler Financial Services (2015)
+Prototyping phase to support functional discussions and workshops for three portals (service center portal, dealer portal, customer portal) — creating a better user experience through rapid iteration.
+- Analysis of current implementation
+- Development of wireframes based on user insights
+- Agile implementation of rapid prototypes for new portals
 
 ## Education
 
 **Bachelor of Science — Business Information Systems** (09/2004 – 08/2007)
 Berlin School of Economics and Law + IBM Germany (dual study program)
 Bachelor's thesis: "From Web 2.0 to vBusiness — Analysis of application potentials of virtual world environments for businesses."
+
+## External Engagement
+
+- Guest author for the book "UX Design for Tablets" by Christian Kuhn (2013)
+- Presentation at CeBIT 2013 about the future of the Mobile Web
+- Presentation at Mobile Tech Con (MTC) 2013 — "HTML5 Multimedia in the Mobile Web"
+- DVD feature in "JavaScript Spezial" 2012 magazine
+- Workshop "Responsive Web Design" & Experts Roundtable at MTC 2012 & 2013
+- Presentation at MTC 2012 — "HTML5 goes Mobile"
+- Google Creative Sandbox 2012 contributor — Droid Booth (Google Chrome Experiment)
 
 ## Skill Stack
 
@@ -98,7 +132,7 @@ Potsdam, Germany — 15 minutes from Berlin Hauptbahnhof by S-Bahn. Happy to wor
 IBM (2007–2009, then 2015–2016) and Jung von Matt (2009–2014, then 2017–2018) — roughly 7 years each across both stints. These are the two pillars of his career.
 
 **What industries has Boris worked in?**
-Enterprise tech (IBM), creative/advertising (Jung von Matt), automotive (AI vehicle pricing at digetiers), connected hardware/IoT (SWAN), and various sectors via freelance including media, retail, and education tech.
+Enterprise tech (IBM), creative/advertising (Jung von Matt), automotive (AI vehicle pricing at digetiers), connected hardware/IoT (SWAN), mental health (soulx), education tech (XU Group, Dein erster Tag), health insurance (SDA SE), open data/culture (Technologiestiftung Berlin), and sports (DFB Fussball.de).
 
 **Does Boris speak German?**
 Yes, native German speaker. Also fluent in English — he works in both languages daily. Basic French on top.
@@ -108,6 +142,9 @@ He started working with AI at IBM Watson in 2015 — well before the current hyp
 
 **Has Boris managed hardware + software teams?**
 Yes — at SWAN he managed the full product stack including hardware-software integration and device-to-cloud systems, with 23 engineers across firmware, mobile, and cloud.
+
+**Has Boris worked in healthcare?**
+Yes — at soulx (mental health app) and SDA SE (white label mobile app for health insurance providers). He has a strong personal interest in digital health and has been following the space closely.
 
 **What's Boris's leadership style?**
 Direct, empathetic, humor-infused. He removes obstacles rather than scheduling meetings about obstacles. Autonomous teams with clear goals. Psychological safety + constructive dissatisfaction — the constant push to improve without fear of failure.
@@ -119,7 +156,10 @@ Senior Engineering Manager, Technical Director, VP Engineering, or Senior/Direct
 Yes — he has been freelancing since 2019 and is open to both freelance engagements and full-time positions starting April/May 2026.
 
 **What companies has Boris worked with as a freelancer?**
-Among others: digetiers (AI automotive), and various digital product clients across industries. He's worked with both startups and established brands.
+Among others: digetiers (AI automotive pricing), soulx (mental health), Dein erster Tag (edtech/Gen Z), Technologiestiftung Berlin (open data/culture), SDA SE (health insurance), XU Group (corporate learning platform), and various other digital product clients.
+
+**Has Boris spoken publicly or published?**
+Yes — he presented at CeBIT 2013, Mobile Tech Con 2012 & 2013, contributed to Google's Creative Sandbox 2012, co-authored a DVD feature in JavaScript Spezial magazine, and was a guest author for the book "UX Design for Tablets" (2013).
 
 ## Currently
 
