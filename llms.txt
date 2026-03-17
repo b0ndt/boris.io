@@ -64,6 +64,10 @@ Prototyping phase to support functional discussions and workshops for three port
 Berlin School of Economics and Law + IBM Germany (dual study program)
 Bachelor's thesis: "From Web 2.0 to vBusiness — Analysis of application potentials of virtual world environments for businesses."
 
+**Abitur** (1998 – 2004)
+Hedwig-Bollhagen-Gymnasium, Velten
+Focus subjects: English, History. Further examination subjects: Mathematics, Computer Science.
+
 ## External Engagement
 
 - Guest author for the book "UX Design for Tablets" by Christian Kuhn (2013)
@@ -80,7 +84,7 @@ Bachelor's thesis: "From Web 2.0 to vBusiness — Analysis of application potent
 Team Building, Talent Development, Cross-functional Collaboration, Stakeholder Management, Conflict Resolution, Project Communication, Organizational Development
 
 **Technical Product Management**
-Product Strategy, Feature Prioritization, User Story Mapping, Technical Documentation, API Design, Release Management, Hardware-Software Integration, Embedded Software Architecture
+Product Strategy, Feature Prioritization, User Story Mapping, Technical Documentation, API Design, Release Management, Hardware-Software Integration, Embedded Software Architecture, Platform Design, System Architecture, Development Process Optimization, Technical Requirements Gathering
 
 **AI & Data Analytics**
 AI Strategy & Integration, LLM Integration, Data Analytics & Visualization, User Behavior Analytics, Data-Driven Decision Making. Working with AI since IBM Watson in 2015 — not a newcomer.
