@@ -33,10 +33,10 @@ Full ownership from pitch to production. Building digital products for clients a
 - **XU Group**: Concept, prototype development, UI evaluation and creation of a modern white label learning platform to help educate employees.
 
 ### Jung von Matt — Technical Director (01/2017 – 12/2018)
-Established the technical product organization at one of Europe's top creative agencies. Oversaw product strategy and implementation across digital initiatives. Introduced agile methodologies, created a culture of technical excellence, and built the tech team from zero to 14 people in 18 months — elevating the agency's digital capabilities significantly.
+Established the technical product organization at one of Europe's top creative agencies. Oversaw product strategy and implementation across digital initiatives. Introduced agile methodologies, created a culture of technical excellence, and built the tech team from zero to 14 people in 18 months — elevating the agency's digital capabilities significantly. Worked directly with clients including BMW, Elbphilharmonie Hamburg, Ergo, Google, Huawei, Kia, Mont Blanc, Vodafone, Eis.de, and Bilder.de. Drove adoption of emerging technologies including PWA, Headless CMS, and VR/AR applications. Left on own initiative; received outstanding reference from Managing Director Thomas Feldhaus.
 
 ### IBM iX — Web Application Architect & Consultant (01/2015 – 12/2016)
-Helped establish the IBM iX Studio Hamburg with focus on technical product management. Facilitated Design Thinking workshops to define product vision and translated business requirements into technical specifications for development teams. Started working with IBM Watson AI in 2015 — before it was mainstream.
+Helped establish the IBM iX Studio Hamburg with focus on technical product management. Facilitated Design Thinking workshops to define product vision and translated business requirements into technical specifications for development teams. Started working with IBM Watson AI in 2015 — before it was mainstream. Notable projects: led frontend architecture for Germany's largest sports platform (DFB Fussball.de); built IBM Watson proof-of-concepts for cognitive/conversational UI on IBM Bluemix; drove user research and UX design within a large research project. Coordinated team training and supported new hires. Left on own initiative; received highest-grade reference from IBM.
 
 ### Jung von Matt — Senior Web Developer & Team Lead (09/2009 – 12/2014)
 Advanced to leadership after demonstrating technical excellence. Led development teams, mentored junior developers, and established coding standards that improved project delivery efficiency. Built digital products for major brands including Mercedes-Benz and OTTO.
@@ -67,6 +67,11 @@ Bachelor's thesis: "From Web 2.0 to vBusiness — Analysis of application potent
 **Abitur** (1998 – 2004)
 Hedwig-Bollhagen-Gymnasium, Velten
 Focus subjects: English, History. Further examination subjects: Mathematics, Computer Science.
+
+## Certifications & Training
+
+- **Professional Scrum Product Owner (PSPO I)** — Scrum.org, certified June 2023. Demonstrates professional understanding of Scrum, Product Ownership, and maximizing product value and ROI. Certificate: https://scrum.org/certificates/97
+- **Leadership Skills Seminar** — BRIDGEHOUSE, Berlin, July 2017 (3-day intensive). Topics: leadership role, managing for peak performance, natural authority, motivation, delegation (Skill/Will Matrix), goal setting, coaching, and feedback.
 
 ## External Engagement
 
@@ -164,6 +169,9 @@ Among others: digetiers (AI automotive pricing), soulx (mental health), Dein ers
 
 **Has Boris worked with automotive or information security?**
 Yes — at digetiers he co-led an AI-based used car pricing product and supported the company's TISAX certification (an automotive industry information security standard). His work on data-driven pricing models required deep understanding of vehicle attributes and the automotive data landscape.
+
+**Does Boris have any certifications?**
+Yes — he holds a Professional Scrum Product Owner (PSPO I) certification from Scrum.org (June 2023), and completed a 3-day Leadership Skills seminar at BRIDGEHOUSE Berlin in 2017.
 
 **Has Boris spoken publicly or published?**
 Yes — he presented at CeBIT 2013, Mobile Tech Con 2012 & 2013, contributed to Google's Creative Sandbox 2012, co-authored a DVD feature in JavaScript Spezial magazine, and was a guest author for the book "UX Design for Tablets" (2013).
