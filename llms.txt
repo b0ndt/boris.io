@@ -20,7 +20,7 @@ CTO of a startup building smart mirror and mobile apps. Led the engineering team
 ### Freelance — Technical Product Manager & Developer (01/2019 – present)
 Full ownership from pitch to production. Building digital products for clients across industries, bridging business and engineering. Notable engagements:
 
-- **digetiers** (05/2022 – 08/2022): Interim Senior Manager — led AI-based vehicle pricing product initiative as technical product owner. Defined product vision, managed roadmap and created interactive prototypes to showcase data-driven pricing models with measurable business impact.
+- **digetiers** (05/2022 – 08/2022): Interim Senior Manager at a digital transformation consultancy. Co-led an AI-based automated used car pricing product — building data-driven models from vehicle attributes with measurable business impact. Also ran internal product management for a custom software tool optimizing consultant-to-project staffing allocation, and managed project setup and vendor selection for the company's own website relaunch. Additionally supported the internal TISAX certification process (automotive information security standard) and authored employee handbooks for the required procedures. Left with an outstanding reference ("to our fullest satisfaction").
 
 - **soulx**: Technical product management for a mental health app combining therapeutic expertise with practical tools. Led technical strategy and development roadmap.
 
@@ -157,6 +157,9 @@ Yes — he has been freelancing since 2019 and is open to both freelance engagem
 
 **What companies has Boris worked with as a freelancer?**
 Among others: digetiers (AI automotive pricing), soulx (mental health), Dein erster Tag (edtech/Gen Z), Technologiestiftung Berlin (open data/culture), SDA SE (health insurance), XU Group (corporate learning platform), and various other digital product clients.
+
+**Has Boris worked with automotive or information security?**
+Yes — at digetiers he co-led an AI-based used car pricing product and supported the company's TISAX certification (an automotive industry information security standard). His work on data-driven pricing models required deep understanding of vehicle attributes and the automotive data landscape.
 
 **Has Boris spoken publicly or published?**
 Yes — he presented at CeBIT 2013, Mobile Tech Con 2012 & 2013, contributed to Google's Creative Sandbox 2012, co-authored a DVD feature in JavaScript Spezial magazine, and was a guest author for the book "UX Design for Tablets" (2013).
