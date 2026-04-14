@@ -201,14 +201,6 @@ function buildFallbackReply(knowledge, messages) {
     return 'Hi, I can answer questions about Boris Fründt, his background, leadership style, industries, availability, and current role. Ask me anything specific and I will keep it concise.';
   }
 
-  if ((/swan/.test(normalizedQuestion) && /(still|current|currently|now|today|work|working|there|role)/.test(normalizedQuestion)) || /(still work at swan|working at swan|currently at swan|current role at swan)/.test(normalizedQuestion)) {
-    let reply = 'No — his Interim CTO role at SWAN ran from July 2025 until March 2026. He is currently available for new freelance or permanent opportunities.';
-    if (shouldOfferContact(messages, lastUserMessage)) {
-      reply += ' If you want, leave your contact details and Boris can follow up directly.\n[CONTACT_OFFER]';
-    }
-    return reply;
-  }
-
   const faqEntries = extractFaqEntries(knowledge)
     .map(entry => ({
       ...entry,
