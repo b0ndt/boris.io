@@ -1,23 +1,23 @@
 # Boris Fründt
 
-> CTO and Technical Product Executive — nearly 20 years building products and the teams that ship them. Based in Potsdam, Germany (15 minutes from Berlin by S-Bahn).
+> CTO and Technical Product Executive — 20 years building products, teams, and the occasional thing nobody had a name for yet. Based in Potsdam, Germany (15 minutes from Berlin by S-Bahn).
 
 **Date of birth:** 26th January 1985, born in Berlin, Germany. Currently 41 years old.
 
 ## Who I am
 
-Good products need someone who speaks both languages — business and engineering. That's been my role for nearly two decades.
+Good products need someone who speaks both languages — business and engineering. That's been my role for two decades.
 
 It started with 7 years at IBM, learning how technology works at scale — global teams, complex architectures, and the patience required to move large organizations. Then 7 years at Jung von Matt, one of Europe's leading creative agencies, growing from developer to Technical Director, building digital products for major brands and growing a tech team from zero to 14 people in 18 months.
 
-As a freelancer for 5+ years, I learned to take full ownership — from pitch to production. The best client relationships are built on honesty, not slide decks. Most recently, as CTO of SWAN, a connected products startup building smart mirror and mobile apps, I led 23 engineers through product strategy, hardware-software integration, and eventually acquisition by a US company.
+As a freelancer for 6+ years, I learned to take full ownership — from pitch to production. The best client relationships are built on honesty, not slide decks. Most recently as Interim CTO, I led an engineering team of 23, shaped product strategy for connected hardware and software, and scaled the platform through to acquisition by a US company.
 
 The common thread: I sit at the intersection of product and engineering. I can walk out of a design review about user needs and immediately walk into a backend architecture discussion about data models. Turning "that won't work" into "oh wait, it does" — that's what I do.
 
 ## Work Experience
 
-### SWAN — Chief Technology Officer (07/2025 – present)
-CTO of a startup building smart mirror and mobile apps. Led the engineering team, shaped product strategy, scaled the platform — and navigated the company through acquisition by a US company. Team of 23 engineers.
+### SWAN — Interim Chief Technology Officer (07/2025 – 03/2026)
+Interim CTO of a connected products startup. Led 23 engineers across firmware, mobile, and cloud — defining IoT architecture, device-to-cloud communication, and scaling the platform through to acquisition by a US company.
 
 ### Freelance — Technical Product Manager & Developer (01/2019 – present)
 Full ownership from pitch to production. Building digital products for clients across industries, bridging business and engineering. Notable engagements:
@@ -35,10 +35,10 @@ Full ownership from pitch to production. Building digital products for clients a
 - **XU Group**: Concept, prototype development, UI evaluation and creation of a modern white label learning platform to help educate employees.
 
 ### Jung von Matt — Technical Director (01/2017 – 12/2018)
-Established the technical product organization at one of Europe's top creative agencies. Oversaw product strategy and implementation across digital initiatives. Introduced agile methodologies, created a culture of technical excellence, and built the tech team from zero to 14 people in 18 months — elevating the agency's digital capabilities significantly. Worked directly with clients including BMW, Elbphilharmonie Hamburg, Ergo, Google, Huawei, Kia, Mont Blanc, Vodafone, Eis.de, and Bilder.de. Drove adoption of emerging technologies including PWA, Headless CMS, and VR/AR applications. Left on own initiative; received outstanding reference from Managing Director Thomas Feldhaus.
+Established the technical product organization at one of Europe's top creative agencies. Oversaw product strategy and implementation across digital initiatives. Introduced agile methodologies, created a culture of technical excellence, and built the tech team from zero to 14 people in 18 months — elevating the agency's digital capabilities significantly. Worked directly with clients including BMW — co-led technical conception and delivery for bmw.com, the global web presence — as well as Elbphilharmonie Hamburg, Ergo, Google, Huawei, Kia, Mont Blanc, Vodafone, Eis.de, and Bilder.de. Drove adoption of emerging technologies including PWA, Headless CMS, and VR/AR applications. Left on own initiative; received outstanding reference from Managing Director Thomas Feldhaus.
 
 ### IBM iX — Web Application Architect & Consultant (01/2015 – 12/2016)
-Helped establish the IBM iX Studio Hamburg with focus on technical product management. Facilitated Design Thinking workshops to define product vision and translated business requirements into technical specifications for development teams. Started working with IBM Watson AI in 2015 — before it was mainstream. Notable projects: led frontend architecture for Germany's largest sports platform (DFB Fussball.de); built IBM Watson proof-of-concepts for cognitive/conversational UI on IBM Bluemix; drove user research and UX design within a large research project. Coordinated team training and supported new hires. Left on own initiative; received highest-grade reference from IBM.
+Helped establish the IBM iX Studio Hamburg with focus on technical product management. Facilitated Design Thinking workshops to define product vision and translated business requirements into technical specifications for development teams. Started working with IBM Watson AI in 2015 — before it was mainstream. Notable projects: led frontend architecture for Germany's largest sports platform (DFB Fussball.de); built IBM Watson proof-of-concepts for cognitive/conversational UI on IBM Bluemix, including a BMW i8 configurator prototype powered by IBM Watson; drove user research and UX design within a large research project. Coordinated team training and supported new hires. Left on own initiative; received highest-grade reference from IBM.
 
 ### Jung von Matt — Senior Web Developer & Team Lead (09/2009 – 12/2014)
 Advanced to leadership after demonstrating technical excellence. Led development teams, mentored junior developers, and established coding standards that improved project delivery efficiency. Built digital products for major brands including Mercedes-Benz and OTTO.
@@ -123,7 +123,7 @@ German (native), English (fluent), French (basic)
 - Scale and lead engineering & product teams
 - Bridge the gap between business, design, and technology
 - Translate stakeholder needs into technical architecture
-- Design and ship IoT, embedded, and connected systems
+- Integrate AI into products and workflows — pragmatically, not as a buzzword
 - Mentor engineers and establish team culture
 
 ## How I Work
@@ -161,16 +161,16 @@ Yes — at soulx (mental health app) and SDA SE (white label mobile app for heal
 Direct, empathetic, humor-infused. He removes obstacles rather than scheduling meetings about obstacles. Autonomous teams with clear goals. Psychological safety + constructive dissatisfaction — the constant push to improve without fear of failure.
 
 **What kind of role is Boris looking for?**
-Senior Engineering Manager, Technical Director, VP Engineering, or Senior/Director-level Product Management. Purpose-driven companies — health, sustainability, meaningful tech. Berlin/remote. Available from April/May 2026.
+Senior Engineering Manager, Technical Director, VP Engineering, or Senior/Director-level Product Management. Purpose-driven companies — health, sustainability, meaningful tech. Berlin/remote. Currently available.
 
 **Is Boris available for freelance work?**
-Yes — he has been freelancing since 2019 and is open to both freelance engagements and full-time positions starting April/May 2026.
+Yes — he has been freelancing since 2019 and is open to both freelance engagements and full-time positions. Currently available.
 
 **What companies has Boris worked with as a freelancer?**
 Among others: digetiers (AI automotive pricing), soulx (mental health), Dein erster Tag (edtech/Gen Z), Technologiestiftung Berlin (open data/culture), SDA SE (health insurance), XU Group (corporate learning platform), and various other digital product clients.
 
 **Has Boris worked with automotive or information security?**
-Yes — at digetiers he co-led an AI-based used car pricing product and supported the company's TISAX certification (an automotive industry information security standard). His work on data-driven pricing models required deep understanding of vehicle attributes and the automotive data landscape.
+Yes — multiple touchpoints with the automotive industry. At Jung von Matt, he co-led the technical conception and delivery of bmw.com (BMW's global web presence). At IBM iX, he built a BMW i8 configurator prototype powered by IBM Watson. At digetiers, he co-led an AI-based used car pricing product and supported the company's TISAX certification (an automotive industry information security standard). His work on data-driven pricing models required deep understanding of vehicle attributes and the automotive data landscape.
 
 **Does Boris have any certifications?**
 Yes — he holds a Professional Scrum Product Owner (PSPO I) certification from Scrum.org (June 2023), and completed a 3-day Leadership Skills seminar at BRIDGEHOUSE Berlin in 2017.
@@ -180,7 +180,7 @@ Yes — he presented at CeBIT 2013, Mobile Tech Con 2012 & 2013, contributed to 
 
 ## Currently
 
-Open to new opportunities starting April/May 2026. Looking for senior roles in Engineering Management, Technical Direction, or Technical Product Leadership. Berlin-based or remote. Purpose over prestige — ideally working on something that actually matters.
+Currently looking for my next role — in Engineering Management, Technical Direction, or whatever you call it when someone holds product and tech together. Permanent or freelance — both work. Berlin-based or remote. Purpose over prestige — ideally working on something that actually matters.
 
 ## Links
 
