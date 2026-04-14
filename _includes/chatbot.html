@@ -35,6 +35,7 @@
     role="dialog"
     aria-label="Chat with Boris's AI assistant"
     aria-hidden="true"
+    hidden
   >
     <!-- Panel header -->
     <div id="boris-chat-header">
@@ -569,11 +570,20 @@
   var isWaiting = false;
   var hasShownIntro = false;
 
+  var closePanelTimer = null;
+
   function openPanel() {
     isOpen = true;
-    panel.classList.add('boris-chat-open');
+    if (closePanelTimer) {
+      clearTimeout(closePanelTimer);
+      closePanelTimer = null;
+    }
+    panel.hidden = false;
     panel.setAttribute('aria-hidden', 'false');
     btn.setAttribute('aria-expanded', 'true');
+    requestAnimationFrame(function () {
+      panel.classList.add('boris-chat-open');
+    });
     if (!hasShownIntro) {
       hasShownIntro = true;
       appendMessage('assistant', 'Hey — I\'m not Boris, but I know quite a bit about him. Ask me anything.');
@@ -586,6 +596,13 @@
     panel.classList.remove('boris-chat-open');
     panel.setAttribute('aria-hidden', 'true');
     btn.setAttribute('aria-expanded', 'false');
+    if (closePanelTimer) {
+      clearTimeout(closePanelTimer);
+    }
+    closePanelTimer = setTimeout(function () {
+      panel.hidden = true;
+      closePanelTimer = null;
+    }, 250);
     btn.focus();
   }
 
