@@ -606,8 +606,15 @@
     btn.focus();
   }
 
+  var scrollToBottomScheduled = false;
+
   function scrollToBottom() {
-    messagesEl.scrollTop = messagesEl.scrollHeight;
+    if (scrollToBottomScheduled) return;
+    scrollToBottomScheduled = true;
+    requestAnimationFrame(function () {
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      scrollToBottomScheduled = false;
+    });
   }
 
 
@@ -752,16 +759,25 @@
   });
 
   // Consent banner awareness — push button up when banner is visible
+  var consentAdjustScheduled = false;
+
   function adjustForConsent() {
-    var consent = document.querySelector('amp-consent');
-    if (consent) {
-      var h = consent.offsetHeight;
-      if (h > 0) {
-        root.style.bottom = (h + 12) + 'px';
-        return;
+    if (consentAdjustScheduled) return;
+    consentAdjustScheduled = true;
+    requestAnimationFrame(function () {
+      var consent = document.querySelector('amp-consent');
+      var nextBottom = '';
+      if (consent) {
+        var h = consent.offsetHeight;
+        if (h > 0) {
+          nextBottom = (h + 12) + 'px';
+        }
       }
-    }
-    root.style.bottom = '';
+      if (root.style.bottom !== nextBottom) {
+        root.style.bottom = nextBottom;
+      }
+      consentAdjustScheduled = false;
+    });
   }
 
   adjustForConsent();
@@ -822,7 +838,7 @@
     contactToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
     contactBody.hidden = !expanded;
     if (expanded) {
-      messagesEl.scrollTop = messagesEl.scrollHeight;
+      scrollToBottom();
     }
   }
 
@@ -831,7 +847,7 @@
     contactShown = true;
     contactForm.classList.add('visible');
     setContactExpanded(true);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
+    scrollToBottom();
   }
 
   contactToggle.addEventListener('click', function (e) {
