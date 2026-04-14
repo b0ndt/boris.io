@@ -23,10 +23,11 @@
   <link rel="mask-icon" href="{{ site.favicon | prepend: site.baseurl | prepend: site.url }}" color="#FFFFFF"
     media="(prefers-color-scheme: dark)" />
 
-  <link rel="preconnect dns-prefetch" href="https://cdn.ampproject.org/" crossorigin>
-  <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="preconnect" href="https://cdn.ampproject.org" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.ampproject.org">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans|Oswald:300,400">
+  <link rel="preload" href="/assets/fonts/pt-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/oswald-300-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <script async src="https://cdn.ampproject.org/v0.js"></script>
 
